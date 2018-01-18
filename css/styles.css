@@ -1,0 +1,49 @@
+body{
+	/*background: lightblue;*/
+	background-image: url("Lituya_Bay_Alaska.jpg");
+}
+a{
+	text-decoration: none;
+}
+header{
+	height:200px;
+	background:rgba(255,255,255,0.6);
+	
+}
+h1{
+	font-family: 'Tangerine', cursive;
+	font-size: 5em;
+	margin: auto;
+	padding-top:10px;
+	text-align: center;
+}
+#entete_Presentation{
+	display: flex;
+	flex-direction: column;
+	
+}
+section{
+	background:rgba(255,255,255,0.6);
+	height:250px;
+}
+#laucher{
+	display: flex;
+	justify-content: space-between;
+	width:80%;
+	margin:auto;
+}
+#home,#book,#news{
+	height:35px;
+	width:30%;
+}
+footer{
+	background:rgba(255,255,255,0.6);
+	height:120px;
+}
+p.bottom{
+	margin: auto;
+}
+#mentions_Infos{
+	display: flex;
+	justify-content: space-around;
+}
