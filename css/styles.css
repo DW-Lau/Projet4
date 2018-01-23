@@ -5,12 +5,8 @@ body{
 a{
 	text-decoration: none;
 }
-header{
-	height:200px;
-	background:rgba(255,255,255,0.8);
-	
-}
-footer{
+
+#bot{
 	background:rgba(255,255,255,0.8);
 	height:50px;
 }
@@ -31,6 +27,7 @@ footer{
 	color: #041F33;
 }
 #entete_Presentation{
+	background:rgba(255,255,255,0.8);
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -83,3 +80,8 @@ p.bottom{
 	text-align: center;
 }
 /*Fin Page d'accueil*/
+
+/*Page HOME*/
+
+
+/*Fin Page HOME*/
