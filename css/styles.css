@@ -132,13 +132,30 @@ section{
 	display: flex;
 	flex-direction: row-reverse;
 }
+/*DEBUT ASIDE*/
+h4{
+	margin:0px;
+}
+.comments{
+	margin:0px;
+	padding: 5px;
+}
+.show_Comms{
+	margin: 0px;
+}
+aside{
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+	border: double #052942 5px;
+	max-height: 220px;
+}
 #block{
 	display: flex;
 	flex-direction: column;
+	max-height: 500px;
 }
-aside{
-	margin: 5px;
-}
+/*FIN ASIDE*/
 footer{
 	background: #052942;
 }
