@@ -155,6 +155,11 @@ aside{
 	flex-direction: column;
 	max-height: 500px;
 }
+.comments{
+	text-align: justify;
+	font-family: 'Helvetica';
+	font-size: 0.9em;
+}
 /*FIN ASIDE*/
 footer{
 	background: #052942;
