@@ -65,19 +65,6 @@ a{
 	}
 	/*FIN SURVOL SOURIS */
 
-/*Fin de section*/
-p.bottom{
-	margin: auto;
-}
-#mentions_Infos{
-	display: flex;
-	justify-content: space-around;
-	text-align: left;
-
-}
-#mentions_Infos h3{
-	text-align: center;
-}
 /*Fin Page d'accueil*/
 
 /*Page HOME*/
@@ -132,39 +119,79 @@ section{
 	display: flex;
 	flex-direction: row-reverse;
 }
+#chaps{
+	margin: 5px;
+	border: solid 2px #052942 ;
+}
 /*DEBUT ASIDE*/
 h4{
 	margin:0px;
-}
-.comments{
-	margin:0px;
-	padding: 5px;
-}
-.show_Comms{
-	margin: 0px;
+	text-align: center;
+    border-bottom: solid 1px;
+    background: lightgrey;
 }
 aside{
 	display: flex;
 	flex-direction: column;
-	margin: 10px;
+	margin: 5px;
 	border: double #052942 5px;
 	max-height: 220px;
 }
-#block{
+#block{/*Container for both aside part*/
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	max-height: 500px;
 }
-.comments{
+.new_Note{/*This part is all about note on home.html, no buttons */
 	text-align: justify;
 	font-family: 'Helvetica';
 	font-size: 0.9em;
+	margin:0px;
+	padding: 5px;
+}
+.all_Buttons{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	height: 35px;
+	width: 33%;
+}
+.add_Comms, .showC, .hideC{
+	font-size: 0.7em;
+	text-align: center;
+	margin: 2px;
+}
+.comms{/*This part is about the last 2 comments add on the page. Change will be operated on javascript page*/
+display: none;
+}
+.show_Comms{
+	margin: 0px;
 }
 /*FIN ASIDE*/
 footer{
 	background: #052942;
 }
+/*Fin de section*/
+p.bottom{
+	margin: auto;
+	display: flex;
+    justify-content: space-around;
+}
+#mentions_Infos{
+	display: flex;
+	justify-content: space-around;
+	text-align: left;
+
+}
+#mentions_Infos h3{
+	text-align: center;
+}
 #comptes_inscriptions, #contacts{
 	border-right: 2px;
+	border:#052942;
+	
+	background: lightblue;
+
 }
 /*Fin Page HOME*/
