@@ -101,17 +101,29 @@ nav{
 	width: 35%;
 }
 ul{ 
-	margin: 0px;
-    padding: 0px;
+	list-style-type: none; 
+	background-color: #052942;
+	margin-right: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 50px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-
-	list-style-type: none; 
+}
+ul li:hover{
+	border-bottom: : solid 2px #052900;
+}
+nav a{
+	color:white;
 }
 
+nav a:hover{
+	color:white;
+}
 #lower_Deco{
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: flex-end;
 	width: 90%;

@@ -12,24 +12,9 @@
 	<title>Billet simple pour l'Alaska, par JR</title>
 	</head>
 		<body>	
-			<header>
-				<div id="headR_Home">
-					<h1> "Billet simple pour l'Alaska"</h1>
-
-					<div id="lower_Deco">
-						<img src="Images/Plume.svg.png" alt="La plume de l'écrivain" id="deco_In_Header" >
-							<div id="line_Ink"><!--Ink line add in css--></div>
-						<h2> Jean Forteroche</h2>
-					</div>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="">L'Auteur</a></li>
-						<li><a href="">Les Chapitres</a></li>
-						<li><a href="">Les Nouveautées</a></li>
-					</ul>
-				</nav>
-			</header>
+		<?php
+		include ('php/header.php');
+		?>
 			<div class="borderDeco">
 			</div>
 			<section>
@@ -83,7 +68,8 @@
 						</p>
 					</div>
 
-					<?php include ('mentionsLeg.php'); ?>
+					<?php include ('php/mentionsLeg.php');
+					?>
 					<div id="last_News">
 						<p>
 							<h3>Les dernières nouveautés:</h3>
