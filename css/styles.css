@@ -70,6 +70,12 @@ a{
 /*Page HOME*/
 
 /*Debut HEADER*/
+header{
+	margin: 0px;
+	display: flex;
+	align-items: center;
+	background: white;
+}
 h1{
 	font-family: 'Dancing Script', cursive;
 	color:#041F33;
@@ -83,13 +89,27 @@ h2{
 	margin: 0px;
 	padding-top: 15px;
 }
-#head_R{
+#headR_Home{
 	height:120px;
 	background: white;
 	display: flex;
 	flex-direction: column;
+	width:65%;
 	
 }
+nav{
+	width: 35%;
+}
+ul{ 
+	margin: 0px;
+    padding: 0px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	list-style-type: none; 
+}
+
 #lower_Deco{
 	display: flex;
 	align-items: center;
