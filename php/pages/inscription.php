@@ -3,7 +3,7 @@
 <head>
 	<title>Devenir Membre</title>
 </head>
-<?php include('../portions/header.php');
+<?php include('header.php');
 ?>
 <body>
 <aside>

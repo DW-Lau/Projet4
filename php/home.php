@@ -23,69 +23,69 @@
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/stylesA.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesA.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
-		<?php include("php/header.php");?>
+		<?php include("portions/header.php");?>
 			<div class="borderDeco">
 			</div>
 			<section>
-				<article id="chaps">
-					<h3 class="Chapters">Les Chapitres</h3>
-						<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet at leo a suscipit. Phasellus sagittis, lectus ut bibendum pretium, ligula metus feugiat nisl, nec vestibulum tellus dui dictum nibh. Mauris mattis pharetra venenatis. Fusce ligula tortor, dignissim ac erat nec, blandit hendrerit nisl. Nulla eu suscipit sapien. Mauris aliquam arcu mauris, varius sodales dui facilisis ut. Maecenas egestas tellus sed consequat elementum. Morbi vehicula lorem nec ante malesuada, nec sagittis tellus feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
-				</article>
-
-				<div id="block">
-					<aside id="last_Comm">
-						<h4  class="new_Aside">Test2</h4>
-							<p class="new_Note">
-								Ut et pretium arcu. Ut in dapibus odio, vitae aliquet elit. Morbi condimentum ex vel convallis egestas. Donec luctus faucibus posuere. Praesent condimentum, turpis et maximus accumsan, enim neque sodales odio, a porttitor ligula leo vitae ligula. Donec dictum sapien ac ante condimentum pharetra. Proin feugiat ligula eu risus accumsan lacinia
+				<div id="sideDeco">
+					<article id="chaps">
+						<h3 class="Chapters">Les Chapitres</h3>
+							<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet at leo a suscipit. Phasellus sagittis, lectus ut bibendum pretium, ligula metus feugiat nisl, nec vestibulum tellus dui dictum nibh. Mauris mattis pharetra venenatis. Fusce ligula tortor, dignissim ac erat nec, blandit hendrerit nisl. Nulla eu suscipit sapien. Mauris aliquam arcu mauris, varius sodales dui facilisis ut. Maecenas egestas tellus sed consequat elementum. Morbi vehicula lorem nec ante malesuada, nec sagittis tellus feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 							</p>
-							<div class="all_Buttons">
-								<button class="add_Comms"> + </button>
-								<button class="showC">Afficher Commentaires</button>
-								<button class="hideC">Masquer les commentaires</button>
-							</div>
-									<div class="comms">
-										<p class="show_Comms">Commentaire test.</p><br>
-										<p class="show_Comms_Sec"> Commentaire test 2 </p>
-									</div>
-					</aside>
+					</article>
 
-					<aside id="new_Comm">
-						<h4 class="new_Aside">Test 1</h4>
-							<p class="new_Note">
-								Ut et pretium arcu. Ut in dapibus odio, vitae aliquet elit. Morbi condimentum ex vel convallis egestas. Donec luctus faucibus posuere. Praesent condimentum, turpis et maximus accumsan, enim neque sodales odio, a porttitor ligula leo vitae ligula. Donec dictum sapien ac ante condimentum pharetra. Proin feugiat ligula eu risus accumsan lacinia
-							</p>
-							<div class="comms">
-								<p class="show_Comms_Third">Commentaire test.</p><br>
-								<p class="show_Comms_Four"> Commentaire test 2 </p>
-								<div class="add_Comms">
-									<button> + </button>
+					<div id="block">
+						<aside id="last_Comm">
+							<h4  class="new_Aside">Test2</h4>
+								<p class="new_Note">
+									Ut et pretium arcu. Ut in dapibus odio, vitae aliquet elit. Morbi condimentum ex vel convallis egestas. Donec luctus faucibus posuere. Praesent condimentum, turpis et maximus accumsan, enim neque sodales odio, a porttitor ligula leo vitae ligula. Donec dictum sapien ac ante condimentum pharetra. Proin feugiat ligula eu risus accumsan lacinia
+								</p>
+								<!-- <div class="all_Buttons">
+									<button class="add_Comms"> + </button>
+									<button class="showC">Afficher Commentaires</button>
+									<button class="hideC">Masquer les commentaires</button>
 								</div>
-							</div>
-					</aside>
-				</div>
-				
+										<div class="comms">
+											<p class="show_Comms">Commentaire test.</p><br>
+											<p class="show_Comms_Sec"> Commentaire test 2 </p>
+										</div> -->
+						</aside>
+
+						<aside id="new_Comm">
+							<h4 class="new_Aside">Test 1</h4>
+								<p class="new_Note">
+									Ut et pretium arcu. Ut in dapibus odio, vitae aliquet elit. Morbi condimentum ex vel convallis egestas. Donec luctus faucibus posuere. Praesent condimentum, turpis et maximus accumsan, enim neque sodales odio, a porttitor ligula leo vitae ligula. Donec dictum sapien ac ante condimentum pharetra. Proin feugiat ligula eu risus accumsan lacinia
+								</p>
+								
+						</aside>
+					</div>
+				</div><!--Fin de sideDeco-->
 			</section>
 			<footer>
 				<div id="mentions_Infos">
 					<div id="comptes_inscriptions">
 						<h3>Login</h3>
 						<p class="bottom"> 
-							<span class="log_members">Déjà inscript </span>
-							</br>
-							<span class="log_NewMembers">Inscription</span>
+							Vous êtes déjà membre:<a href="pages/login.php">Login</a>
+						</p>	
+						<br>
+						<p class="bottom">
+							Vous voulez nous rejoindre: <a href="pages/inscription.php"> Inscription
+								
+							</a>
 						</p>
+						
 					</div>
 
-					<?php include ("php/mentionsLeg.php");
+					<?php include ("portions/mentionsLeg.php");
 					?>
 					<div id="last_News">
 						<p>

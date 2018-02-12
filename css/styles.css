@@ -4,77 +4,13 @@ body{
 a{
 	text-decoration: none;
 }
-
-#bot{
-	background:rgba(255,255,255,0.8);
-	height:50px;
-}
-/*Page D'accueil*/
-.acc{/*H1 accueil*/
-	/*font-family: 'Tangerine', cursive;*/
-	font-family: 'Dancing Script', cursive;
-	color:#041F33;
-	font-size: 5em;
-	margin: auto;
-	padding-top:10px;
-	text-align: center;
-}
-.titre_d{/*H2 accueil*/
-	text-align: right;
-	margin-right: 10px;
-	font-family: 'Dancing Script', cursive;
-	color: #041F33;
-}
-#entete_Presentation{
-	background:rgba(255,255,255,0.8);
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-/*Section*/
-#middle{
-	background:rgba(255,255,255,0.8);
-	height:405px;
-	border-top: #094a7833 inset 5px;
-	border-bottom: #094a7833 inset 5px;
-	
-}
-#laucher{
-	display: flex;
-	justify-content: space-between;
-	width:80%;
-	height:100%;
-	margin:auto;
-}
-#home,#book,#news{
-	height:35px;
-	width:30%;
-	margin: auto;
-    background: #094A78;
-    border-radius: 10px;
-    border: 2px solid white;
-    font-family: 'Arial';
-}
-#home a,#book a, #news a{
-	color: white;
-}
-	/*SURVOL SOURIS*/
-	#home:hover,#book:hover,#news:hover{
-	    background: #052942;
-	    /*font-weight: bold;*/
-	}
-	/*FIN SURVOL SOURIS */
-
-/*Fin Page d'accueil*/
-
 /*Page HOME*/
 
 /*Debut HEADER*/
-header{
-	margin: 0px;
-	display: flex;
-	align-items: center;
+header{/*Même propriétés que stylesA.css*/
 	background: white;
+	border-bottom: 5px double #052942;
+
 }
 h1{
 	font-family: 'Dancing Script', cursive;
@@ -84,10 +20,7 @@ h1{
 	text-align: center;
 }
 h2{	
-	font-family: 'Dancing Script', cursive;
-	color:#041F33;
-	margin: 0px;
-	padding-top: 15px;
+font-size: 1.6em;
 }
 #headR_Home{
 	height:120px;
@@ -122,17 +55,8 @@ nav a:hover{
 	color:white;
 }
 #lower_Deco{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-end;
-	width: 90%;
-    margin: auto;
 }
 #line_Ink{
-	height: 2px;
-	background: black;
-	width: 70%;
 }
 #deco_In_Header{
 	height: 50px;
@@ -141,39 +65,60 @@ nav a:hover{
 }
 
 /*Fin HEADER*/
-h3{
-	font-family: 'Dancing Script', cursive;
-	margin: 0px;
-}
 section{
+	background:rgba(255,255,255,0.8);
+	height: 675px;
+}
+#sideDeco{/*Div contenant aside et article*/
+	margin: auto;
 	background: white;
-	height: 500px;
+	width:80%;
+	border-left: solid #052942;
+	border-right:  solid #052942;
 	display: flex;
 	flex-direction: row-reverse;
 }
+/*Article*/
 #chaps{
 	margin: 5px;
-	border: solid 2px #052942 ;
+	width: 70%;
+	border-left: solid 2px #052942;
+	border-right: solid 2px #052942;
 }
+
+.Chapters{
+	text-align: center;
+	font-family: 'Dancing Script', cursive;
+	font-size: 1.1em;
+}
+#chaps p{
+	padding: 5px;
+	text-align: justify;
+}
+
+/*Fin article/ END ARTICLE*/
+
 /*DEBUT ASIDE*/
 h4{
 	margin:0px;
 	text-align: center;
-    border-bottom: solid 1px;
-    background: lightgrey;
+	font-size:1.2em; 
+    border: solid 1px;
+    background: #5cadd380;
 }
 aside{
 	display: flex;
 	flex-direction: column;
 	margin: 5px;
-	border: double #052942 5px;
-	max-height: 220px;
+	border-bottom:solid #052942 2px;
+	height: 220px;
 }
 #block{/*Container for both aside part*/
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	max-height: 500px;
+	width:25%;
+	height: 675px;
 }
 .new_Note{/*This part is all about note on home.html, no buttons */
 	text-align: justify;
@@ -201,14 +146,26 @@ display: none;
 	margin: 0px;
 }
 /*FIN ASIDE*/
-footer{
-	background: #052942;
-}
+
 /*Fin de section*/
+footer{
+	background:#5cadd395;
+	border: double #052942 5px;
+	height: 120px;
+}
+h3{
+	font-family: 'Dancing Script', cursive;
+	font-size: 0.9em;
+	margin:auto;
+}
 p.bottom{
 	margin: auto;
 	display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+.bottom a{
+	color:white;
+	text-transform: uppercase;
 }
 #mentions_Infos{
 	display: flex;
@@ -219,11 +176,19 @@ p.bottom{
 #mentions_Infos h3{
 	text-align: center;
 }
+#comptes_inscriptions,#contacts,#last_News{
+	width:33%;
+	background: #5cadd3;
+}
 #comptes_inscriptions, #contacts{
-	border-right: 2px;
-	border:#052942;
-	
-	background: lightblue;
-
+	border-right: solid 2px #052942;
+	padding-right: 5px;
+}
+#contacts ul{
+	background-color: inherit;
+	display: flex;
+	flex-direction: column;
+	margin: 0px;
+	padding:0px;
 }
 /*Fin Page HOME*/
