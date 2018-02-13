@@ -77,6 +77,7 @@ section{
 	border-right:  solid #052942;
 	display: flex;
 	flex-direction: row-reverse;
+	justify-content: space-around;
 }
 /*Article*/
 #chaps{
@@ -192,3 +193,18 @@ p.bottom{
 	padding:0px;
 }
 /*Fin Page HOME*/
+
+/*Début Page inscription.php*/
+#formulaire{
+	width: 55%;
+
+}
+form{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	font-family: 'Arial';
+}
+form input{
+	width:50%;
+}

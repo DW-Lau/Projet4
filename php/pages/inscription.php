@@ -1,26 +1,79 @@
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
+	<meta charset="utf-8">
+
+	<meta name="description" content="Découvert le nouveau roman de Jean Forteroche, 'Billet simple pour Alaska'.(Projet Openclassroom)">
+
+	<meta name="keywords" content="Billet simple pour l'Alaska, Jean Forteroche, Roman, Livre, En Ligne, nouveautées, Actulitée, Auteur" />
+		<!--Meta Facebook-->
+	<meta property="og:title" content="Billet simple ppir l'Alaska, par JF" />
+	<meta property="og:type" content="article" /> 
+	<meta property="og:url" content="http://www.projet4.laura-lariccia.fr" /> 
+	<meta property="og:image" content="images/" /> 
+	<meta property="og:description" content="Le nouveau roman de Jean ForteRoche" /> 
+	<meta property="og:site_name" content="Billet simple ppir l'Alaska, par JF" /> 
+	<meta property="fb:admins" content="Facebook numeric ID" />
+		
+		<!--Meta Twitter-->
+	<meta name="twitter:card" content="images/.png">
+	<meta name="twitter:site" content="@laura"> 
+	<meta name="twitter:title" content="Billet simple ppir l'Alaska, par JR">
+	<meta name="twitter:description" content="Le nouveau roman de Jean ForteRoche"> 
+	<meta name="twitter:creator" content="@author_handle">
+	<meta name="twitter:image:src" content="images.png">
+		<!--FIN META -->
+	<link rel="stylesheet" type="text/css" href="../../css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../../css/stylesA.css">
+	<!--POLICES-->
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 	<title>Devenir Membre</title>
-</head>
-<?php include('header.php');
-?>
-<body>
-<aside>
-	<p> Grâce aux formulaire vous pourrez devenir membre et profiter de contenu exclusif. </br>
-	En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</p>
-</aside>
+	</head>
 
-<section>
-		<form method="post" action="">
-			<label name="nom">Nom:</label>
-			<input type="text" name="nom"/>
+	<body>
+		<?php include('../portions/header.php');
+		?>
+		<section>
+			<div id="sideDeco">
+				<article id="formulaire">
+					<h3>Inscription:</h3>
+						<form method="post" action="espace_Membres.php">
+							<label name="nom">Nom:</label>
+							<input type="text" name="nom" id="nom" required />
 
-			<label name="firstName"> Prénom:</label>
-			<input type="text" name="firstName"/>
+							<label name="firstName"> Prénom:</label>
+							<input type="text" name="firstName" id="firstName" required />
 
-			
-		</form>
-</section>
-</body>
+							<label name="nickname"> Pseudo:</label>
+							<input type="text" name="nickname" id="pseudo" required>
+
+							<label name="mail"> Adresse mail:</label>
+							 <input type="email" name="mail" id="mail" required/>
+
+							<label name="mdp1">Mot de passe:</label>
+							<input type="passeword" name="mdp1" id="motDpasse" required />
+
+							<label name="mdp2">Cofirmation du mot de passe:</label>
+							<input type="passeword" name="mdp2" id="mdPasse" required />
+							<span id="statutMDP"></span>
+
+							<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
+							</textarea>
+							<input type="submit" id="validation" value="Valider" />
+						</form>
+				</article>
+
+				<aside>
+					<h4 class="new_Aside">Avant de continuer..</h4>
+						<p> Grâce aux formulaire vous pourrez devenir membre et profiter de contenu exclusif. </br>
+						En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
+						Les informations renseignées ne seront utilisées que sur ce site.
+						</p>
+				</aside>
+			</div><!--Fin de sideDeco-->
+		</section>
+
+		<script type="text/javascript" src="../../javascript/validInscription.js"></script>
+	</body>
 </html>
