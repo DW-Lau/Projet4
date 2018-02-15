@@ -52,7 +52,7 @@
 							 <input type="email" name="mail" id="mail" required/>
 
 							<label name="mdp1">Mot de passe:</label>
-							<input type="passeword" name="mdp1" id="motDpasse" required />
+							<input type="passeword" name="mdp1" id="motDpasse" required /><span id="longueurMDP"></span>
 
 							<label name="mdp2">Cofirmation du mot de passe:</label>
 							<input type="passeword" name="mdp2" id="mdPasse" required />
