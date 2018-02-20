@@ -9,6 +9,19 @@ var Bouton_validation=document.getElementById('validation');
 
 var mail_cle=courriel.value;
 
+
+function verifPrenom(){
+	var regexPr=/[^0-9].+[A-Z].+.[a-z]/;
+	if (prenom==regexPr) {
+		console.log ('Prénom correct');
+	}else{
+		console.log('Erreur Prénom');
+	}
+}
+prenom.addEventListener('input', verifPrenom);
+
+
+
 var regex=/.+@.+\..+/;
 function verif_Mail() {
 	if (regex===mail_cle) {
@@ -34,6 +47,8 @@ formulaire.addEventListener("input", function(e){
 		lengthPWD.textContent="Mot de passe trop court."
 		lengthPWD.style.color="red";
 	}else{
+		lengthPWD.textContent="ok."
+		lengthPWD.style.color="green";
 		if(mdp1===mdp2){
 			console.log("Mot de passe correspondant");
 			updateStat.textContent="Mode de passe correspondant";
