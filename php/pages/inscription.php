@@ -32,13 +32,13 @@
 	</head>
 
 	<body>
-		<?php include('../portions/header.php');
+		<?php require('../portions/header.php');
 		?>
 		<section>
 			<div id="sideDeco">
 				<article id="formulaire">
 					<h3>Inscription:</h3>
-						<form method="post" action="espace_Membres.php">
+						<form method="post" action="espacemembres.php">
 							<label name="nom">Nom:</label>
 							<input type="text" name="nom" id="nom" required />
 
@@ -52,10 +52,10 @@
 							 <input type="email" name="mail" id="mail" required/>
 
 							<label name="mdp1">Mot de passe:</label>
-							<input type="passeword" name="mdp1" id="motDpasse" required /><span id="longueurMDP"></span>
+							<input type="password" name="mdp1" id="motDpasse" required /><span id="longueurMDP"></span>
 
 							<label name="mdp2">Cofirmation du mot de passe:</label>
-							<input type="passeword" name="mdp2" id="mdPasse" required />
+							<input type="password" name="mdp2" id="mdPasse" required />
 							<span id="statutMDP"></span>
 
 							<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
@@ -65,13 +65,21 @@
 				</article>
 
 				<aside>
-					<h4 class="new_Aside">Avant de continuer..</h4>
-						<p> Grâce aux formulaire vous pourrez devenir membre et profiter de contenu exclusif. </br>
-						En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
-						Les informations renseignées ne seront utilisées que sur ce site.
+					<h4 class="subInfo">Avant de continuer..</h4>
+						<p> Remplissez le formulaire  pour rejoindre notre communauté! </br>
+						Devenez membre et profiter de contenu exclusif.
+						Paratger vos impressions avec les autres utilisateurs, en postant des messages sur les billets et chapitres postés par l'auteur.  </br></br>
+
+						<i>En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
+						Les informations renseignées ne seront utilisées que sur ce site.</i>
 						</p>
 				</aside>
 			</div><!--Fin de sideDeco-->
+		</section>
+			<footer>
+				<?php require ("../portions/mentionsLeg.php");
+					?>
+			</footer>
 		</section>
 
 		<script type="text/javascript" src="../../javascript/validInscription.js"></script>

@@ -31,10 +31,11 @@
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
+			
 			<?php require('../portions/header.php');?>
+		
 			<section>
 				<div id="sideDeco">
-
 				</div>
 			</section>
 			<footer>

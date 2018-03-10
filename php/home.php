@@ -31,69 +31,49 @@
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
-		<?php include("portions/header.php");?>
-			<div class="borderDeco">
-			</div>
+			
+			<?php include("portions/header.php");?>
+		
 			<section>
 				<div id="sideDeco">
-					<article id="chaps">
-						<h3 class="Chapters">Les Chapitres</h3>
-							<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet at leo a suscipit. Phasellus sagittis, lectus ut bibendum pretium, ligula metus feugiat nisl, nec vestibulum tellus dui dictum nibh. Mauris mattis pharetra venenatis. Fusce ligula tortor, dignissim ac erat nec, blandit hendrerit nisl. Nulla eu suscipit sapien. Mauris aliquam arcu mauris, varius sodales dui facilisis ut. Maecenas egestas tellus sed consequat elementum. Morbi vehicula lorem nec ante malesuada, nec sagittis tellus feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-							</p>
-					</article>
+					<?php
+						try{
+							$bdd=new PDO('mysql:host=localhost;dbname=projet4;charset=utf8', 'root','');
+						}
+						catch (Exception $e){
+							die('Erreur: ' . $e->getmsg());
+						}
 
-					<div id="block">
-						<aside id="last_Comm">
-							<h4  class="new_Aside">Test2</h4>
-								<p class="new_Note">
-									Ut et pretium arcu. Ut in dapibus odio, vitae aliquet elit. Morbi condimentum ex vel convallis egestas. Donec luctus faucibus posuere. Praesent condimentum, turpis et maximus accumsan, enim neque sodales odio, a porttitor ligula leo vitae ligula. Donec dictum sapien ac ante condimentum pharetra. Proin feugiat ligula eu risus accumsan lacinia
-								</p>
-								<!-- <div class="all_Buttons">
-									<button class="add_Comms"> + </button>
-									<button class="showC">Afficher Commentaires</button>
-									<button class="hideC">Masquer les commentaires</button>
-								</div>
-										<div class="comms">
-											<p class="show_Comms">Commentaire test.</p><br>
-											<p class="show_Comms_Sec"> Commentaire test 2 </p>
-										</div> -->
-						</aside>
+						$reponse= $bdd->query('SELECT id_chap,titre,textchap,date_edition FROM chapitres');
+						/*Thoses 4 lines created the <article>*/
+						echo '<article id="chaps">
+									<h3 class="Chapters">Les Chapitres</h3>
+										<p> Retrouvez la liste complète des chapitres, au fur et à mesure des postes.
+										</p>';
 
-						<aside id="new_Comm">
-							<h4 class="new_Aside">Test 1</h4>
-								<p class="new_Note">
-									Ut et pretium arcu. Ut in dapibus odio, vitae aliquet elit. Morbi condimentum ex vel convallis egestas. Donec luctus faucibus posuere. Praesent condimentum, turpis et maximus accumsan, enim neque sodales odio, a porttitor ligula leo vitae ligula. Donec dictum sapien ac ante condimentum pharetra. Proin feugiat ligula eu risus accumsan lacinia
-								</p>
+						while($donnees=$reponse->fetch() ){
+							echo'<a href="pages/chapitres.php?'.$donnees['id_chap'].'">'. htmlspecialchars($donnees['titre']).'</a></br>' ;
+						}
+
+						echo'</article>';//End of <article>
+						$reponse -> closeCursor();
+					/*----Creation of the aside part----*/
+						$rep= $bdd->query('SELECT id_billets,billetitre,commbillet,date_ecrit FROM billets ORDER BY date_ecrit DESC LIMIT 0,2');
+						echo '<div id="block">';
+						while($informations= $rep->fetch() ){
+							echo '<aside class="last_Comm">
+										<h4  class="new_Aside">'.htmlspecialchars($informations['billetitre']).'</h4>
+											<p class="new_Note">'.htmlspecialchars($informations['commbillet']).'</p>
+									</aside>';
 								
-						</aside>
-					</div>
+						}	
+						echo '</div>';//End of <div id="block">
+						$rep ->closeCursor();
+					?>
 				</div><!--Fin de sideDeco-->
 			</section>
 			<footer>
-				<div id="mentions_Infos">
-					<div id="comptes_inscriptions">
-						<h3>Login</h3>
-						<p class="bottom"> 
-							Vous êtes déjà membre:<a href="pages/login.php">Login</a>
-						</p>	
-						<br>
-						<p class="bottom">
-							Vous voulez nous rejoindre: <a href="pages/inscription.php"> Inscription
-								
-							</a>
-						</p>
-						
-					</div>
-
-					<?php include ("portions/mentionsLeg.php");
-					?>
-					<div id="last_News">
-						<p>
-							<h3>Les dernières nouveautés:</h3>
-							<span class="blog"></span>
-						</p>
-					</div>
-				</div>
+				<?php include ("portions/mentionsLeg.php");?>
 			</footer>
 		</body>
 		<script type="text/javascript" src="javascript/commentaires.js"></script>

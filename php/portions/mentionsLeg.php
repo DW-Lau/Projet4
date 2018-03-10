@@ -1,10 +1,54 @@
-<div id="contacts">	
-	<h3>Contacts</h3>
-		<ul>
-			<li>Tel: 01 23 45 67 89</li>
-			<li>Mail:jean.forteRoche@adressemail.test</li>
-			<li>Editeur:</li>
-		</ul>
-		<p> Projet réalisé dans le cadre de la formation Openclassrooms: Dévelloppeur web junior.
-		</p>
+<div id="mentions_Infos">
+	<div id="comptes_inscriptions">
+		<?php //condition to acces profil's page, when user is log in.
+		if( isset($_SESSION['pseudo']) ){
+			echo '<p> Bonjour: '.$_SESSION['pseudo'].'</br> Pour rejoindre votre espace: <a href="pages/espacemembre.php?'.$_SESSION['id_membre'].'"> Mon profil </a></p>';
+
+		}else{
+			echo '<h4>Login</h4>
+			<p class="bottom"> 
+				Vous êtes déjà membre:<a href="pages/login.php">Login</a>
+			</p>	
+				<br>
+			<p class="bottom">
+				Vous voulez nous rejoindre: <a href="pages/inscription.php"> Inscription</a>
+			</p>';
+		}
+		?>
+		
+						
+	</div>
+	<div id="last_bill">
+			<h4>Les dernières nouveautés:</h4>
+			<span class="blog">
+				<?php
+					try{
+						$bdd=new PDO('mysql:host=localhost;dbname=projet4;charset=utf8', 'root','');
+					}
+					catch (Exception $e){
+						die('Erreur: ' . $e->getmsg());
+					}
+
+					$reponse= $bdd->query('SELECT id_billets, billetitre, commbillet, date_ecrit FROM billets ORDER BY date_ecrit LIMIT 0 , 1');
+
+					while($donnees=$reponse->fetch() ){
+
+					echo '<h5>'.htmlspecialchars($donnees['billetitre']).'</h5> le date:'.$donnees['date_ecrit'].'</br><p>
+					'.htmlspecialchars($donnees['commbillet']).'</p>';
+				}
+				$reponse->closeCursor();
+
+				?>
+			</span>
+	</div>
+	<div id="contacts">	
+		<h4>Contacts</h4>
+			<ul>
+				<li>Tel: 01 23 45 67 89</li>
+				<li>Mail:jean.forteRoche@adressemail.test</li>
+				<li>Editeur:</li>
+			</ul>
+			<p> Projet réalisé dans le cadre de la formation Openclassrooms: Dévelloppeur web junior.
+			</p>
+	</div>
 </div>
