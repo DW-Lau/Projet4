@@ -34,7 +34,11 @@
 	</head>
 
 	<body>
+<<<<<<< HEAD
 		<?php require('../../portions/header.php');
+=======
+		<?php require('../portions/header.php');
+>>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 		?>
 		<section>
 			<div id="secondSideDeco">	
@@ -51,9 +55,15 @@
 
 				<article id="formulaire">
 					<h3>Inscription:</h3>
+<<<<<<< HEAD
 						<form method="post" action="espacemembre.php">
 							<label name="lastname">Nom:<input type="text" name="lastname" id="nom" required /></label>
 							
+=======
+						<form method="post" action="espacemembres.php">
+							<label name="nom">Nom:</label>
+							<input type="text" name="nom" id="nom" required />
+>>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 
 							<label name="firstname"> Prénom:<input type="text" name="firstname" id="firstname" required /></label>
 							
@@ -64,10 +74,18 @@
 							<label name="mail"> Adresse mail:<input type="email" name="mail" id="mail" required/></label>
 							<span id="mailcheck"></span>
 
+<<<<<<< HEAD
 							<label name="mdp1">Mot de passe:<input type="password" name="mdp1" id="motDpasse" required /></label>
 							<span id="longueurMDP"></span>
 
 							<label name="mdp2">Cofirmation du mot de passe:<input type="password" name="mdp2" id="mdPasse" required /></label>
+=======
+							<label name="mdp1">Mot de passe:</label>
+							<input type="password" name="mdp1" id="motDpasse" required /><span id="longueurMDP"></span>
+
+							<label name="mdp2">Cofirmation du mot de passe:</label>
+							<input type="password" name="mdp2" id="mdPasse" required />
+>>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 							<span id="statutMDP"></span>
 
 							<!--<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
@@ -75,7 +93,27 @@
 							<input type="submit" id="validation" value="Valider" />
 						</form>
 				</article>
+<<<<<<< HEAD
 			</div><!--end secondSideDeco-->
+		</section>
+			<footer>
+				<?php require ("../portions/mentionsLeg.php");
+					?>
+			</footer>
+=======
+
+				<aside>
+					<h4 class="subInfo">Avant de continuer..</h4>
+						<p> Remplissez le formulaire  pour rejoindre notre communauté! </br>
+						Devenez membre et profiter de contenu exclusif.
+						Paratger vos impressions avec les autres utilisateurs, en postant des messages sur les billets et chapitres postés par l'auteur.  </br></br>
+
+						<i>En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
+						Les informations renseignées ne seront utilisées que sur ce site.</i>
+						</p>
+				</aside>
+			</div><!--Fin de sideDeco-->
+>>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 		</section>
 			<footer>
 				<?php require ("../portions/mentionsLeg.php");
