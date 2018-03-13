@@ -1,12 +1,6 @@
 body{
 	background-image: url("Lituya_Bay_Alaska.jpg");
 	margin: 5px;
-<<<<<<< HEAD
-=======
-}
-a{
-	text-decoration: none;
->>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 }
 /*Page HOME*/
 
@@ -34,39 +28,7 @@ font-size: 1.6em;
 	width:65%;
 	
 }
-<<<<<<< HEAD
 
-=======
-nav{
-	margin: auto;
-	width: 40%;
-}
-ul{ 
-	list-style-type: none; 
-	background-color: #052942;
-	margin-right: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    max-height: 50px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-ul li:hover{
-	border-bottom: : solid 2px #052900;
-}
-nav a{
-	color:white;
-}
-
-nav a:hover{
-	color:white;
-}
-/*#lower_Deco{
-}
-#line_Ink{
-}*/
->>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 #deco_In_Header{
 	height: 50px;
 	width: 85px;
@@ -76,13 +38,8 @@ nav a:hover{
 /*Fin HEADER*/
 section{
 	background:rgba(255,255,255,0.8);
-<<<<<<< HEAD
 	height: 675px;
 /*	height:75%;*/
-=======
-	/*height: 675px;*/
-	height:75%;
->>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 }
 
 #sideDeco{/*Div contenant aside et article*/
@@ -132,13 +89,6 @@ aside{
 	margin: 5px;
 	border-bottom:solid #052942 2px;
 	height: 240px;
-<<<<<<< HEAD
-=======
-	width: 40%
-}
-.last_Comm{
-	width: 100%;
->>>>>>> 1d1d4e4001a30baea4ffb766178c32b74dd1bca7
 }
 /*.last_Comm{
 	width: 100%;
