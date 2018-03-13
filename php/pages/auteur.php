@@ -23,19 +23,20 @@
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
+	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../css/styles.css">
 	<link rel="stylesheet" type="text/css" href="../../css/stylesA.css">
-	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
+			
 			<?php require('../portions/header.php');?>
+		
 			<section>
 				<div id="sideDeco">
-
 				</div>
 			</section>
 			<footer>
