@@ -68,7 +68,7 @@
 							<label name="mdp">Mot de passe:<input type="password" name="mdp" id="motDpasse" required /></label>
 							<span id="longueurMDP"></span>
 
-							<label name="mdp1">Cofirmation du mot de passe:<input type="password" name="mdp1" id="mdp2" required /></label>
+							<label name="mdp1">Cofirmation du mot de passe:<input type="password" name="mdp1" id="mdp1" required /></label>
 							<span id="statutMDP"></span>
 
 							<!--<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
