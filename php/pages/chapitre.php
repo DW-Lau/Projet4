@@ -44,6 +44,7 @@
 							catch (Exception $e){
 								die('Erreur: ' . $e->getmsg());
 							}
+<<<<<<< HEAD
 							//var_dump($_GET['id']);
 							$reponse=$bdd->prepare('SELECT id,titre,textchap,date_edition
 							 FROM chapitres
@@ -55,6 +56,18 @@
 							$donnees = $reponse->fetch();
 							var_dump($reponse);
 							var_dump($donnees['titre']);
+=======
+							$reponse=$bdd->prepare('SELECT chapitres.id,titre,textchap, chapitres.date_edition,chapitres.comms, commentaires.id,commentaires.id_chap,commentaires.membre,commentaires.contenu, commentaires.date_poste
+							 FROM chapitres
+							 LEFT JOIN commentaires
+							 ON chapitres.id=commentaires.id_chap
+							 WHERE chapitres.id=?');
+
+							$reponse->execute(array(
+								'chapitres.id'=>$_POST['chapitres.id']
+							));
+							$donnees = $reponse->fetch();
+>>>>>>> d29d908d31ab8e553bf7b7f4c33c736407968636
 							echo '<h2>'.$donnees['titre'].'</h2> 
 							<p>'.$donnees['textchap'].'</p>';
 							//  <div class="allComs"> <p>'.$donnees['contenu'].'</p>

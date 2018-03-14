@@ -50,9 +50,15 @@
 				$_POST['lastname'] = htmlspecialchars($_POST['lastname']);
 				$_POST['firstname'] = htmlspecialchars($_POST['firstname']);
 				$_POST['pseudo'] = htmlspecialchars($_POST['pseudo']);//PSEUDO
+<<<<<<< HEAD
 				$_POST['mdp']=$_POST['mdp'];//MOT DE PASSE
 				$_POST['mdp1']=$_POST['mdp1'];//CONFIRMATION MOT DE PASSE
 				//$_POST['mail'] = htmlspecialchars($_POST['mail']);//ADRESSE MAIL
+=======
+				$_POST['mdp']=htmlspecialchars($_POST['mdp1']);//MOT DE PASSE
+				$_POST['mdp1']=htmlspecialchars($_POST['mdp2']);//CONFIRMATION MOT DE PASSE
+				$_POST['mail'] = htmlspecialchars($_POST['mail']);//ADRESSE MAIL
+>>>>>>> d29d908d31ab8e553bf7b7f4c33c736407968636
 				// $_POST['signature']=htmlspecialchars($_POST['signature']);
 	//Vérification pseudo
 
@@ -73,7 +79,11 @@
 										
 								$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
+<<<<<<< HEAD
 								$req = $bdd->prepare('INSERT INTO membres(lastname,firstname,pseudo,mail,mdp,date_entree) VALUES(:lastname,:firstname,:pseudo,:mail,:mdp,NOW() )');
+=======
+								$req = $bdd->prepare('INSERT INTO membres(lastname,firstname,pseudo,mail,mdp,date_entree) VALUES(:lastname,:firstname,:pseudo,:mail,:mdp,CURDATE() )');
+>>>>>>> d29d908d31ab8e553bf7b7f4c33c736407968636
 
 								$req->execute(array(
 									'lastname'=>$_POST['lastname'],

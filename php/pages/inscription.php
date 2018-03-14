@@ -34,8 +34,12 @@
 	</head>
 
 	<body>
+<<<<<<< HEAD
 		<?php 
 		require('../portions/header.php');
+=======
+		<?php require('../../portions/header.php');
+>>>>>>> d29d908d31ab8e553bf7b7f4c33c736407968636
 		?>
 		<section>
 			<div id="secondSideDeco">	
@@ -65,10 +69,17 @@
 							<label name="mail"> Adresse mail:<input type="email" name="mail" id="mail" required/></label>
 							<span id="mailcheck"></span>
 
+<<<<<<< HEAD
 							<label name="mdp">Mot de passe:<input type="password" name="mdp" id="motDpasse" required /></label>
 							<span id="longueurMDP"></span>
 
 							<label name="mdp1">Cofirmation du mot de passe:<input type="password" name="mdp1" id="mdp2" required /></label>
+=======
+							<label name="mdp1">Mot de passe:<input type="password" name="mdp1" id="motDpasse" required /></label>
+							<span id="longueurMDP"></span>
+
+							<label name="mdp2">Cofirmation du mot de passe:<input type="password" name="mdp2" id="mdPasse" required /></label>
+>>>>>>> d29d908d31ab8e553bf7b7f4c33c736407968636
 							<span id="statutMDP"></span>
 
 							<!--<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
