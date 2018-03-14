@@ -57,7 +57,11 @@
 				
 						while($donnees=$reponse->fetch() ){
 							echo'<div class="thumbnail">
+<<<<<<< HEAD
 									<h5><a href="chapitre.php?id='.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a></h5>
+=======
+									<h5><a href="chapitre.php?'.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a></h5>
+>>>>>>> d29d908d31ab8e553bf7b7f4c33c736407968636
 									<p class="sumChapters">'.$donnees['textchap'].' [...]</br>
 									Mise en ligne le:'.$donnees['date_edition'] .'</p>
 								</div>' ;
