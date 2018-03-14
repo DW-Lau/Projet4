@@ -23,19 +23,43 @@
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
+	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../css/styles.css">
 	<link rel="stylesheet" type="text/css" href="../../css/stylesA.css">
-	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
+			
 			<?php require('../portions/header.php');?>
+		
 			<section>
 				<div id="sideDeco">
+						<?php
+							try{
+								$bdd=new PDO('mysql:host=localhost;dbname=projet4;charset=utf8', 'root','');
+							}
+							catch (Exception $e){
+								die('Erreur: ' . $e->getmsg());
+							}
+							//var_dump($_GET['id']);
+							$reponse=$bdd->prepare('SELECT id,titre,textchap,date_edition
+							 FROM chapitres
+							 WHERE id=?');
 
+							$reponse->execute(array(
+								'id'=>$_GET['id'],
+							));
+							$donnees = $reponse->fetch();
+							var_dump($reponse);
+							var_dump($donnees['titre']);
+							echo '<h2>'.$donnees['titre'].'</h2> 
+							<p>'.$donnees['textchap'].'</p>';
+							//  <div class="allComs"> <p>'.$donnees['contenu'].'</p>
+							$reponse->closeCursor()
+						?>
 				</div>
 			</section>
 			<footer>

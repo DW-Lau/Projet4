@@ -23,19 +23,49 @@
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
+		
+	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../css/styles.css">
 	<link rel="stylesheet" type="text/css" href="../../css/stylesA.css">
-	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 	<!--POLICES-->
+	<!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+ 	 <script>tinymce.init({ selector:'textarea' });</script> -->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
-			<?php require('../portions/header.php');?>
+			
+			<?php require("../portions/header.php");?>
+		
 			<section>
-				<div id="sideDeco">
+				<div id="secondSideDeco">
+					<aside id="introChapters">
+						<h3>Les chapitres:</h3>
+						<p> Retrouvez ici la liste, complète, des chapitres du nouveau roman de Jean ForteRoche.  </p>
+					</aside>
+					<article id="seleChap">
+							<?php
+						try{
+							$bdd=new PDO('mysql:host=localhost;dbname=projet4;charset=utf8', 'root','');
+						}
+						catch (Exception $e){
+							die('Erreur: ' . $e->getmsg());
+						}
 
+						$reponse= $bdd->query('SELECT id,titre,SUBSTR(textchap, 1, 100)as textchap,date_edition FROM chapitres ');//Selection of the first 100 characters 
+				
+						while($donnees=$reponse->fetch() ){
+							echo'<div class="thumbnail">
+									<h5><a href="chapitre.php?id='.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a></h5>
+									<p class="sumChapters">'.$donnees['textchap'].' [...]</br>
+									Mise en ligne le:'.$donnees['date_edition'] .'</p>
+								</div>' ;
+						}
+						$reponse -> closeCursor();
+						?>
+<!-- <textarea>Next, start a free trial!</textarea>; TINY MCE -->
+					</article>
 				</div>
 			</section>
 			<footer>

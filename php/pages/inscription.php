@@ -23,6 +23,8 @@
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
+		
+	<link rel="stylesheet" type="text/css" href="../../css/menu.css">
 	<link rel="stylesheet" type="text/css" href="../../css/styles.css">
 	<link rel="stylesheet" type="text/css" href="../../css/stylesA.css">
 	<!--POLICES-->
@@ -32,46 +34,54 @@
 	</head>
 
 	<body>
-		<?php include('../portions/header.php');
+		<?php 
+		require('../portions/header.php');
 		?>
 		<section>
-			<div id="sideDeco">
+			<div id="secondSideDeco">	
+				<aside id="rules">
+					<h4 class="subInfo">Avant de continuer..</h4>
+						<p> Remplissez le formulaire  pour rejoindre notre communauté! </br>
+						Devenez membre et profiter de contenu exclusif.
+						Paratger vos impressions avec les autres utilisateurs, en postant des messages sur les billets et chapitres postés par l'auteur.  </br></br>
+
+						<i>En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
+						Les informations renseignées ne seront utilisées que sur ce site.</i>
+						</p>
+				</aside>
+
 				<article id="formulaire">
 					<h3>Inscription:</h3>
-						<form method="post" action="espace_Membres.php">
-							<label name="nom">Nom:</label>
-							<input type="text" name="nom" id="nom" required />
+						<form method="post" action="espacemembre.php">
+							<label name="lastname">Nom:<input type="text" name="lastname" id="nom" required /></label>
+							
 
-							<label name="firstName"> Prénom:</label>
-							<input type="text" name="firstName" id="firstName" required />
+							<label name="firstname"> Prénom:<input type="text" name="firstname" id="firstname" required /></label>
+							
 
-							<label name="nickname"> Pseudo:</label>
-							<input type="text" name="nickname" id="pseudo" required>
+							<label name="pseudo"> Pseudo:<input type="text" name="pseudo" id="pseudo" required></label>
+							
 
-							<label name="mail"> Adresse mail:</label>
-							 <input type="email" name="mail" id="mail" required/>
+							<label name="mail"> Adresse mail:<input type="email" name="mail" id="mail" required/></label>
+							<span id="mailcheck"></span>
 
-							<label name="mdp1">Mot de passe:</label>
-							<input type="passeword" name="mdp1" id="motDpasse" required /><span id="longueurMDP"></span>
+							<label name="mdp">Mot de passe:<input type="password" name="mdp" id="motDpasse" required /></label>
+							<span id="longueurMDP"></span>
 
-							<label name="mdp2">Cofirmation du mot de passe:</label>
-							<input type="passeword" name="mdp2" id="mdPasse" required />
+							<label name="mdp1">Cofirmation du mot de passe:<input type="password" name="mdp1" id="mdp2" required /></label>
 							<span id="statutMDP"></span>
 
-							<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
-							</textarea>
+							<!--<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
+							</textarea> -->
 							<input type="submit" id="validation" value="Valider" />
 						</form>
 				</article>
-
-				<aside>
-					<h4 class="new_Aside">Avant de continuer..</h4>
-						<p> Grâce aux formulaire vous pourrez devenir membre et profiter de contenu exclusif. </br>
-						En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
-						Les informations renseignées ne seront utilisées que sur ce site.
-						</p>
-				</aside>
-			</div><!--Fin de sideDeco-->
+			</div><!--end secondSideDeco-->
+		</section>
+			<footer>
+				<?php require ("../portions/mentionsLeg.php");
+					?>
+			</footer>
 		</section>
 
 		<script type="text/javascript" src="../../javascript/validInscription.js"></script>
