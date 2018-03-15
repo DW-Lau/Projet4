@@ -30,17 +30,21 @@ if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail
 //This condition will check if  all inuput are well filled.
 if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
 	$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+var_dump($pseudo);
+var_dump($firstname);
+var_dump($lastname);
+var_dump($mail);
+var_dump($pass_hache);
 
-
-	$req = $bdd->prepare('INSERT INTO membres(lastname,firstname,pseudo,mail,mdp,date_entree) VALUES(:lastname,:firstname,:pseudo,:mail,:mdp,NOW() )');
-	$req = $bdd->execute(array(
-			'lastname'=$lastname,
-			'firstname'=$firstname,
-			'pseudo'=$pseudo,
-			'mail'=$mail,
-			'mdp'=$pass_hache;
-
-			));
+	$req = $bdd->prepare('INSERT INTO membres(lastname,firstname,pseudo,mail,mdp) VALUES(:lastname,:firstname,:pseudo,:mail,:mdp )');
+	$req->execute(array(
+			'lastname'=>$lastname,
+			'firstname'=>$firstname,
+			'pseudo'=>$pseudo,
+			'mail'=>$mail,
+			'mdp'=>$pass_hache));
+}else {
+	echo 'Une erreur est survenu.'
 }
 
 	// 	// if ($_POST['pseudo']&& $^_POST['mdp1'] sont dans la bdd) {
