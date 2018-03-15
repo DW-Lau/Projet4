@@ -33,7 +33,8 @@
 	</head>
 		<body>	
 			
-			<?php include("portions/header.php");?>
+			<?php 
+			require("portions/header.php");?>
 		
 			<section>
 				<div id="sideDeco">
