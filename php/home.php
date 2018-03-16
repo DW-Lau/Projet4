@@ -46,7 +46,7 @@
 							die('Erreur: ' . $e->getmsg());
 						}
 
-						$reponse= $bdd->query('SELECT id,titre,textchap,date_edition FROM chapitres ORDER BY date_edition  DESC LIMIT 0,2');
+						$reponse= $bdd->query('SELECT id,titre,textchap,date_format(date_edition,"%d.%m.%y")as date_fr FROM chapitres ORDER BY date_edition  DESC LIMIT 0,2');
 						/*Thoses 4 lines created the <article>*/
 						echo '<article id="chaps">
 									<h3 class="Chapters">Les Chapitres</h3>
@@ -54,7 +54,8 @@
 										</p>';
 
 						while($donnees=$reponse->fetch() ){
-							echo'<a href="pages/chapitres.php?'.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a></br>' ;
+							echo'<a href="pages/chapitres.php?'.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a></br>
+								<p> posté le:'.$donnees['date_fr'].'</p>' ;
 						}
 
 						echo'</article>';//End of <article>

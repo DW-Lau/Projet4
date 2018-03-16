@@ -37,11 +37,11 @@ $_SESSION=$informationsMembre;
 						die('Erreur: ' . $e->getmsg());
 					}
 
-					$reponse= $bdd->query('SELECT id_billets, billetitre, commbillet, date_ecrit FROM billets ORDER BY date_ecrit LIMIT 0 , 1');
+					$reponse= $bdd->query('SELECT id_billets, billetitre, commbillet, date_format(date_ecrit,"%d.%m.%Y - %H.%i")as date_ecrit_fr FROM billets ORDER BY date_ecrit LIMIT 0 , 1');
 
 					while($donnees=$reponse->fetch() ){
 
-					echo '<h5>'.htmlspecialchars($donnees['billetitre']).'</h5> le date:'.$donnees['date_ecrit'].'</br><p>
+					echo '<h5>'.htmlspecialchars($donnees['billetitre']).'</h5> le:'.$donnees['date_ecrit_fr'].'</br><p>
 					'.htmlspecialchars($donnees['commbillet']).'</p>';
 				}
 				$reponse->closeCursor();

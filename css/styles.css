@@ -64,7 +64,6 @@ h3{
 #chaps{
 	margin: 5px;
 	width: 70%;
-	margin: auto;
 	border-left: solid 2px #052942;
 	border-right: solid 2px #052942;
 }
@@ -123,9 +122,7 @@ aside{
 	text-align: center;
 	margin: 2px;
 }
-.comms{/*This part is about the last 2 comments add on the page. Change will be operated on javascript page*/
-display: none;
-}
+
 .show_Comms{
 	margin: 0px;
 }
@@ -202,6 +199,7 @@ h5{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow-y: auto;
 }
  #rules{
 	margin: auto;
@@ -252,4 +250,36 @@ margin-top: 10px;
 	border-radius: 5px;
 	margin: 5px;
 	padding: 5px;
+}
+/*---CHAPTER---*/
+#chapterText h2{
+	text-align: center;
+}
+
+#chapterText{
+	text-align: justify;
+}
+/*SCROLL BAR*/
+/* width */
+/*::-webkit-scrollbar {
+    width: 10px;
+}
+*/
+/* Track */
+/*::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}*/
+ 
+/* Handle */
+/*::-webkit-scrollbar-thumb {
+    background: #888; 
+}*/
+
+/* Handle on hover */
+/*::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}*/
+.commChapter{
+color: black;
+margin:auto;
 }
