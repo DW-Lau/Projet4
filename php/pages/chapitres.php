@@ -64,7 +64,6 @@
 						}
 						$reponse -> closeCursor();
 						?>
-<!-- <textarea>Next, start a free trial!</textarea>; TINY MCE -->
 					</article>
 				</div>
 			</section>

@@ -1,3 +1,6 @@
+<!-- <?php
+//setcookie('pseudo',$informationsMembre['pseudo']);
+?> -->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -40,6 +43,7 @@
 		
 				<div>
 				<?php require('../../controller/sublogController.php'); ?>	
+				<h6>Bonjour : <?php echo $informationsMembre['pseudo']?></h6>
 				</div>
 			</div>
 		</section>

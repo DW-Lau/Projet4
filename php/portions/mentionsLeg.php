@@ -1,13 +1,21 @@
+<?php
+if (isset($pseudo) ){
+	require('../../controller/sublogController.php');
+session_start();
+$_SESSION=$informationsMembre;
+}
+
+?>
 <div id="mentions_Infos">
 	<div id="comptes_inscriptions">
 		<?php //condition to acces profil's page, when user is log in.
 		if( isset($_SESSION['pseudo']) ){
-			echo '<p> Bonjour: '.$_SESSION['pseudo'].'</br> Pour rejoindre votre espace: <a href="pages/espacemembre.php?'.$_SESSION['id_membre'].'"> Mon profil </a></p>';
+			echo '<p> Bonjour: '.$_SESSION['pseudo'].'</p>';
 
 		}else{
 			echo '<h4>Login</h4>
 			<p class="bottom"> 
-				Vous êtes déjà membre:<a href="pages/login.php">Login</a>
+				Vous êtes déjà membre:<a href="pages/inscription.php">Login</a>
 			</p>	
 				<br>
 			<p class="bottom">
@@ -29,11 +37,11 @@
 						die('Erreur: ' . $e->getmsg());
 					}
 
-					$reponse= $bdd->query('SELECT id_billets, billetitre, commbillet, date_ecrit FROM billets ORDER BY date_ecrit LIMIT 0 , 1');
+					$reponse= $bdd->query('SELECT id_billets, billetitre, commbillet, date_format(date_ecrit,"%d.%m.%Y - %H.%i")as date_ecrit_fr FROM billets ORDER BY date_ecrit LIMIT 0 , 1');
 
 					while($donnees=$reponse->fetch() ){
 
-					echo '<h5>'.htmlspecialchars($donnees['billetitre']).'</h5> le date:'.$donnees['date_ecrit'].'</br><p>
+					echo '<h5>'.htmlspecialchars($donnees['billetitre']).'</h5> le:'.$donnees['date_ecrit_fr'].'</br><p>
 					'.htmlspecialchars($donnees['commbillet']).'</p>';
 				}
 				$reponse->closeCursor();
