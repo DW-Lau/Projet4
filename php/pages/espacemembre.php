@@ -42,9 +42,13 @@
 			<div id="sideDeco">
 		
 				<div>
-				<?php require('../../controller/sublogController.php'); ?>	
-				<h6>Bonjour : <?php echo $informationsMembre['pseudo']?></h6>
-				</div>
+				<?php
+				require('../../controller/sublogController.php');
+				// require('../../model/sublogModel.php'); 
+				?>	
+				<!-- <h6>Bonjour : <?php //echo $informationsMembre['pseudo']?></h6>
+				</div> -->
+				<p> Bonjour</p>
 			</div>
 		</section>
 
