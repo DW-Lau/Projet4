@@ -66,18 +66,15 @@
 								die('Erreur: ' . $e->getmsg());
 							}
 						$idPage=$_GET['id'];
-						var_dump($idPage);
-							$comments=$bdd->prepare('SELECT id_chap,membre,contenu,date_poste FROM commentaires WHERE id_chap=:id_chap ');
+							$comments=$bdd->prepare('SELECT id_chap,membre,contenu,date_format(date_poste,"%d.%m.%y-")as date_poste_fr FROM commentaires WHERE id_chap=:id_chap ');
 						
 							$comments->execute(array(
 								'id_chap'=>$idPage
 							));
 
 							while($allcomms= $comments->fetch() ){
-								//var_dump($allcomms['id_chap']);
-								//var_dump($allcomms['membre']);
 								echo '<span class="commChapter">
-										<span class="membreComm">'.htmlspecialchars($allcomms['membre']).'</span> à posté le '.$allcomms['date_poste'].'</br>
+										<span class="membreComm">'.htmlspecialchars($allcomms['membre']).'</span> à posté le '.$allcomms['date_poste_fr'].'</br>
 										<p>'.htmlspecialchars($allcomms['contenu']).'</p>
 									</span>';
 						//RESTE A INSERER LES NOUVEAUX COMMENTAIRES DANS LA BASE DE DONNEES ET A LES AFFICHER; AJOUTER LE TINY MCE  SI L'UTILISATEUR EST CONNECTER
