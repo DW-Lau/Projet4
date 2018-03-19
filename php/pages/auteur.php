@@ -28,8 +28,9 @@
 	<link rel="stylesheet" type="text/css" href="../../css/stylesA.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-	<title>Billet simple pour l'Alaska, par JF</title>
+	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+		<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
 			

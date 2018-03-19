@@ -14,13 +14,11 @@ echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
 			echo '<p> Bonjour: '.$_SESSION['pseudo'].'</p>';
 
 		}else{
-			echo '<h4>Login</h4>
+			echo '<h4>Connexion:</h4>
 			<p class="bottom"> 
-				Vous êtes déjà membre:<a href="pages/inscription.php">Login</a>
-			</p>	
-				<br>
-			<p class="bottom">
-				Vous voulez nous rejoindre: <a href="pages/inscription.php"> Inscription</a>
+				Vous êtes déjà membre:<a href="../pages/inscription.php">Login</a>
+			<br/>
+				Vous voulez nous rejoindre: <a href="../pages/inscription.php"> Inscription</a>
 			</p>';
 		}
 		?>
@@ -42,7 +40,7 @@ echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
 
 					while($donnees=$reponse->fetch() ){
 
-					echo '<h5>'.htmlspecialchars($donnees['billetitre']).'</h5> le:'.$donnees['date_ecrit_fr'].'</br><p>
+					echo '<h6>'.htmlspecialchars($donnees['billetitre']).' le:'.$donnees['date_ecrit_fr'].'</h6><p>
 					'.htmlspecialchars($donnees['commbillet']).'</p>';
 				}
 				$reponse->closeCursor();
@@ -50,7 +48,7 @@ echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
 				?>
 			</span>
 	</div>
-	<div id="contacts">	
+	<!-- <div id="contacts">	
 		<h4>Contacts</h4>
 			<ul>
 				<li>Tel: 01 23 45 67 89</li>
@@ -59,5 +57,5 @@ echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
 			</ul>
 			<p> Projet réalisé dans le cadre de la formation Openclassrooms: Dévelloppeur web junior.
 			</p>
-	</div>
+	</div> -->
 </div>
