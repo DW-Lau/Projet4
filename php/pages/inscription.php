@@ -39,7 +39,7 @@
 		?>
 		<section>
 			<div id="secondSideDeco">	
-				<aside id="rules">
+				<article id="rules">
 					<h4 class="subInfo">Avant de continuer..</h4>
 						<p> Remplissez le formulaire  pour rejoindre notre communauté! </br>
 						Devenez membre et profiter de contenu exclusif.
@@ -48,9 +48,9 @@
 						<i>En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
 						Les informations renseignées ne seront utilisées que sur ce site.</i>
 						</p>
-				</aside>
+				</article>
 
-				<article id="formulaire">
+				<aside id="formulaire">
 					<h3>Inscription:</h3>
 						<form method="post" action="espacemembre.php">
 							<label name="lastname">Nom:<input type="text" name="lastname" id="nom" required /></label>
@@ -75,7 +75,15 @@
 							</textarea> -->
 							<input type="submit" id="validation" value="Valider" />
 						</form>
-				</article>
+				</aside>
+				<aside id="loginForm">
+					<h3>Connexion: </h3>
+					<form method="post" action="espacemembre.php">
+						<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudo" required></label>
+						<label name="checkmdp">Mot de passe:<input type="password" name="checkmdp" id="motDpasse" required /></label>
+						<input type="submit" id="validation" value="Valider" />
+					</form>
+				</aside>
 			</div><!--end secondSideDeco-->
 		</section>
 			<footer>

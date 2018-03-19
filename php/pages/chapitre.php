@@ -66,7 +66,7 @@
 								die('Erreur: ' . $e->getmsg());
 							}
 						$idPage=$_GET['id'];
-							$comments=$bdd->prepare('SELECT id_chap,membre,contenu,date_format(date_poste,"%d.%m.%y-")as date_poste_fr FROM commentaires WHERE id_chap=:id_chap ');
+							$comments=$bdd->prepare('SELECT id_chap,membre,contenu,date_format(date_poste,"%d.%m.%y")as date_poste_fr FROM commentaires WHERE id_chap=:id_chap ');
 						
 							$comments->execute(array(
 								'id_chap'=>$idPage
