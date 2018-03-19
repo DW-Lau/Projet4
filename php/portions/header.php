@@ -8,9 +8,9 @@
 	</div>
 		<nav>
 			<ul>
-				<li><a href="./pages/auteur.php">L'Auteur</a></li>
-				<li><a href="./pages/chapitres.php">Les Chapitres</a></li>
-				<li><a href="./pages/billets.php">Les Nouveautées</a></li>
+				<li><a href="./auteur.php">L'Auteur</a></li>
+				<li><a href="./chapitres.php">Les Chapitres</a></li>
+				<li><a href="./billets.php">Les Nouveautées</a></li>
 				</ul>
 		</nav>
 </header>
