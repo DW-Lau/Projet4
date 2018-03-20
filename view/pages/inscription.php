@@ -24,10 +24,10 @@
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
 		
-	<link rel="stylesheet" type="text/css" href="../../view/css/menu.css">
-	<link rel="stylesheet" type="text/css" href="../../view/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="../../view/css/stylesA.css">
-	<link rel="stylesheet" type="text/css" href="../../view/css/stylesResponsiv.css">
+	<link rel="stylesheet" type="text/css" href="../css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesA.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesResponsiv.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
@@ -51,8 +51,8 @@
 						Les informations renseignées ne seront utilisées que sur ce site.</i>
 						</p>
 				</article>
-
-				<aside id="formulaire">
+			<div id="subBlock">
+				<aside class="formulaires">
 					<h3>Inscription:</h3>
 						<form method="post" action="espacemembre.php">
 							<label name="lastname">Nom:<input type="text" name="lastname" id="nom" required /></label>
@@ -78,7 +78,7 @@
 							<input type="submit" id="validation" value="Valider" />
 						</form>
 				</aside>
-				<aside id="loginForm">
+				<aside class="formulaires">
 					<h3>Connexion: </h3>
 					<form method="post" action="espacemembre.php">
 						<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudo" required></label>
@@ -86,6 +86,7 @@
 						<input type="submit" id="validation" value="Valider" />
 					</form>
 				</aside>
+			</div> <!-- end of subBlock -->
 			</div><!--end secondSideDeco-->
 		</section>
 			<footer>
@@ -94,6 +95,6 @@
 			</footer>
 		</section>
 
-		<script type="text/javascript" src="../../javascript/validInscription.js"></script>
+		<script type="text/javascript" src="../javascript/validInscription.js"></script>
 	</body>
 </html>

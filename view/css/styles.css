@@ -24,7 +24,6 @@ h3{/*Article*/
 	margin:2px;
 	text-align: center;
 	font-family: 'Dancing Script', cursive;
-	font-size: 1.1em;
 }
 h4{/*footer and aside*/
 	font-family: 'Courgette', cursive;
@@ -77,16 +76,32 @@ section{
 /*Article*/
 
 #chaps{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	margin: 5px;
 	width: 70%;
 	border-left: solid 2px #052942;
 	border-right: solid 2px #052942;
 }
 #chaps p{
+	margin: 0px;
 	padding: 5px;
 	text-align: justify;
 }
-
+.lastsChapts{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height:125px;
+	width: 85%;
+}
+#imgThumb{
+	width: 27%;
+	border: solid #052942 2px;
+	border-radius: 10px;
+}
 /*Fin article/ END ARTICLE*/
 
 /*DEBUT ASIDE*/
@@ -184,12 +199,16 @@ h6{
 	align-items: center;
 	overflow: auto;
 }
+#subBlock{
+	display: flex;
+	width: 80%;
+}
  #rules{
 	margin: auto;
 	width: 55%;
 	border-bottom: double 5px #052942;
 }
-#formulaire{
+.formulaires{
 	width: 55%;
 	margin: auto;
 

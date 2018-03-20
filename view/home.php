@@ -23,9 +23,9 @@
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
-		<link rel="stylesheet" type="text/css" href="../view/css/menu.css">
-	<link rel="stylesheet" type="text/css" href="../view/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="../view/css/stylesA.css">
+		<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link rel="stylesheet" type="text/css" href="css/stylesA.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
@@ -36,7 +36,7 @@
 			
 			<header>
 				<div id="headR_Home">
-					<h1><a href="../view/home.php"> "Billet simple pour l'Alaska"</a></h1>
+					<h1><a href="home.php"> "Billet simple pour l'Alaska"</a></h1>
 						<div id="lower_Deco">
 							<div id="line_Ink"><!--Ink line add in css--></div>
 							<h2> Jean Forteroche</h2>
@@ -44,9 +44,9 @@
 				</div>
 					<nav>
 						<ul>
-							<li><a href="../php/pages/auteur.php">L'Auteur</a></li>
-							<li><a href="../php/pages/chapitres.php">Les Chapitres</a></li>
-							<li><a href="../php/pages/billets.php">Les Nouveautées</a></li>
+							<li><a href="pages/auteur.php">L'Auteur</a></li>
+							<li><a href="pages/chapitres.php">Les Chapitres</a></li>
+							<li><a href="pages/billets.php">Les Nouveautées</a></li>
 							</ul>
 					</nav>
 			</header>
@@ -72,8 +72,10 @@
 										</p>';
 
 						while($donnees=$reponse->fetch() ){
-							echo'<a href="pages/chapitre.php?id='.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a></br>
-								<p> posté le:'.$donnees['date_fr'].'</p>' ;
+							echo'<div class="lastsChapts">
+							<img src="Images/Alaska_Railroad.jpg" id="imgThumb" alt="Billet simple pour lAlaska">
+							<a href="pages/chapitre.php?id='.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a>
+								<p> posté le:'.$donnees['date_fr'].'</div></p>' ;
 						}
 
 						echo'</article>';//End of <article>
@@ -94,7 +96,7 @@
 				</div><!--Fin de sideDeco-->
 			</section>
 			<footer>
-				<?php require("../php/portions/mentionsLeg.php");?>
+				<?php require("portions/mentionsLeg.php");?>
 			</footer>
 		</body>
 		<script type="text/javascript" src="javascript/commentaires.js"></script>

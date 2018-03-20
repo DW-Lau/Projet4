@@ -27,10 +27,10 @@
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
 		
-	<link rel="stylesheet" type="text/css" href="../../view/css/menu.css">
-	<link rel="stylesheet" type="text/css" href="../../view/css/styles.css">
-	<link rel="stylesheet" type="text/css" href="../../view/css/stylesA.css">
-	<link rel="stylesheet" type="text/css" href="../../view/css/stylesResponsiv.css">
+	<link rel="stylesheet" type="text/css" href="../css/menu.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesA.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesResponsiv.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">

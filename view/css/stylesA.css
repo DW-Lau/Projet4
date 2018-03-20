@@ -96,7 +96,7 @@ h2{
 h3{
 	font-size: 1em;
 	font-family: 'Arial';
-	/*text-transform: uppercase;*/
+	text-decoration: underline;
 }
 #summary{
 	display: flex;
