@@ -16,9 +16,9 @@ echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
 		}else{
 			echo '<h4>Connexion:</h4>
 			<p class="bottom"> 
-				Vous êtes déjà membre:<a href="./pages/inscription.php">Login</a>
+				Vous êtes déjà membre:<a href="./home.php?action=inscription">Login</a>
 			<br/>
-				Vous voulez nous rejoindre: <a href="./pages/inscription.php"> Inscription</a>
+				Vous voulez nous rejoindre: <a href="./home.php?action=inscription"> Inscription</a>
 			</p>';
 		}
 		?>
