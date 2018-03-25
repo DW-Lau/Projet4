@@ -78,7 +78,6 @@ section{
 #chaps{
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	align-items: center;
 	margin: 5px;
 	width: 70%;
@@ -86,19 +85,26 @@ section{
 	border-right: solid 2px #052942;
 }
 #chaps p{
+	font-size: 0.8em;
 	margin: 0px;
 	padding: 5px;
 	text-align: justify;
 }
 .lastsChapts{
+	margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height:125px;
+	height:150px;
 	width: 85%;
 }
+.lastsChapts a{
+	color:#0B8AA1;
+	font-size: 1em;
+	font-family: 'Raleway';
+}
 #imgThumb{
-	width: 27%;
+	height: inherit;
 	border: solid #052942 2px;
 	border-radius: 10px;
 }
@@ -126,7 +132,7 @@ aside{
 	margin: auto;
 }
 .new_Note{
-	font-size: 1em;
+	font-size: 0.9em;
 }
 /*FIN ASIDE*/
 
@@ -150,6 +156,8 @@ footer p{
 p.bottom{
 	text-align: center;
   	font-family: 'Raleway', sans-serif;
+  	display: flex;
+  	flex-direction: column;
 }
 
 .bottom a{
