@@ -1,0 +1,77 @@
+@media all and (max-width:750px) {
+	body{
+		margin: 0px;
+	}
+	header{
+		position: fixed;
+		z-index: 5;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin-top: -155px;
+	}
+
+	h1{
+		font-size: 2em;
+	}
+	h2{
+		font-size: 1.1em;
+	}
+	#headR_Home{
+		width: 100%;
+	}
+	#lower_deco{
+		width: 25%;
+	}
+	nav{
+		width: 100%;
+		max-height: 45px;
+	}
+	ul{
+		margin: 0px;
+		padding: 5px;
+		border-radius: 0px;
+	
+	}
+	section{
+		position: relative;
+		z-index: 1;
+		margin-top: 155px;
+	}
+	#sideDeco{
+		width: inherit;
+		border:none;
+		display: flex;
+		flex-direction: column-reverse;
+	}
+	#chaps{
+		width: inherit;
+		margin: 5px;
+
+	}
+	#block{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+	}
+	.last_Comm{
+		width: 50%;
+		padding-bottom: 5px;
+		border-bottom: solid #052942 1px;
+	}
+	footer{
+		position: relative;
+		z-index: 2;
+		height: inherit;
+	}
+	#comptes_inscriptions{
+		width: 100%;
+	}
+	p.bottom{
+		font-size: 0.7em;
+	}
+	#last_bill{
+		display: none;
+	}
+
+}
