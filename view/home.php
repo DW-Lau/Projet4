@@ -5,6 +5,7 @@
 require ("portions/header.php");/*THE HEADER IS CALL */
 if (!(isset($_GET['action']) ) ) {
 	require("pages/homepage.php");
+	require("../controller/homeController.php");
 }
 if (isset($_GET['action'])){
 	if($_GET['action']=='inscription'){
