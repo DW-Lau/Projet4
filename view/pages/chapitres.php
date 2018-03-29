@@ -6,11 +6,21 @@
 		</aside>
 		
 		<article id="seleChap">
+
+				<?php
+					while ($list=$reponse->fetch() ) {
+				?>
 				<div class="thumbnail">
-					<h5><a href="./home.php?action=auteur&amp;id=<?php$donnees['id']?>'"><?= htmlspecialchars($donnees['titre'])?></a></h5>
-						<p class="sumChapters"> <?=$donnees['textchap']?> [...]</br>
-						Mise en ligne le:<?=$donnees['date_fr']?></p>
+					
+					<h5><a href="./home.php?id=<?php $list['id']; ?>"><?php echo htmlspecialchars($list['titre'])?></a>
+					</h5>
+						<p class="sumChapters"> <?php echo htmlspecialchars($list['textchap']);?> [...]</br>
+						Mise en ligne le:<?php echo htmlspecialchars($list['date_fr']);?></p>
 				</div>
-					</article>
-				</div>
-			</section>
+				<?php
+					}
+					$reponse->closeCursor();
+				?>
+		</article>
+	</div>
+</section>

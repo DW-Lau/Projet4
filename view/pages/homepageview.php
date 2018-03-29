@@ -1,36 +1,26 @@
 <div class="borderDeco">
 </div>
-	
+	<?php
+	require("../controller/homeController.php");
+	?>
 <section>
 	<div id="sideDeco">
-		<?php
-			try{
-				$bdd=new PDO('mysql:host=localhost;dbname=projet4;charset=utf8', 'root','');
-				}
-			catch (Exception $e){
-				die('Erreur: ' . $e->getmsg());
-			}
-
-			$reponse= $bdd->query('SELECT id,titre,textchap,date_format(date_edition,"%d.%m.%y")as date_fr FROM chapitres ORDER BY date_edition  DESC LIMIT 0,2');
-						/*Thoses 4 lines created the <article>*/
-			echo '<article id="chaps">
+		<article id="chaps">
 					<h3 class="Chapters">Les Chapitres</h3>
-						<p> Retrouvez la liste complète des chapitres, au fur et à mesure des postes.</p>';
+						<p> Retrouvez la liste complète des derniers chapitres, postés par l'auteur.</p>';
 
-			while($donnees=$reponse->fetch() ){
-				echo'<div class="lastsChapts">
+			<?php chaptersCalls() ?>
+				<div class="lastsChapts">
 						<img src="Images/Alaska_Railroad.jpg" id="imgThumb" alt="Billet simple pour lAlaska">
-						<p><a href="pages/chapitre.php?id='.$donnees['id'].'">'. htmlspecialchars($donnees['titre']).'</a>
-						 - posté le:'.$donnees['date_fr'].'</p></div>' ;
-						}
+						<p><a href="pages/chapitre.php?id='.$reponse['id'].'"><?= htmlspecialchars($reponse['titre'])?></a>
+						 - posté le:<?=$reponse['date_fr']?></p></div>' ;
+						
 
-						echo'</article>';//End of <article>
-						$reponse -> closeCursor();
-					/*----Creation of the aside part----*/
-						$rep= $bdd->query('SELECT id_billets,billetitre,commbillet,date_ecrit FROM billets ORDER BY date_ecrit LIMIT 0,2');
-						echo '<div id="block">';
-						while($informations= $rep->fetch() ){
-							echo '<aside class="last_Comm">
+		</article>
+					
+						
+						<div id="block">';
+						<aside class="last_Comm">
 										<h4  class="new_Aside">'.htmlspecialchars($informations['billetitre']).'</h4>
 											<p class="new_Note">'.htmlspecialchars($informations['commbillet']).'</p>
 									</aside>';

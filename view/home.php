@@ -4,12 +4,10 @@
 <?php
 require ("portions/header.php");/*THE HEADER IS CALL */
 if (!(isset($_GET['action']) ) ) {
-	require("pages/homepage.php");
-	require("../controller/homeController.php");
+	require("../controller/homeController.php");//FONCTIONNE
 }
 if (isset($_GET['action'])){
 	if($_GET['action']=='inscription'){
-		require("pages/inscription.php");
 		require ("../contoller/sublogController.php");
 		/*Condition Submit or login session*/
 		if ( isset($_POST['checkPseudo'])&& isset($_POST['checkmdp']) ){
@@ -22,15 +20,14 @@ if (isset($_GET['action'])){
 	}//end of $_GET['action']=='inscription'
 	
 		elseif ($_GET['action']=='auteur') {//got to auteur.php
-			require("pages/auteur.php");
+			
 		}
+
 		elseif ($_GET['action']=='chapitres') {
-			require("pages/chapitres.php");
-			require("../controller/selectChapController.php");
-				if ($_GET['action']=='chapitre') {
-					require("pages/chapitre.php");
-					
-				}
+			require("../controller/selecChapController.php");
+		}
+		elseif($_GET['action']=='chapitre'){
+			require("../controller/oneChapController.php");
 		}
 }
  ?>
