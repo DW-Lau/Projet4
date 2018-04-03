@@ -1,4 +1,5 @@
 <section>
+	
 	<div id="secondSideDeco">
 		<aside id="introChapters">
 			<h3>Les chapitres:</h3>
@@ -12,7 +13,7 @@
 				?>
 				<div class="thumbnail">
 					
-					<h5><a href="./home.php?id=<?php $list['id']; ?>"><?php echo htmlspecialchars($list['titre'])?></a>
+					<h5><a href="./home.php?action=chapitre&ampid=<?php echo $list['id']; ?>"><?php echo htmlspecialchars($list['titre'])?></a>
 					</h5>
 						<p class="sumChapters"> <?php echo htmlspecialchars($list['textchap']);?> [...]</br>
 						Mise en ligne le:<?php echo htmlspecialchars($list['date_fr']);?></p>
@@ -24,3 +25,5 @@
 		</article>
 	</div>
 </section>
+<!-- pages/chapitre.php?id=<
+./home.php?action=chapitres?id=< -->

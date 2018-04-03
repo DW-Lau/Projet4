@@ -25,10 +25,11 @@ if (isset($_GET['action'])){
 
 		elseif ($_GET['action']=='chapitres') {
 			require("../controller/selecChapController.php");
+
 		}
-		elseif($_GET['action']=='chapitre'){
-			require("../controller/oneChapController.php");
-		}
+		 elseif($_GET['action']=='chapitre'){
+		 	require("../controller/oneChapController.php");
+		 }
 }
  ?>
 			
