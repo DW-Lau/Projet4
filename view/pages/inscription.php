@@ -14,7 +14,7 @@
 
 		<aside class="formulaires">
 			<h3>Inscription:</h3>
-				<form method="post" action="espacemembre.php">
+				<form method="post" action="./home.php?action=logger">
 					<label name="lastname">Nom:<input type="text" name="lastname" id="nom" required /></label>
 							
 
@@ -33,8 +33,6 @@
 					<label name="mdp1">Cofirmation du mot de passe:<input type="password" name="mdp1" id="mdp1" required /></label>
 					<span id="statutMDP"></span>
 
-							<!--<textarea name="signature" row="2" col="35"> Ecrivez ici votre signature.
-							</textarea> -->
 					<input type="submit" id="validation" value="Valider" />
 				</form>
 		</aside>

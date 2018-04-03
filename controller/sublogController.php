@@ -1,6 +1,11 @@
 <?php
-//var_dump(is_file("model/sublogModel.php")). "\n";
-require("../../model/sublogModel.php");
+
+// if (file_exists("../model/sublogModel.php"))
+//     echo 'Found';
+// else
+//     echo 'Not found';
+require("../model/sublogModel.php");
 	
-require("./view/espacemembre.php");
+//require("./view/espacemembre.php");
+require("../view/pages/inscription.php");
 
