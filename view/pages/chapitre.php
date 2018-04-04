@@ -34,6 +34,13 @@
 							}
 							$comments->closeCursor();
 						?>
+						<div id="writeComm">
+							<!-- 
+								<form>
+									<textarea></textarea>
+								</form>
+								 -->
+						</div>
 		</aside>		
 
 							

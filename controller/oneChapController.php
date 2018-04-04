@@ -3,7 +3,7 @@
 		
 require('../model/selecChapModel.php');
 // $donnees=listChap();
-// $_GET['id']=$donnees['id'];
+$_GET['id']=$donnees['id'];
 	require('../model/oneChapModel.php');
 	$idPage=$_GET['id'];
 	$donnees=oneChap();

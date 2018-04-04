@@ -13,10 +13,10 @@ function oneChap(){
 
 
 	$idPage=$_GET['id']; //Creation of a variable  to get id of the page.
-	$reponse=$bdd->prepare('SELECT id,titre,textchap FROM chapitres WHERE id=:$idPage ');
-	$reponse->execute(array(
-		'id'=>$idPage
-		 ));
+	$reponse=$bdd->query('SELECT id,titre,textchap FROM chapitres WHERE id=:$idPage ');
+	// $reponse->execute(array(
+	// 	'id'=>$idPage
+	// 	 ));
 	return $reponse;
 	
 }
