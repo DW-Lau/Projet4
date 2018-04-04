@@ -58,10 +58,17 @@ if (isset($_GET['action'])){
 
 	}
 		
-	
+		elseif( $_GET['action']=='billets' ){
+			require("../controller/billsController.php");
+				
+		}
+		// elseif( ($_GET['action']=='billets')&&(isset($_POST['lastUpdate']) ) ){
+		// 		require("../controller/billsController.php");
+		// 		$rep=getLastBills();
+		// 	}
 	
 		elseif ($_GET['action']=='auteur') {//got to auteur.php
-			
+			require("pages/auteur.php");
 		}
 
 		elseif ($_GET['action']=='chapitres') {
