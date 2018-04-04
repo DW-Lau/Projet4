@@ -16,6 +16,7 @@
 						<p>
 							<a href="pages/chapitre.php?id=' <?= htmlspecialchars($donnees['id']); ?>'"> <?php echo htmlspecialchars($donnees['titre']); ?></a> - posté le: <?php echo htmlspecialchars($donnees['date_fr']); ?>
 						</p>
+
 				</div>
 					<?php
 						}
