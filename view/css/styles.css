@@ -180,12 +180,14 @@ p.bottom{
 	height:inherit;
 
 }
-#contacts ul{
+#contact{
 	background-color: inherit;
 	display: flex;
-	flex-direction: column;
-	margin: 0px;
-	padding:0px;
+	align-items: center;
+	
+}
+#contact p{
+font-size: 1em;
 }
 h6{
 	margin:0px;
@@ -193,7 +195,11 @@ h6{
 	font-size: 0.9em;
 }
 /*Fin Page HOME*/
-
+#authorDeco{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 /*beginning of inscription.php*/
 #secondSideDeco{/*this "div" is pretty much the same as sideDeco, but it only on the inscription.php */
 	margin: auto;
