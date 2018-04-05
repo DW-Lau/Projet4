@@ -37,6 +37,7 @@ if (isset($_GET['action'])){
 			$mdp=$_POST['mdp'];//MOT DE PASSE
 			$mdp1=$_POST['mdp1'];//CONFIRMATION MOT DE PASSE
 			$mail = $_POST['mail'];//ADRESSE MAIL
+			require ("../controller/sublogController.php");
 				if ($mdp==$mdp1) {
 		//if both pwd matches together, then
 				}else{
@@ -52,7 +53,7 @@ if (isset($_GET['action'])){
 
 				//This condition will check if  all inuput are well filled.
 				if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
-						subInfos();
+						subInfos($lastname);
 				}/*endof Submit/login session*/
 		}//It will check if login or submit has been filled.
 

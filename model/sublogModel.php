@@ -7,12 +7,12 @@
 	}
 
 //---------------INFORMATIONS from inscription form------------//
-// $lastname = htmlspecialchars($_POST['lastname']);
-// $firstname= htmlspecialchars($_POST['firstname']);
-// $pseudo = htmlspecialchars($_POST['pseudo']);//PSEUDO
-// $mdp=$_POST['mdp'];//MOT DE PASSE
-// $mdp1=$_POST['mdp1'];//CONFIRMATION MOT DE PASSE
-// $mail = $_POST['mail'];//ADRESSE MAIL
+$lastname = htmlspecialchars($_POST['lastname']);
+$firstname= htmlspecialchars($_POST['firstname']);
+$pseudo = htmlspecialchars($_POST['pseudo']);//PSEUDO
+$mdp=$_POST['mdp'];//MOT DE PASSE
+$mdp1=$_POST['mdp1'];//CONFIRMATION MOT DE PASSE
+$mail = $_POST['mail'];//ADRESSE MAIL
 
 //---------------INFORMATIONS from loginForm form------------//
 
@@ -63,6 +63,7 @@ function subInfo(){
 		$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
 		$req = $bdd->prepare('INSERT INTO membres(lastname,firstname,pseudo,mail,mdp) VALUES(:lastname,:firstname,:pseudo,:mail,:mdp )');
+		var_dump($lastname);
 		$req->execute(array(
 				'lastname'=>$lastname,
 				'firstname'=>$firstname,

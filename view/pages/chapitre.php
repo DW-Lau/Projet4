@@ -5,34 +5,35 @@
 	<div id="chapterSideDeco">
 		<article id="chapterText"> 
 			<?php
-				while($donnees = $reponse->fetch()){
+
+				while($chapitre = $donnees->fetch()){
 			?>
-			<h2><?php echo htmlspecialchars($donnees['titre']);?></h2>
+			<h2><?php echo htmlspecialchars($chapitre['titre']);?></h2>
 
 						
-				<p><?php echo htmlspecialchars($donnees['textchap']);?></p>
+				<p><?php echo htmlspecialchars($chapitre['textchap']);?></p>
 			<?php
 			}
-				$reponse->closeCursor()
+				$donnees->closeCursor();
 			?>
 		</article>
 		<aside>
 			<?php
 						
-				while($allcomms= $comments->fetch() ){
+				while($commentaires= $allcomms->fetch() ){
 			?>
 				<span class="commChapter">
-					<span class="membreComm"><?php echo htmlspecialchars($allcomms['membre']);?>
+					<span class="membreComm"><?php echo htmlspecialchars($commentaires['membre']);?>
 					
-						<p>à posté le <?php echo htmlspecialchars($allcomms['date_poste_fr']);?></br>
-						<p><?php echo htmlspecialchars($allcomms['contenu']);?>
+						<p>à posté le <?php echo htmlspecialchars($commentaires['date_poste_fr']);?></br>
+						<p><?php echo htmlspecialchars($commentaires['contenu']);?>
 						
 						</p>
 					</span>';
 						<!-- //RESTE A INSERER LES NOUVEAUX COMMENTAIRES DANS LA BASE DE DONNEES ET A LES AFFICHER; AJOUTER LE TINY MCE  SI L'UTILISATEUR EST CONNECTER -->
 						<?php
 							}
-							$comments->closeCursor();
+							$allcomms->closeCursor();
 						?>
 						<div id="writeComm">
 							<!-- 
