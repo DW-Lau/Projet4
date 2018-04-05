@@ -269,7 +269,8 @@ margin-top: 10px;
 
 #chapterText{
 	text-align: justify;
-	padding: 30px;
+	padding-right: 50px;
+	padding-left: 50px;
 }
 #chapterSideDeco{
 	margin: auto;
@@ -281,6 +282,9 @@ margin-top: 10px;
 	display: flex;
 	flex-direction: column;
 	overflow: auto;
+}
+aside #showComms{
+	overflow: unset;
 }
 /*SCROLL BAR*/
 /* width */
@@ -305,4 +309,10 @@ margin-top: 10px;
 .commChapter{
 color: black;
 margin:auto;
+width: 80%
+}
+.membreComm{
+	text-decoration: underline;
+	font-size: 0.8em;
+
 }

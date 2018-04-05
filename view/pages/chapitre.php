@@ -8,40 +8,39 @@
 
 				while($chapitre = $donnees->fetch()){
 			?>
-			<h2><?php echo htmlspecialchars($chapitre['titre']);?></h2>
-
-						
-				<p><?php echo htmlspecialchars($chapitre['textchap']);?></p>
+			<h2><?php echo htmlspecialchars($chapitre['titre']);?></h2>		
+				<p><?= nl2br($chapitre['textchap'])?></p>
 			<?php
 			}
 				$donnees->closeCursor();
 			?>
 		</article>
-		<aside>
+		<aside id="showComms">
+			<h4>Commentaires:</h4>
 			<?php
 						
 				while($commentaires= $allcomms->fetch() ){
 			?>
 				<span class="commChapter">
-					<span class="membreComm"><?php echo htmlspecialchars($commentaires['membre']);?>
+					<span class="membreComm">
+						<?php echo htmlspecialchars($commentaires['membre']);?>
 					
 						<p>à posté le <?php echo htmlspecialchars($commentaires['date_poste_fr']);?></br>
 						<p><?php echo htmlspecialchars($commentaires['contenu']);?>
-						
 						</p>
-					</span>';
-						<!-- //RESTE A INSERER LES NOUVEAUX COMMENTAIRES DANS LA BASE DE DONNEES ET A LES AFFICHER; AJOUTER LE TINY MCE  SI L'UTILISATEUR EST CONNECTER -->
+					</span>
+				</span>
 						<?php
 							}
 							$allcomms->closeCursor();
 						?>
-						<div id="writeComm">
-							<!-- 
-								<form>
-									<textarea></textarea>
-								</form>
-								 -->
-						</div>
+
+					<!-- <div id="writeComm">
+						<form>
+							<textarea></textarea>
+						</form>
+								
+					</div> -->
 		</aside>		
 
 							
