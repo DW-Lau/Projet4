@@ -17,7 +17,7 @@ if (isset($_GET['action'])){
 		require ("../controller/sublogController.php");
 		if ( isset($_POST['checkPseudo'])&& isset($_POST['checkmdp']) ){
 			$checkPseudo = htmlspecialchars($_POST['checkPseudo']);
-		$checkmdp = $_POST['checkmdp'];
+			$checkmdp = $_POST['checkmdp'];
 			checkInfos();
 				if (!$resultat){
 					  echo 'Mauvais identifiant ou mot de passe !';
@@ -30,13 +30,9 @@ if (isset($_GET['action'])){
 					    	echo 'Mauvais identifiant ou mot de passe !';
 					   	}
 				}//end of the fist else
+
 		}elseif(isset($lastname)&& isset($firstname)&&isset($pseudo)&&isset($mdp)&&isset($mdp1)&&isset($amil)){
-			$lastname = htmlspecialchars($_POST['lastname']);
-			$firstname= htmlspecialchars($_POST['firstname']);
-			$pseudo = htmlspecialchars($_POST['pseudo']);//PSEUDO
-			$mdp=$_POST['mdp'];//MOT DE PASSE
-			$mdp1=$_POST['mdp1'];//CONFIRMATION MOT DE PASSE
-			$mail = $_POST['mail'];//ADRESSE MAIL
+				
 			require ("../controller/sublogController.php");
 				if ($mdp==$mdp1) {
 		//if both pwd matches together, then
@@ -53,7 +49,17 @@ if (isset($_GET['action'])){
 
 				//This condition will check if  all inuput are well filled.
 				if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
-						subInfos($lastname);
+					 var_dump($_POST['lastname']);
+						// $_POST['lastname'] = htmlspecialchars($_POST['lastname']);
+						// 	$_POST['firstname']= htmlspecialchars($_POST['firstname']);
+						// 	$_POST['pseudo'] = htmlspecialchars($_POST['pseudo']);//PSEUDO
+						// 	$_POST['mdp']=$_POST['mdp'];//MOT DE PASSE
+						// 	// $mdp1=$_POST['mdp1'];//CONFIRMATION MOT DE PASSE
+						// 	$_POST['mail'] = $_POST['mail'];//ADRESSE MAIL
+						 getNewUser($_POST['lastname'],$_POST['firstname'],$_POST['pseudo'],$_POST['mdp'],$_POST['mail']);
+						 echo "OKAY";
+				}else{
+					echo "Un problème est survenu. Veuillez resaissir vos informations";
 				}/*endof Submit/login session*/
 		}//It will check if login or submit has been filled.
 
@@ -77,6 +83,9 @@ if (isset($_GET['action'])){
 
 		}
 		 elseif($_GET['action']=='chapitre'){
+		 	require("../controller/oneChapController.php");
+		 }
+		 elseif($_GET['action']=='supprimeComm'){
 		 	require("../controller/oneChapController.php");
 		 }
 }

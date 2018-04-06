@@ -35,6 +35,7 @@
 
 					<input type="submit" id="validation" value="Valider" />
 				</form>
+				<!-- <?php //var_dump($infoUser); ?> -->
 		</aside>
 
 		<aside class="formulaires">
