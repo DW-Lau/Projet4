@@ -15,7 +15,7 @@
 					
 					<h5><a href="./home.php?action=chapitre&amp;id=<?php echo $list['id']; ?>"><?php echo htmlspecialchars($list['titre'])?></a>
 					</h5>
-						<p class="sumChapters"> <?php echo htmlspecialchars($list['textchap']);?> [...]</br>
+						<p class="sumChapters"> <?= nl2br($list['textchap']);?> [...]</br>
 						Mise en ligne le:<?php echo htmlspecialchars($list['date_fr']);?></p>
 				</div>
 				<?php
