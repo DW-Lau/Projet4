@@ -15,7 +15,7 @@
 				$donnees->closeCursor();
 			?>
 		</article>
-		<aside id="showComms">
+		<aside id="showComms" style="overflow:unset;">
 			<h4>Commentaires:</h4>
 			<?php
 						
@@ -23,11 +23,12 @@
 			?>
 				<span class="commChapter">
 					<span class="membreComm">
-						<?php echo htmlspecialchars($commentaires['membre']);?>
+						<strong><?php echo htmlspecialchars($commentaires['membre']);?></strong>
 					
-						<p>à posté le <?php echo htmlspecialchars($commentaires['date_poste_fr']);?></br>
-						<p><?php echo htmlspecialchars($commentaires['contenu']);?>
+						à posté le : <?php echo htmlspecialchars($commentaires['date_poste_fr']);?></br>
+						<p><?php echo htmlspecialchars($commentaires['contenu']);?><span class="signaler"><a href="./home.php?action=supprimerComm&amp;id=<?php echo $_GET['id']; ?>"> Signaler ce commentaire</a></span>
 						</p>
+
 					</span>
 				</span>
 						<?php
@@ -35,12 +36,12 @@
 							$allcomms->closeCursor();
 						?>
 
-					<!-- <div id="writeComm">
+					<div id="writeComm">
 						<form>
 							<textarea></textarea>
 						</form>
 								
-					</div> -->
+					</div> 
 		</aside>		
 
 							
