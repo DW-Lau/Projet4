@@ -16,7 +16,7 @@ function checkInfos(){
 
 	$resultat = $req->fetch();
 	$isPasswordCorrect = password_verify($checkmdp, $resultat['mdp']);
-}//end of checkInfos();
+}//end of checkInfos();   
 
 function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
 		$bdd=dbConnect();

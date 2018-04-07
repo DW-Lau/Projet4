@@ -1,6 +1,6 @@
 <?php
 if (isset($pseudo) ){
-	require('../../controller/sublogController.php');
+	include('./../controller/sublogController.php');
 session_start();
 $_SESSION=$informationsMembre;
 echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
