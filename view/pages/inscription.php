@@ -40,7 +40,7 @@
 
 		<aside class="formulaires">
 			<h3>Connexion: </h3>
-				<form method="post" action="espacemembre.php">
+				<form method="post" action="./home.php?action=logger">
 					<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudo" required></label>
 					<label name="checkmdp">Mot de passe:<input type="password" name="checkmdp" id="motDpasse" required /></label>
 					<input type="submit" id="validation" value="Valider" />

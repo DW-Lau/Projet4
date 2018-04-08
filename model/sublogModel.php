@@ -9,13 +9,16 @@
 
 //---------------INFORMATIONS from loginForm form------------//
 
-function checkInfos(){
-	$req= $bdd->prepare('SELECT id,mail FROM membres WHERE pseudo=:pseudo');
-	$req->execute(array(
-    'pseudo' => $checkPseudo));
+function checkInfo($checkpseudo,$checkmdp){
+	$bdd=dbConnect();
 
-	$resultat = $req->fetch();
+	$req= $bdd->prepare('SELECT id,mail FROM membres WHERE pseudo=:pseudo');
+	$checkUser=$req->execute(array(
+   			    'pseudo' => $checkPseudo));
+
+	$resultat = $checkUser->fetch();
 	$isPasswordCorrect = password_verify($checkmdp, $resultat['mdp']);
+	return $isPasswordCorrect;
 }//end of checkInfos();   
 
 function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){

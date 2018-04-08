@@ -48,14 +48,4 @@ echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
 				?>
 			</span>
 	</div>
-	<!-- <div id="contacts">	
-		<h4>Contacts</h4>
-			<ul>
-				<li>Tel: 01 23 45 67 89</li>
-				<li>Mail:jean.forteRoche@adressemail.test</li>
-				<li>Editeur:</li>
-			</ul>
-			<p> Projet réalisé dans le cadre de la formation Openclassrooms: Dévelloppeur web junior.
-			</p>
-	</div> -->
 </div>
