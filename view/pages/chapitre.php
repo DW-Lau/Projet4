@@ -38,13 +38,16 @@
 
 					<div id="writeComm">
 						<form>
-							<textarea></textarea>
+							<textarea class="tinymce"></textarea>
 						</form>
 								
 					</div> 
 		</aside>		
-
+<!-- 5min 1er -->
 							
 					
 				</div>
 			</section>
+			<!-- javascript -->
+			<script type="text/javascript" src="./javascript/jquery.min.js"></script>
+			<script type="text/javascript" src="./plugins/tinymce.min.js"></script>
