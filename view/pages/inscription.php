@@ -49,12 +49,6 @@
 		</div> <!-- end of subBlock -->
 	</div><!--end secondSideDeco-->
 </section>
-	<!-- 		<footer>
-				<?php //require ("../portions/mentionsLeg.php");
-					?>
-			</footer>
-		</section>
 
-		<script type="text/javascript" src="../javascript/validInscription.js"></script>
-	</body>
-</html> -->
+		<!-- <script type="text/javascript" src="../javascript/validInscription.js"></script>
+ -->

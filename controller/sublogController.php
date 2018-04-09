@@ -6,7 +6,7 @@ function getInfoNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
 		return $infoUser;
 }
 echo "existe déjà";
-$infosMembre=$infoUser;
+//$infosMembre=$infoUser;
 
 require_once("../model/sublogModel.php");//changer le once ?
 

@@ -46,9 +46,9 @@
 				</div>
 					<nav>
 						<ul>
-							<li><a href="./home.php?action=auteur">L'Auteur</a></li>
+							<li><a href="./home.php?action=inscription">Connexion/Inscription</a></li>
 							<li><a href="./home.php?action=chapitres">Les Chapitres</a></li>
-							<li><a href="./home.php?action=billets">Les Nouveautées</a></li>
+							<li><a href="./home.php?action=admin">Administrateur</a></li>
 							</ul>
 					</nav>
 			</header>

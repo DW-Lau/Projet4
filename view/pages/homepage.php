@@ -14,7 +14,7 @@
 				<div class="lastsChapts">
 					<img src="Images/Alaska_Railroad.jpg" id="imgThumb" alt="Billet simple pour lAlaska">
 						<p>
-							<a href="pages/chapitre.php?id=' <?= htmlspecialchars($donnees['id']); ?>'"> <?php echo htmlspecialchars($donnees['titre']); ?></a> - posté le: <?php echo htmlspecialchars($donnees['date_fr']); ?>
+							<a href="./home.php?action=chapitre&amp;id=<?php echo $donnees['id']; ?>"> <?php echo htmlspecialchars($donnees['titre']); ?></a> - posté le: <?php echo htmlspecialchars($donnees['date_fr']); ?>
 						</p>
 
 				</div>
@@ -30,7 +30,7 @@
 			?>
 				<aside class="last_Comm">
 					<h4  class="new_Aside"> <?php echo htmlspecialchars($billets['billetitre']); ?></h4>
-						<p class="new_Note"><?php echo htmlspecialchars($billets['commbillet'])?></p>
+						<p class="new_Note"><?= nl2br($billets['commbillet'])?></p>
 				</aside>
 			<?php
 				}
