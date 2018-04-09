@@ -6,6 +6,6 @@ function chaptersCall(){
 }
 function billsCall(){
 		$bdd=dbConnect();
-	$rep= $bdd->query('SELECT id_billets,billetitre,commbillet,date_ecrit FROM billets ORDER BY date_ecrit LIMIT 0,2');
+	$rep= $bdd->query('SELECT id_billets,billetitre,commbillet,date_ecrit FROM billets ORDER BY date_ecrit  DESC LIMIT 0,2');
 	return $rep;
 }
