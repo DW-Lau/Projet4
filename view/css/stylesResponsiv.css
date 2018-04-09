@@ -62,7 +62,6 @@
 	footer{
 		position: relative;
 		z-index: 2;
-		height: inherit;
 	}
 	#comptes_inscriptions{
 		width: 100%;
@@ -70,7 +69,7 @@
 	p.bottom{
 		font-size: 0.7em;
 	}
-	#last_bill{
+	#last_billet{
 		display: none;
 	}
 

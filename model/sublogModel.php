@@ -9,16 +9,32 @@
 
 //---------------INFORMATIONS from loginForm form------------//
 
-function checkInfo($checkpseudo,$checkmdp){
+function checkInfo($checkPseudo,$checkmdp){
 	$bdd=dbConnect();
+		var_dump($checkPseudo);
 
-	$req= $bdd->prepare('SELECT id,mail FROM membres WHERE pseudo=:pseudo');
-	$checkUser=$req->execute(array(
-   			    'pseudo' => $checkPseudo));
-
-	$resultat = $checkUser->fetch();
+	$req= $bdd->prepare('SELECT id,mdp FROM membres WHERE pseudo=:pseudo');
+	$req->execute(array(
+   			    'pseudo' => $checkPseudo
+   			));
+//	var_dump($checkUser['pseudo']);
+	$resultat = $req->fetch();
+	// return $resultat;
 	$isPasswordCorrect = password_verify($checkmdp, $resultat['mdp']);
-	return $isPasswordCorrect;
+// 	if (!$resultat){
+//   		echo 'Mauvais identifiant ou mot de passe !';
+// 	}else{
+//     	if ($isPasswordCorrect) {
+//         	session_start();
+//         	$_SESSION['id'] = $resultat['id'];
+//        		$_SESSION['pseudo'] = $pseudo;
+//         echo 'Vous êtes connecté !';
+//     }
+//     else {
+//         echo 'Mauvais identifiant ou mot de passe !';
+//     }
+// }
+	//return $isPasswordCorrect;
 }//end of checkInfos();   
 
 function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
@@ -31,9 +47,10 @@ function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
 				'firstname'=>$firstname,
 				'pseudo'=>$pseudo,
 				'mail'=>$mail,
-				'mdp'=>$pass_hache));
+				'mdp'=>$pass_hache
+			));
 		return $infoUser;
-		var_dump($infoUser);
+		//var_dump($infoUser);
 
 		// $reponse= $bdd->prepare('SELECT id,pseudo FROM membres WHERE pseudo=:pseudo');
 		// $reponse-> execute(array(
@@ -47,4 +64,13 @@ function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
 	// }
 }//end of subInfo()
 
+// function getIdUser($id,$pseudo){
+// 	$bdd=dbConnect();
 
+// 	$logUser=$bdd->prepare('SELECT id, pseudo FROM membres WHERE id=: id, pseudo=:pseudo');
+// 	$infoLog=$logUser->execute(array(
+// 		'id'=>$id,
+// 		'pseudo'=>$pseudo
+// 		));
+// 	return $infoLog;
+// }
