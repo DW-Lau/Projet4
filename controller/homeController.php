@@ -1,6 +1,6 @@
 <?php
-	require("connectBDDController.php");
+	require_once("connectBDDController.php");
 	require("../model/homeModel.php");
-	$chapters=chaptersCall();
+	$chapters=chapterCall();
 	$rep=billsCall();
 	require("../view/pages/homepage.php");

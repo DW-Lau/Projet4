@@ -1,5 +1,11 @@
 <?php
-function chaptersCall(){
+// if (function_exists('chapterCall')){
+//    echo "Function Exists"; 
+// }else{
+//    echo "Function Not Found, This name Can be used!";
+// }
+
+function chapterCall(){
 	$bdd=dbConnect();
 	$chapters= $bdd->query('SELECT id,titre,textchap,date_format(date_edition,"%d.%m.%y")as date_fr FROM chapitres ORDER BY date_edition  DESC LIMIT 0,2');	
 	return $chapters;

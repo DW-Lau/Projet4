@@ -1,10 +1,16 @@
 <?php
 	
-	if (isset($pseudo) ){
-	include('../controller/sublogController.php');
-	session_start();
-
-	$_SESSION=$isPasswordCorrect;
+	if (isset($pseudo) || isset($checkPseudo) ){
+	include('../controller/loginController.php');
+	    if ($isPasswordCorrect) {
+       		session_start();
+      		$_SESSION['id'] = $resultat['id'];
+        	$_SESSION['pseudo'] = $pseudo;
+       		echo 'Vous êtes connecté !';
+   		}
+   		else{
+   			echo "Mauvais identifiant ou mot de passe";
+   		}
 }
 	//echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
 ?>
@@ -13,12 +19,13 @@
 
 <?php
 require ("portions/header.php");/*THE HEADER IS CALL */
-//require("../controller/homeController.php");
 
 if (!(isset($_GET['action']) ) ) {
 	require("../controller/homeController.php");//FONCTIONNE
+	//require("../controller/footerController.php");
 }
 if (isset($_GET['action'])){
+	
 	if($_GET['action']=='inscription'){
 		require ("../controller/sublogController.php");
 	}//end of $_GET['action']=='inscription'		
@@ -38,56 +45,36 @@ if (isset($_GET['action'])){
 				if ($mdp==$mdp1) {
 					if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 						if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
-									 // var_dump($lastname);
+							// getInfoNewUser($lastname,$firstname,$pseudo,$mdp,$mail);
+							getNewUser($_POST['lastname'],$_POST['firstname'],$_POST['pseudo'],$_POST['mdp'],$_POST['mail']);
+							 echo "OKAY ligne 44"; 
 
-									// getInfoNewUser($lastname,$firstname,$pseudo,$mdp,$mail);
-											  getNewUser($_POST['lastname'],$_POST['firstname'],$_POST['pseudo'],$_POST['mdp'],$_POST['mail']);
-								//	var_dump(getInfoNewUser($lastname,$firstname,$pseudo,$mdp,$mail) );
-														 echo "OKAY ligne 67"; 
-
-												require ("../controller/sublogController.php");
-												echo "toujours okay";
-								}
-									else{
-										echo "Un problème est survenu. Veuillez resaissir vos informations";
-									}
-							}
+							require ("../controller/sublogController.php");
+												echo "okay ligne 47";
 						}else{
-							echo "les 2 mots de passe ne sont pas correspondant.";
+							echo "Un problème est survenu. Veuillez resaissir vos informations";
 						}
-
-				}			/*MAIL*/
-						
-
-						//This condition will check if  all inuput are well filled.
-						/*endof Submit/login session*/
-			}else{
-					$checkPseudo = htmlspecialchars($_POST['checkPseudo']);
-					$checkmdp = $_POST['checkmdp'];
-				if ( isset($checkPseudo)&& isset($checkmdp) ){
-						echo "vérife pseudo et mdp";
-						checkInfoUser($_POST['checkPseudo'],$_POST['checkmdp']);
-
-					checkInfos();
-						if (!$resultat){
-							  echo 'Mauvais identifiant ou mot de passe !';
-						}else{
-							if ($isPasswordCorrect) {
-								session_start();
-								  	$_SESSION['id'] = $resultat['id'];
-								    $_SESSION['pseudo'] = $pseudo;
-								    echo "SESSION OK";
-							}else {
-							    	echo 'Mauvais identifiant ou mot de passe !';
-							   	}
-						}//end of the fist else
+					}
+				}else{
+					echo "les 2 mots de passe ne sont pas correspondant.";
+				}
+			}//end of if(isset($lastname)&& isset($firstname)&&	.....
+			
+		}//end of if (isset($_POST['lastname'])) ligne30
+		else{
+			$checkPseudo = htmlspecialchars($_POST['checkPseudo']);
+			$checkmdp = $_POST['checkmdp'];
+			if ( isset($checkPseudo)&& isset($checkmdp) ){
+				checkInfo($_POST['checkPseudo'],$_POST['checkmdp']);
+				require ("../controller/loginController.php");
+				//checkInfos();
+					//end of the fist else
 				}
 			}//It will check if login or submit has been filled.
 	}
 		
 	// elseif( $_GET['action']=='billets' ){
-	// 	require("../controller/billsController.php");
-				
+	// 	require("../controller/billsController.php");			
 	// }
 	// elseif ($_GET['action']=='auteur') {//got to auteur.php
 	// 	require("pages/auteur.php");
@@ -104,12 +91,10 @@ if (isset($_GET['action'])){
 		 	require("../controller/oneChapController.php");
 		 }
 }
+
+require("../controller/footerController.php");
  ?>
-			
-			<footer>
-				<?php require("portions/mentionsLeg.php");?>
-			</footer>
-		</body>
+		
 		<script type="text/javascript" src="javascript/commentaires.js"></script>
 
 </html>
