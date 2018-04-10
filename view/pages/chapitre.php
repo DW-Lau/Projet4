@@ -37,7 +37,7 @@
 						?>
 
 					<div id="writeComm">
-						<form id="getNewComment" method="post">
+						<form id="getNewComment" action="./home.php?action=chapitreNewComm&amp;id=<?php echo $list['id']; ?>" method="post">
 							<label>Pseudo:<input type="text" name="pseudo" required/></label>
 							<textarea class="tinymce"></textarea>
 							<input type="submit" id="save" value="Valider" />

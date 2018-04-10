@@ -86,6 +86,24 @@ if (isset($_GET['action'])){
 		}
 		 elseif($_GET['action']=='chapitre'){
 		 	require("../controller/oneChapController.php");
+		 	getComments();
+		 	echo "hello";
+		 	if($_GET['action']=='chapitreNewComm'){
+		 		echo "hello?";
+		 		$_GET['id'];
+		 		var_dump($_GET['id']);
+		 		$idChap=$_GET['id'];
+				$pseudoComment=$_POST['pseudo'];
+				$textComment=$_POST['getNewComment'];
+				var_dump($pseudo);
+
+				addNewComment($_POST['pseudo'],$_POST['getNewComment'],$_GET['id']);
+				require("../controller/oneChapController.php");
+
+		 	}elseif (isset($_GET['signaler'])){
+
+		 		//suppression commentaire
+		 	}
 		 }
 		 elseif($_GET['action']=='supprimeComm'){
 		 	require("../controller/oneChapController.php");
