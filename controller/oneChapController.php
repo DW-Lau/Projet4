@@ -3,5 +3,5 @@
 	require("connectBDDController.php");
 	$donnees=oneChap();
 	$allcomms=getComments();
-	$removeComm=deletComm();
+	//$removeComm=deletComm();
 	require('../view/pages/chapitre.php');

@@ -37,17 +37,20 @@
 						?>
 
 					<div id="writeComm">
-						<form>
+						<form id="getNewComment" method="post">
+							<label>Pseudo:<input type="text" name="pseudo" required/></label>
 							<textarea class="tinymce"></textarea>
+							<input type="submit" id="save" value="Valider" />
 						</form>
 								
 					</div> 
 		</aside>		
-<!-- 5min 1er -->
+
 							
 					
 				</div>
 			</section>
 			<!-- javascript -->
 			<script type="text/javascript" src="./javascript/jquery.min.js"></script>
-			<script type="text/javascript" src="./plugins/tinymce.min.js"></script>
+			<script type="text/javascript" src="./plugins/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="./plugins/tinymce/init-tinymce.js"></script>

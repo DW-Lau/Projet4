@@ -30,8 +30,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
 
-	<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-   <script>tinymce.init({ selector:'textarea' });</script>
+	<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+   <script>tinymce.init({ selector:'textarea' });</script> -->
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	

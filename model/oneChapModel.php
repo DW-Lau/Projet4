@@ -22,13 +22,13 @@ function getComments(){
 				));
 	return $comments;
 }
-function deletComm(){
-	$bdd=dbConnect();
-	$deletCommId=$_GET['id'];
-	$dlt=$bdd->prepare('DELETE id,id_chap,membre,contenu,date_format FROM commentaires WHERE id: id');
-		$dlt->execute(array(
-			'id'=>$deletCommId
-		));
-		return $dlt;
-}
+// function deletComm(){
+// 	$bdd=dbConnect();
+// 	$deletCommId=$_GET['id'];
+// 	$dlt=$bdd->prepare('DELETE id,id_chap,membre,contenu,date_format FROM commentaires WHERE id: id');
+// 		$dlt->execute(array(
+// 			'id'=>$deletCommId
+// 		));
+// 		return $dlt;
+// }
 
