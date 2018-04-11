@@ -87,19 +87,19 @@ if (isset($_GET['action'])){
 		 elseif($_GET['action']=='chapitre'){
 		 	require("../controller/oneChapController.php");
 		 	getComments();
-		 	echo "hello";
-		 	if($_GET['action']=='chapitreNewComm'){
-		 		echo "hello?";
+		 	
+		 	if($_GET['action']=='chapitre'){
+		 		//echo "hello?";
 		 		$_GET['id'];
-		 		var_dump($_GET['id']);
+		 		//var_dump($_GET['id']);
 		 		$idChap=$_GET['id'];
-				$pseudoComment=$_POST['pseudo'];
-				$textComment=$_POST['getNewComment'];
-				var_dump($pseudo);
-
-				addNewComment($_POST['pseudo'],$_POST['getNewComment'],$_GET['id']);
+		 		$pseudoComment=$_POST['nickname'];
+				$textComment=$_POST['tinymce'];
+		 		var_dump($pseudoComment);
+		 		
+				addComment($_POST['nickname'],$_POST['tinymce'],$_GET['id']);echo "passer?";
 				require("../controller/oneChapController.php");
-
+				
 		 	}elseif (isset($_GET['signaler'])){
 
 		 		//suppression commentaire

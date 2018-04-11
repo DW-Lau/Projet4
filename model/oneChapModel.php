@@ -32,15 +32,29 @@ function getComments(){
 // 		));
 // 		return $dlt;
 // }
-// function addNewComment($pseudoComment,$textComment,$idChap){
+
+function addComment($pseudoComment,$textComment,$idChap){
+	$bdd=dbConnect();
+	$idPage=$_GET['id'];
+	$newComm=$bdd->prepare('INSERT INTO commentaires (id_chap, membre, contenu, date_poste) VALUES(:id_chap,:membre,:contenu, NOW()' );
+	$newComm->execute(array(
+		'id_chap'=>$idPage,
+		'membre'=>$pseudoComment,
+		'contenu'=>$textComment
+		
+	));
+	//return $newComm;
+}
+//:id, :id_chap,:membre, :contenu, NOW() 
+// function addComment($pseudoComment,$textComment,$idChap){
 // 	$bdd=dbConnect();
 
-// 	$addComment=$bdd->prepare('INSERT INTO commentaires ( membre,contenu,date_poste)VALUES( :membre, contenu) WHERE id_chap=:id_chap' );
-// 	$addComment->execute(array(
+// 	$newComm=$bdd->prepare('INSERT INTO commentaires ( membre,contenu,date_poste)VALUES( :membre, :contenu, NOW() ) WHERE id_chap=:id_chap' );
+// 	$newComm->execute(array(
 // 		'membre'=>$pseudoComment,
 // 		'contenu'=>$textComment,
 // 		'id_chap'=>$_GET['id']
 // 	));
-// 	return $addComment;
+// 	//return $newComm;
 // }
 

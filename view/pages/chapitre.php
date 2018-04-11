@@ -37,9 +37,9 @@
 						?>
 
 					<div id="writeComm">
-						<form id="getNewComment" action="./home.php?action=chapitreNewComm&amp;id=<?php echo $list['id']; ?>" method="post">
-							<label>Pseudo:<input type="text" name="pseudo" required/></label>
-							<textarea class="tinymce"></textarea>
+						<form id="getNewComment" action="./home.php?action=chapitre&amp;id=<?php echo $_GET['id']; ?>" method="post">
+							<label>Pseudo:<input type="text" name="nickname" id="nickname" required/></label>
+							<textarea class="tinymce" name="tinymce"></textarea>
 							<input type="submit" id="save" value="Valider" />
 						</form>
 								
