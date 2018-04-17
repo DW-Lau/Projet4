@@ -21,24 +21,21 @@
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
 		<!--FIN META -->
-		<link rel="stylesheet" type="text/css" href="css/menu.css">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" type="text/css" href="css/stylesA.css">
-	<link rel="stylesheet" type="text/css" href="css/stylesResponsiv.css">
+		<link rel="stylesheet" type="text/css" href="view/css/menu.css">
+	<link rel="stylesheet" type="text/css" href="view/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="view/css/stylesA.css">
+	<link rel="stylesheet" type="text/css" href="view/css/stylesResponsiv.css">
 	<!--POLICES-->
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
-
-	<!-- <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-   <script>tinymce.init({ selector:'textarea' });</script> -->
 	<title>Billet simple pour l'Alaska, par JF</title>
 	</head>
 		<body>	
 			
 			<header>
 				<div id="headR_Home">
-					<h1><a href="home.php"> "Billet simple pour l'Alaska"</a></h1>
+					<h1><a href="../../home.php"> "Billet simple pour l'Alaska"</a></h1>
 						<div id="lower_Deco">
 							<div id="line_Ink"><!--Ink line add in css--></div>
 							<h2> Jean Forteroche</h2>

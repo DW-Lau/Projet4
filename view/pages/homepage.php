@@ -1,8 +1,8 @@
 <div class="borderDeco">
 </div>
-	<?php
-	include_once("../controller/homeController.php");
-	?>
+<!-- 	<?php
+	//include_once("../controller/homeController.php");
+	?> -->
 <section>
 	<div id="sideDeco">
 		<article id="chaps">
@@ -12,7 +12,7 @@
 						while ($donnees=$chapters->fetch()) {
 					?>
 				<div class="lastsChapts">
-					<img src="Images/Alaska_Railroad.jpg" id="imgThumb" alt="Billet simple pour lAlaska">
+					<img src="view/Images/Alaska_Railroad.jpg" id="imgThumb" alt="Billet simple pour lAlaska">
 						<p>
 							<a href="./home.php?action=chapitre&amp;id=<?php echo $donnees['id']; ?>"> <?php echo htmlspecialchars($donnees['titre']); ?></a> - posté le: <?php echo htmlspecialchars($donnees['date_fr']); ?>
 						</p>
@@ -26,7 +26,7 @@
 
 		<div id="block">
 			<?php
-				while($billets= $rep->fetch()){
+				while($billets= $bills->fetch()){
 			?>
 				<aside class="last_Comm">
 					<h4  class="new_Aside"> <?php echo htmlspecialchars($billets['billetitre']); ?></h4>
@@ -34,7 +34,7 @@
 				</aside>
 			<?php
 				}
-				$rep->closeCursor();
+				$bills->closeCursor();
 			?>				
 		</div>		
 	</div><!--Fin de sideDeco-->

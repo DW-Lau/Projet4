@@ -10,7 +10,7 @@
 			<h4>Les dernières nouveautés:</h4>
 			<span class="blog">
 				<?php
-					while($lastBillet=$billet->fetch() ){
+					while($lastBillet=$lastBill->fetch() ){
 				?>
 					<h6><?php echo htmlspecialchars($lastBillet['billetitre']);?> le:<?php echo htmlspecialchars($lastBillet['date_ecrit_fr']);?></h6>
 					<p>
