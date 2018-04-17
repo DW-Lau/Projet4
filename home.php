@@ -75,17 +75,18 @@ if (!(isset($_GET['action']) ) ) {
 	// 		}//It will check if login or submit has been filled.
 	// }
 	
- 		elseif ($_GET['action']=='chapitres') {
+ 		if ($_GET['action']=='chapitres') {
 			require("controller/Front.php");
 			getAllChaps();
 			footerPage();
 
 		}
-		 elseif($_GET['action']=='selectionchapitre'){
-		 	require("../controller/oneChapController.php");
-		 	getComments();
+		if($_GET['action']=='selectionchapitre'){
+		 	require("controller/Front.php");
+		 	getOneChap();
+		 	footerPage();
 		 	
-		 	if($_GET['action']=='chapitre'){
+		 	if($_GET['action']=='ValiderComment'){
 		 		//echo "hello?";
 		 		$_GET['id'];
 		 		//var_dump($_GET['id']);

@@ -1,25 +1,22 @@
 <section>
-	<!-- <?php
-	//include_once("../../controller/oneChapController.php");
-	?> -->
 	<div id="chapterSideDeco">
 		<article id="chapterText"> 
 			<?php
 
-				while($chapitre = $donnees->fetch()){
+				while($chapitre = $pickOneChap->fetch()){
 			?>
 			<h2><?php echo htmlspecialchars($chapitre['titre']);?></h2>		
 				<p><?= nl2br($chapitre['textchap'])?></p>
 			<?php
 			}
-				$donnees->closeCursor();
+				$pickOneChap->closeCursor();
 			?>
 		</article>
 		<aside id="showComms" style="overflow:unset;">
 			<h4>Commentaires:</h4>
 			<?php
 						
-				while($commentaires= $allcomms->fetch() ){
+				while($commentaires= $commByChap->fetch() ){
 			?>
 				<span class="commChapter">
 					<span class="membreComm">
@@ -33,11 +30,11 @@
 				</span>
 						<?php
 							}
-							$allcomms->closeCursor();
+							$commByChap->closeCursor();
 						?>
 
 					<div id="writeComm">
-						<form id="getNewComment" action="./home.php?action=chapitre&amp;id=<?php echo $_GET['id']; ?>" method="post">
+						<form id="getNewComment" action="./home.php?action=ValiderComment&amp;id=<?php echo $_GET['id']; ?>" method="post">
 							<label>Pseudo:<input type="text" name="nickname" id="nickname" required/></label>
 							<textarea class="tinymce" name="tinymce"></textarea>
 							<input type="submit" id="save" value="Valider" />
