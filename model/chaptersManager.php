@@ -22,11 +22,10 @@ class ChaptersManager extends Manager
 		$bdd=$this->dbConnect();
 		$allchap= $bdd->query('SELECT id,titre,SUBSTR(textchap, 1, 100)as textchap,date_format(date_edition,"%d.%m.%y")as date_fr FROM chapitres  ');//Selection of the first 100 characters 
 		return $allchap;
-
 	}
+
 	// public function addChap(){
 	// 	$bdd=$this->dbConnect();
 	// 	$newChap=$bdd;
 	// } 
-
 }
