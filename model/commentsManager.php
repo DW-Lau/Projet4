@@ -2,7 +2,7 @@
 
 require_once("manager.php");
 
-class ChaptersManager extends Manager
+class CommentsManager extends Manager
 {
 	public function getComments(){
 		$bdd=$this->dbConnect();
@@ -41,6 +41,6 @@ class ChaptersManager extends Manager
 	// public function signalComm(){
 	// 	$bdd=$this->dbConnect();
 	// 	$pbComm=$bdd->prepare('UPDATE ');
-		
+
 	// }
 }

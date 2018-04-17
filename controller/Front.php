@@ -13,9 +13,19 @@ function firstPage(){
 		$billetsCall= new billsCaller();
 		$bills= $billetsCall-> billsCall();
 
-		$billFooter= new billsCaller();
-		$lastBill=$billFooter->footerBill();
+
 	require("./view/pages/homepage.php");
-	require("./view/portions/mentionsLeg.php");
+
+}
+function footerPage(){
+	$billFooter= new billsCaller();
+	$lastBill=$billFooter->footerBill();
+		require("./view/portions/mentionsLeg.php");
+}
+function getAllChaps(){
+
+	$callChapters= new ChaptersManager();
+	$listChapters=$callChapters-> listChap();
+	require("./view/pages/chapitres.php");
 
 }

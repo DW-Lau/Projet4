@@ -9,18 +9,18 @@
 		<article id="seleChap">
 
 				<?php
-					while ($list=$reponse->fetch() ) {
+					while ($list=$listChapters->fetch() ) {
 				?>
 				<div class="thumbnail">
 					
-					<h5><a href="./home.php?action=chapitre&amp;id=<?php echo $list['id']; ?>"><?php echo htmlspecialchars($list['titre'])?></a>
+					<h5><a href="./home.php?action=selectionchapitre&amp;id=<?php echo $list['id']; ?>"><?php echo htmlspecialchars($list['titre'])?></a>
 					</h5>
 						<p class="sumChapters"> <?= nl2br($list['textchap']);?> [...]</br>
 						Mise en ligne le:<?php echo htmlspecialchars($list['date_fr']);?></p>
 				</div>
 				<?php
 					}
-					$reponse->closeCursor();
+					$listChapters->closeCursor();
 				?>
 		</article>
 	</div>
