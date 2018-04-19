@@ -48,5 +48,6 @@
 							<li><a href="./home.php?action=admin">Administrateur</a></li>
 							</ul>
 					</nav>
+					<p> déconnexion</p>
 			</header>
 		

@@ -23,7 +23,7 @@ require ("view/portions/header.php");/*THE HEADER IS CALL */
 if (!(isset($_GET['action']) ) ) {
 	require("controller/Front.php");
 	firstPage();
-	footerPage();
+	//footerPage();
 	//require("../controller/footerController.php");
 }
 if (isset($_GET['action'])){
@@ -31,8 +31,8 @@ if (isset($_GET['action'])){
 	if($_GET['action']=='inscription'){
 	 	require ("controller/Back.php");
 	 		formulaire();
-	 		require("controller/Front.php");
-	 		footerPage();
+	 		//require("controller/Front.php");
+	 		//footerPage();
 
 	}//end of $_GET['action']=='inscription'		
 
@@ -79,13 +79,13 @@ if (isset($_GET['action'])){
  		if ($_GET['action']=='chapitres') {
 			require("controller/Front.php");
 			getAllChaps();
-			footerPage();
+			//footerPage();
 
 		}
 		if($_GET['action']=='selectionchapitre'){
 		 	require("controller/Front.php");
 		 	getOneChap();
-		 	footerPage();
+		 	//footerPage();
 		} 	
 		 	if($_GET['action']=='ValiderComment'){
 		 		//echo "hello?";

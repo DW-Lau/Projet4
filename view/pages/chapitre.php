@@ -12,7 +12,7 @@
 				$pickOneChap->closeCursor();
 			?>
 		</article>
-		<aside id="showComms" style="overflow:unset;">
+		<article id="showComms" style="overflow:unset;">
 			<h4>Commentaires:</h4>
 			<?php
 						
@@ -41,7 +41,7 @@
 						</form>
 								
 					</div> 
-		</aside>		
+		</article>		
 
 							
 					
