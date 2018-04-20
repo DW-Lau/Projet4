@@ -8,20 +8,23 @@
 		<article id="chaps">
 			<h3 class="Chapters">Les Chapitres</h3>
 				<p> Retrouvez la liste complète des derniers chapitres, postés par l'auteur.</p>
+					<div id="chaptersColumns">
 					<?php
 						while ($donnees=$chapters->fetch()) {
 					?>
-				<div class="lastsChapts">
-					<img src="view/Images/Alaska_Railroad.jpg" id="imgThumb" alt="Billet simple pour lAlaska">
+					<div class="lastsChapts">
+						<img src="view/Images/Alaska_Railroad.jpg" id="imgThumb" alt="Billet simple pour lAlaska">
 						<p>
 							<a href="./home.php?action=selectionchapitre&amp;id=<?php echo $donnees['id']; ?>"> <?php echo htmlspecialchars($donnees['titre']); ?></a> - posté le: <?php echo htmlspecialchars($donnees['date_fr']); ?>
 						</p>
 
-				</div>
+					</div>
+
 					<?php
 						}
 						$chapters->closeCursor();
 					?>
+				</div>
 		</article>
 
 		<div id="block">

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 	<head>
 	<meta charset="utf-8">
 
@@ -35,12 +39,13 @@
 			
 			<header>
 				<div id="headR_Home">
-					<h1><a href="../../home.php"> "Billet simple pour l'Alaska"</a></h1>
+					<h1><a href="./home.php"> "Billet simple pour l'Alaska"</a></h1>
 						<div id="lower_Deco">
 							<div id="line_Ink"><!--Ink line add in css--></div>
 							<h2> Jean Forteroche</h2>
 						</div>
 				</div>
+				<div id="nav_Log">
 					<nav>
 						<ul>
 							<li><a href="./home.php?action=inscription">Connexion/Inscription</a></li>
@@ -48,6 +53,13 @@
 							<li><a href="./home.php?action=admin">Administrateur</a></li>
 							</ul>
 					</nav>
-					<p> déconnexion</p>
+					<?php
+						//if ($_GET['pseudo']==true) {
+						echo "<a href='./home/php?action=logOut'>Déconnexion</a>";
+					//}
+					
+					?>
+					
+				</div>
 			</header>
 		
