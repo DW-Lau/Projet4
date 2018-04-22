@@ -1,19 +1,26 @@
-<!-- <?php
-	
-	// if (isset($pseudo) || isset($checkPseudo) ){
-	// include('../controller/loginController.php');
-	//     if ($isPasswordCorrect) {
- //       		session_start();
- //      		$_SESSION['id'] = $resultat['id'];
- //        	$_SESSION['pseudo'] = $pseudo;
- //       		echo 'Vous êtes connecté !';
- //   		}
- //   		else{
- //   			echo "Mauvais identifiant ou mot de passe";
- //   		}
-//}
+<?php
+echo "Bonjour";
+var_dump($pseudo);
+	 if ( isset($pseudo) || isset($checkPseudo) ){
+	 	var_dump($pseudo);
+	 	require("controller/Back.php");
+		sessionBegin($infoUser);
+	     if ($isPasswordCorrect) {
+       		session_start();
+      		$_SESSION['id'] = $resultat['id'];
+        	$_SESSION['pseudo'] = $pseudo;
+       		echo 'Vous êtes connecté !';
+   		}
+  		elseif(isset($infoUser) ){
+   			session_start();
+   			$_SESSION['id'] = $resultat['id'];
+        	$_SESSION['pseudo'] = $pseudo;
+       		echo 'Bienvenue: '.$_SESSION['pseudo'];
+
+  		}
+}
 	//echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
-?> -->
+?>
 <!DOCTYPE html>
 <html>
 
@@ -48,10 +55,13 @@ if (isset($_GET['action'])){
 			if ($mdp==$mdp1) {
 				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 					if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
+						var_dump($lastname);
 							// getInfoNewUser($lastname,$firstname,$pseudo,$mdp,$mail);
-						getNewUser($_POST['lastname'],$_POST['firstname'],$_POST['pseudo'],$_POST['mdp'],$_POST['mail']);
-							// echo "OKAY ligne 44"; 
+						// getNewUser($_POST['lastname'],$_POST['firstname'],$_POST['pseudo'],$_POST['mdp'],$_POST['mail']);
 						require ("controller/Back.php");
+						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
+							// echo "OKAY ligne 44"; 
+						
 						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
 												//echo "okay ligne 47";
 					}else{
