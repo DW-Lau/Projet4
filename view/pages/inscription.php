@@ -12,7 +12,7 @@
 			</article>
 		<div id="subBlock">
 
-		<aside class="formulaires">
+		<div class="formulaires">
 			<h3>Inscription:</h3>
 				<form method="post" action="./home.php?action=subscribeMember">
 					<label name="lastname">Nom:<input type="text" name="lastname" id="nom" required /></label>
@@ -36,16 +36,16 @@
 					<input type="submit" id="validation" value="Valider" />
 				</form>
 				<!-- <?php //var_dump($infoUser); ?> -->
-		</aside>
+		</div>
 
-		<aside class="formulaires">
+		<div class="formulaires">
 			<h3>Connexion: </h3>
 				<form method="post" action="./home.php?action=logger">
-					<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudo" required></label>
-					<label name="checkmdp">Mot de passe:<input type="password" name="checkmdp" id="motDpasse" required /></label>
+					<label name="checkPseudo"> Pseudo:<input type="text" name="checkPseudo" id="pseudoMember" required></label>
+					<label name="checkmdp">Mot de passe:<input type="password" name="checkmdp" id="motDpasseMember" required /></label>
 					<input type="submit" id="validation" value="Valider" />
 				</form>
-		</aside>
+		</div>
 		</div> <!-- end of subBlock -->
 	</div><!--end secondSideDeco-->
 </section>

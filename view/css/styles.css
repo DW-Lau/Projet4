@@ -228,15 +228,22 @@ h6{
 }
 #subBlock{
 	display: flex;
-	width: 80%;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    width: 80%;
+    height: 500px;
+    padding:10px;
+    border:#052460 inset 5px;
+    background: rgba(37,138,161, 0.2);
 }
  #rules{
-	margin: auto;
-	width: 55%;
+	margin: 10px;
+	width: 80%;
 	border-bottom: double 5px #052942;
 }
 .formulaires{
-	width: 55%;
+	width: 80%;
 	margin: auto;
 
 }
@@ -248,6 +255,7 @@ form{
 }
 form input{
 	width:50%;
+	float: right;
 }
 /*---CHAPTERS---*/
 h5 a{
