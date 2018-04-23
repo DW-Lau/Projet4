@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 
 	<head>
 	<meta charset="utf-8">
@@ -54,9 +52,9 @@ session_start();
 							</ul>
 					</nav>
 					<?php
-						//if ($_GET['pseudo']==true) {
-						echo "<a href='./home/php?action=logOut'>Déconnexion</a>";
-					//}
+						if (isset($_SESSION['pseudo'] ) ) {
+						echo "<a href='home/php?action=logOut'>Déconnexion</a>";
+					}
 					
 					?>
 					

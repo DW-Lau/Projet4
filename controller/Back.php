@@ -13,7 +13,6 @@ function formulaire(){
 function subscribe($lastname,$firstname,$pseudo,$mdp,$mail){
 	$newMember= new membersManager();
 	$subMember= $newMember->getNewUser($lastname,$firstname,$pseudo,$mdp,$mail);
-	
 }
 /*TEST RECUPERATION DES DONNEES*/
 // function sessionBegin($infoUser){

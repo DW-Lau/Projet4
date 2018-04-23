@@ -1,25 +1,10 @@
 <?php
-echo "Bonjour";
-var_dump($pseudo);
-	 if ( isset($pseudo) || isset($checkPseudo) ){
-	 	var_dump($pseudo);
-	 	require("controller/Back.php");
-		sessionBegin($infoUser);
-	     if ($isPasswordCorrect) {
-       		session_start();
-      		$_SESSION['id'] = $resultat['id'];
-        	$_SESSION['pseudo'] = $pseudo;
-       		echo 'Vous êtes connecté !';
-   		}
-  		elseif(isset($infoUser) ){
-   			session_start();
-   			$_SESSION['id'] = $resultat['id'];
-        	$_SESSION['pseudo'] = $pseudo;
-       		echo 'Bienvenue: '.$_SESSION['pseudo'];
-
-  		}
+session_start();
+//var_dump($_SESSION['id']);
+if(isset($_SESSION["pseudo"]) ){
+	echo 'Bonjour et bienvenue: '.$_SESSION['pseudo'];
 }
-	//echo '<script> alert("Bonjour: '.$_SESSION['pseudo']. '" !)</script>';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +19,9 @@ if (!(isset($_GET['action']) ) ) {
 	//require("../controller/footerController.php");
 }
 if (isset($_GET['action'])){
-	
+	if($_GET['action']=='logOut'){
+		session_destroy();
+	}
 	if($_GET['action']=='inscription'){
 	 	require ("controller/Back.php");
 	 		formulaire();
@@ -62,7 +49,7 @@ if (isset($_GET['action'])){
 						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
 							// echo "OKAY ligne 44"; 
 						
-						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
+						//subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
 												//echo "okay ligne 47";
 					}else{
 						echo "Un problème est survenu. Veuillez resaissir vos informations";
@@ -78,8 +65,9 @@ if (isset($_GET['action'])){
 			$checkPseudo = htmlspecialchars($_POST['checkPseudo']);
 			$checkmdp = $_POST['checkmdp'];
 			if ( isset($checkPseudo)&& isset($checkmdp) ){
-				checkInfo($checkPseudo,$checkmdp);
-				require ("controller/Back.php");
+			require ("controller/Back.php");	
+			checkInfo($checkPseudo,$checkmdp);
+				
 
 				//checkInfos();
 					//end of the fist else
