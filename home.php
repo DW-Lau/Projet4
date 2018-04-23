@@ -64,16 +64,26 @@ if (isset($_GET['action'])){
 		if ($_GET['action']=='logger'){
 			$checkPseudo = htmlspecialchars($_POST['checkPseudo']);
 			$checkmdp = $_POST['checkmdp'];
+
 			if ( isset($checkPseudo)&& isset($checkmdp) ){
-			require ("controller/Back.php");	
-			checkInfo($checkPseudo,$checkmdp);
-				
+				require ("controller/Back.php");	
+				checkInfo($checkPseudo,$checkmdp);
+			}
 
-				//checkInfos();
-					//end of the fist else
-				}
 		}//It will check if login or submit has been filled.
+		if($_GET['action']=='admin'){
+			require("view/pages/connexionAdmin.php");
+		}
+		if($_GET['action']=='adminOnly'){
+			$AdminPseudo=htmlspecialchars($_POST['IdAdmin']);
+			$AdminPwd=$_POST['PwdAdmin'];
 
+			if (isset($AdminPseudo)&& isset($AdminPwd)) {
+				require("controller/Back.php");
+				adminConnexion($AdminPseudo,$AdminPwd);
+			}
+			
+		}
  		if ($_GET['action']=='chapitres') {
 			require("controller/Front.php");
 			getAllChaps();
