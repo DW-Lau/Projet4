@@ -53,7 +53,7 @@
 					</nav>
 					<?php
 						if (isset($_SESSION['pseudo'] ) ) {
-						echo "<a href='home/php?action=logOut'>Déconnexion</a>";
+						echo "<p> Bonjour ".$_SESSION['pseudo']."<br/><a href='./home.php?action=logOut'>Déconnexion</a><p>";
 					}
 					
 					?>
