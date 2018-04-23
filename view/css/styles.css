@@ -347,3 +347,11 @@ width: 80%
 	font-style: italic;
 	padding-left: 5px;
 }
+/*FORM ADMIN*/
+#AdminConnexion{
+	background: white;
+    border: #052942 2px inset;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
