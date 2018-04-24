@@ -1,5 +1,10 @@
 <?php
 require_once("./model/adminManager.php");
+/*----------------REQUIRE TO ADMINPAGE----------------*/
+require_once("./model/chaptersManager.php");
+require_once("./model/billetsManager.php");
+require_once("./model/commentsManager.php");
+
 
 function checkInfo($checkPseudo,$checkmdp){
 	$checkUser= new membersManager();
@@ -20,4 +25,13 @@ function adminConnexion($AdminPseudo,$AdminPwd){
 
 	require("./view/pages/adminPage.php");
 
+}
+function lastUpdate(){
+	$lastChaptPost= new ChaptersManager ();
+	$lastChapterPost= $lastChaptPost->AdminChapRecap();
+
+	$lastCommPost= new CommentsManager ();
+	$lastCommentPost= $lastCommPost -> lastComment();
+
+	require("./view/pages/adminPage.php");
 }

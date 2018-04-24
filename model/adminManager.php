@@ -70,9 +70,9 @@ class membersManager extends Manager
 					//var_dump($resultat['id']);
 					//session_start();
 					$_SESSION['id']=$resultat['id'];
-					var_dump($_SESSION['id']);
+					//var_dump($_SESSION['id']);
 					$_SESSION['pseudo'] = $AdminPseudo;
-					echo "Bienvenu". $_SESSION['pseudo'] ;
+				//	echo "Bienvenu". $_SESSION['pseudo'] ;
 					//header("Location:home.php?action=adminOnly");
 				}
 				else{

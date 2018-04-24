@@ -73,8 +73,11 @@ if (isset($_GET['action'])){
 		$AdminPwd=$_POST['PwdAdmin'];
 
 		if (isset($AdminPseudo)&& isset($AdminPwd)) {
+			
 			require("controller/Back.php");
+			lastUpdate();
 			adminConnexion($AdminPseudo,$AdminPwd);
+			
 		}
 	}
  	if ($_GET['action']=='chapitres') {

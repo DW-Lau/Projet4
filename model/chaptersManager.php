@@ -28,4 +28,14 @@ class ChaptersManager extends Manager
 	// 	$bdd=$this->dbConnect();
 	// 	$newChap=$bdd;
 	// } 
+	public function AdminChapRecap(){
+		$bdd=$this->dbConnect();
+		$lastchap= $bdd->query('SELECT id,titre FROM chapitres ORDER BY date_edition DESC LIMIT 0,1');
+		return $lastchap;
+	}
+	public function showAllChap(){
+		$bdd=$this->dbConnect();
+		$allchapters= $bdd->query('SELECT id,titre FROM chapitres ORDER BY date_edition ');
+		return $allchapters;
+	}
 }
