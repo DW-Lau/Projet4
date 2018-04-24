@@ -355,3 +355,20 @@ width: 80%
     width: 60%;
     padding: 10px;
 }
+#headband{
+	background: white;
+	border-bottom: double #052942 5px;
+	display: flex;
+    justify-content: space-between;
+    padding:5px;
+}
+#lastChapUpDate{
+	width: 45%;
+
+}
+#lastCommUpDate{
+	width:45%;
+}
+#lastChapUpDate p, #lastCommUpDate p{
+font-size: 0.8em;
+}
