@@ -35,3 +35,8 @@ function lastUpdate(){
 
 	require("./view/pages/adminPage.php");
 }
+function updateWarningComm($warningComm){
+	$signalement= new CommentsManager();
+	$warningComment=$signalement->signalComm($warningComm);
+	//require(".view/pages/chapitres.php");
+}

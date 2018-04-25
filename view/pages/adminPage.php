@@ -26,3 +26,18 @@
 		?>
 	</div>
 </div>
+<section id="adminPannel">
+	<article>
+		
+	</article>
+	<aside id="gestionBlock">
+		<div id="CommAdmin">
+			
+		</div>
+		<div id="ChapAdmin">
+
+			
+		</div>
+	</aside>
+	
+</section>

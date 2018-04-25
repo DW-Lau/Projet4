@@ -23,7 +23,13 @@
 						<strong><?php echo htmlspecialchars($commentaires['membre']);?></strong>
 					
 						à posté le : <?php echo htmlspecialchars($commentaires['date_poste_fr']);?></br>
-						<p><?php echo htmlspecialchars($commentaires['contenu']);?><span class="signaler"><a href="./home.php?action=supprimerComm&amp;id=<?php echo $_GET['id']; ?>"> Signaler ce commentaire</a></span>
+						<p>
+						<?php
+							if ($commentaires['warning_comm'] ==1) {
+								echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
+							}
+						?>
+							<?php echo htmlspecialchars($commentaires['contenu']);?><span class="signaler"><a href="./home.php?action=signaler&amp;id=<?php echo $commentaires['id_comm']; ?>"> Signaler ce commentaire</a></span>
 						</p>
 
 					</span>

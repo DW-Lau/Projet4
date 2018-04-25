@@ -101,9 +101,16 @@ if (isset($_GET['action'])){
 		require("../controller/oneChapController.php");
 				
 	}
-	//if ($_GET['action']=='signaler'){
-	//suppression commentaire
-	// }
+	if ($_GET['action']=='signaler'){
+		$_GET['id'];
+		var_dump($_GET['id']);
+		$warningComm=$_GET['id'];
+		var_dump($warningComm);
+			require("controller/Back.php");
+			updateWarningComm($warningComm);
+
+
+	}
 		 
 	if($_GET['action']=='supprimeComm'){
 		require("controller/Front.php");
