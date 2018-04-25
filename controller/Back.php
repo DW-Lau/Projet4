@@ -30,8 +30,15 @@ function lastUpdate(){
 	$lastChaptPost= new ChaptersManager ();
 	$lastChapterPost= $lastChaptPost->AdminChapRecap();
 
+	$callChapters= new ChaptersManager();
+	$listChapters=$callChapters-> listChap();
+
 	$lastCommPost= new CommentsManager ();
 	$lastCommentPost= $lastCommPost -> lastComment();
+
+	$repotedComm= new CommentsManager();
+	$reportedComments= $repotedComm->getReportingComments();
+
 
 	require("./view/pages/adminPage.php");
 }

@@ -50,6 +50,11 @@ class CommentsManager extends Manager
 		return $pbComm;
 
 	 }
+	public function getReportingComments(){
+		$bdd=$this->dbConnect();
+		$reportedComm=$bdd->query('SELECT id_comm, id_chap, membre, contenu, warning_comm, date_format(date_poste,"%d.%m.%y")as date_poste_fr FROM commentaires WHERE warning_comm=1 ORDER BY date_poste_fr');
+		return $reportedComm;
+	}
 	public function lastComment(){
 		$bdd=$this->dbConnect();
 		$lastComm=$bdd->query('SELECT id_comm, commentaires.id_chap, membre,contenu,date_format(date_poste,"%d.%m.%y")as date_poste_fr, chapitres.id,id_chap,titre FROM commentaires LEFT JOIN chapitres ON commentaires.id_chap=chapitres.id ORDER BY date_poste_fr LIMIT 0,1');
