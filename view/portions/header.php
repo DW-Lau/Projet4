@@ -43,14 +43,21 @@
 							<h2> Jean Forteroche</h2>
 						</div>
 				</div>
+				<?php
+								if (!isset($_SESSION['id'])==115){
+				?>
 				<div id="nav_Log">
 					<nav>
 						<ul>
+							
 							<li><a href="./home.php?action=inscription">Connexion/Inscription</a></li>
 							<li><a href="./home.php?action=chapitres">Les Chapitres</a></li>
 							<li><a href="./home.php?action=admin">Administrateur</a></li>
 							</ul>
 					</nav>
+				<?php
+					}// end of condition
+					?>
 					<?php
 						if (isset($_SESSION['pseudo'] ) ) {
 						echo "<p> Bonjour ".$_SESSION['pseudo']."<br/><a href='./home.php?action=logOut'>Déconnexion</a><p>";
