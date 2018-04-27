@@ -9,11 +9,13 @@ session_start();
 <html>
 
 <?php
-require ("view/portions/header.php");/*THE HEADER IS CALL */
+
 
 if (!(isset($_GET['action']) ) ) {
 	require("controller/Front.php");
-	firstPage();
+		headBand();
+		getAllChaps();
+		
 }
 if (isset($_GET['action'])){
 	if($_GET['action']=='logOut'){
@@ -22,7 +24,9 @@ if (isset($_GET['action'])){
 	}
 	if($_GET['action']=='inscription'){
 	 	require ("controller/Back.php");
+	 		headBand();
 	 		formulaire();
+	 		
 
 	}//end of $_GET['action']=='inscription'		
 
@@ -38,7 +42,7 @@ if (isset($_GET['action'])){
 			if ($mdp==$mdp1) {
 				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 					if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
-						var_dump($lastname);
+						//var_dump($lastname);
 							
 						require ("controller/Back.php");
 						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
@@ -60,13 +64,28 @@ if (isset($_GET['action'])){
 
 		if ( isset($checkPseudo)&& isset($checkmdp) ){
 			require ("controller/Back.php");	
+			headBand();
 			checkInfo($checkPseudo,$checkmdp);
+			
 		}
 
 	}//end of 'logger'
 	
 	if($_GET['action']=='admin'){
-		require("view/pages/connexionAdmin.php");
+		if (isset($_SESSION["pseudo"])) {
+			if( ($_SESSION["id"])=="115"){
+				require("controller/Front.php");
+				require("controller/Back.php");
+				headBand();
+				lastUpdate();
+			}
+		}
+		require("controller/Front.php");
+		require("controller/Back.php");
+		headBand();
+		adminPage();
+		
+		//require("view/pages/connexionAdmin.php");
 	}
 	if($_GET['action']=='adminOnly'){
 		$AdminPseudo=htmlspecialchars($_POST['IdAdmin']);
@@ -82,10 +101,12 @@ if (isset($_GET['action'])){
 	}
  	if ($_GET['action']=='chapitres') {
 		require("controller/Front.php");
+		headBand();
 		getAllChaps();
 	}
 	if($_GET['action']=='selectionchapitre'){
 		require("controller/Front.php");
+		headBand();
 		getOneChap();
 	} 	
 
