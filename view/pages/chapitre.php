@@ -12,10 +12,11 @@
 				$pickOneChap->closeCursor();
 			?>
 		</article>
+
 		<article id="showComms" style="overflow:unset;">
 			<h4>Commentaires:</h4>
 			<?php
-						
+				if( isset($_SESSION['pseudo']) ){		
 				while($commentaires= $commByChap->fetch() ){
 			?>
 				<span class="commChapter">
@@ -41,12 +42,18 @@
 
 					<div id="writeComm">
 						<form id="getNewComment" action="./home.php?action=ValiderComment&amp;id=<?php echo $_GET['id']; ?>" method="post">
-							<label>Pseudo:<input type="text" name="nickname" id="nickname" required/></label>
+							<label>Pseudo:<input type="text" name="nickname" id="nickname" value="<?php echo htmlspecialchars($_SESSION['pseudo']);?>" required/></label>
 							<textarea class="tinymce" name="tinymce"></textarea>
 							<input type="submit" id="save" value="Valider" />
 						</form>
 								
 					</div> 
+					<?php
+					}//end of pseudo session condition
+					else{
+							echo "Vous devez être connecté pour avoir accès aux commentaires.";
+						}
+					?>
 		</article>		
 
 							

@@ -2,7 +2,7 @@
 if(isset($_SESSION["pseudo"])){
 	if( ($_SESSION["id"])=="115"){
 	//	header("Location:home.php?action=adminOnly");
-		//require("adminPage.php");//temporaire
+		require("adminPage.php");//temporaire
 		//echo "hello";
 	}
 

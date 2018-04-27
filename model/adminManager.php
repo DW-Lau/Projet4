@@ -33,7 +33,8 @@ class membersManager extends Manager
 
 	public function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
 		$bdd=$this->dbConnect();
-			var_dump($lastname);
+			//var_dump($lastname);
+		var_dump($pseudo);
 		$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
 		$user = $bdd->prepare('INSERT INTO membres(id,lastname,firstname,pseudo,mail,mdp) VALUES(id,:lastname,:firstname,:pseudo,:mail,:mdp )');
