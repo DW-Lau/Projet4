@@ -18,17 +18,30 @@ class CommentsManager extends Manager
 		var_dump($pseudoComment);
 		var_dump($textComment);
 		var_dump($idChap);
-		$warning_comm=0;
-		$newComm=$bdd->prepare('INSERT INTO commentaires (id_chap, membre, contenu,warning_comm, date_poste) VALUES(:id_chap,:membre,:contenu, NOW() )' );
+		//$warning_comm=0;
+		$newComm=$bdd->prepare('INSERT INTO commentaires (id_chap, membre, contenu, date_poste) VALUES(:id_chap,:membre,:contenu, NOW() )' );
 		$newComm->execute(array(
 			'id_chap'=>$idChap,
 			'membre'=>$pseudoComment,
 			'contenu'=>$textComment,
-			'warning_comm'=>$warning_comm
+			//'warning_comm'=>$warning_comm
 			
 		));
 		//return $newComm;
 	}
+
+	// $newComm=$bdd->prepare('INSERT INTO commentaires (id_chap, commentaires.membre, contenu,warning_comm, date_poste,membres.pseudo)
+	// 							FROM commentaires 
+	// 							LEFT JOIN membres 
+	// 							ON commentaires.membre=membres.pseudo 
+	// 							VALUES(:id_chap,:membre,:contenu, NOW() )' );
+	// 							$newComm->execute(array(
+	// 								'id_chap'=>$idChap,
+	// 								'membre'=>$pseudoComment,
+	// 								'contenu'=>$textComment
+	// 								//'warning_comm'=>$warning_comm
+									
+	// 							));
 	// public function deletComm(){
 	// 	$bdd=$this->dbConnect();
 	// 	$deletCommId=$_GET['id'];

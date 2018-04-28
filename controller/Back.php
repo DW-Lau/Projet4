@@ -12,7 +12,7 @@ function checkInfo($checkPseudo,$checkmdp){
 	$checkUser= new membersManager();
 	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp);
 
-	require("./view/pages/homepage.php");
+	require("./index.html");
 }
 function formulaire(){
 	require ("./view/pages/inscription.php");

@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 //var_dump($_SESSION['id']);
 // if(isset($_SESSION["pseudo"]) ){
 // 	echo 'Bonjour et bienvenue: '.$_SESSION['pseudo'];
@@ -61,6 +61,7 @@ if (isset($_GET['action'])){
 		$checkmdp = $_POST['checkmdp'];
 
 		if ( isset($checkPseudo)&& isset($checkmdp) ){
+			require("controller/Front.php");
 			require ("controller/Back.php");	
 			headBand();
 			checkInfo($checkPseudo,$checkmdp);
@@ -115,9 +116,11 @@ if (isset($_GET['action'])){
 		$pseudoComment=$_POST['nickname'];
 		$textComment=$_POST['tinymce'];
 		var_dump($pseudoComment);
-		 		
-		addComment($_POST['nickname'],$_POST['tinymce'],$_GET['id']);echo "passer?";
-		require("../controller/oneChapController.php");
+		 		require("controller/Front.php");
+		 		getOneChap();
+		//addComment($pseudoComment,$textComment,$idChap);
+		addComments($pseudoComment,$textComment,$idChap);
+		
 				
 	}
 	if ($_GET['action']=='signaler'){

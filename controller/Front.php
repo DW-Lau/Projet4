@@ -34,8 +34,10 @@ function getOneChap(){
 	$getallComms= new CommentsManager();
 	$commByChap=$getallComms->getComments();
 
-	//$addComm= new CommentsManager();
-	//$newComment=$addComm->addComment($pseudoComment,$textComment,$idChap);
-
+	require("./view/pages/chapitre.php");
+}
+function addComments($pseudoComment,$textComment,$idChap){
+	$addComm= new CommentsManager();
+	$newComment=$addComm->addComment($pseudoComment,$textComment,$idChap);
 	require("./view/pages/chapitre.php");
 }
