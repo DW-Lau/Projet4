@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 //var_dump($_SESSION['id']);
 // if(isset($_SESSION["pseudo"]) ){
 // 	echo 'Bonjour et bienvenue: '.$_SESSION['pseudo'];
@@ -23,6 +23,7 @@ if (isset($_GET['action'])){
 		// header("Location:home.php");
 	}
 	if($_GET['action']=='inscription'){
+		require("controller/Front.php");
 	 	require ("controller/Back.php");
 	 		headBand();
 	 		formulaire();
@@ -42,11 +43,8 @@ if (isset($_GET['action'])){
 			if ($mdp==$mdp1) {
 				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 					if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
-						//var_dump($lastname);
-							
 						require ("controller/Back.php");
 						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
-							
 					}
 					else{
 						echo "Un problème est survenu. Veuillez resaissir vos informations";

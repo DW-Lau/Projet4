@@ -31,24 +31,43 @@ class membersManager extends Manager
 		return $isPasswordCorrect; 
 	}
 
+
 	public function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
 		$bdd=$this->dbConnect();
-			//var_dump($lastname);
-		var_dump($pseudo);
-		$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+		/*This part will check if the new member had write a pseudo already taken.*/
+		$verif=$bdd->prepare('SELECT pseudo FROM membres WHERE pseudo=:pseudo LIMIT 0,1');
+		$verif->execute(array(
+	   			    'pseudo'=>$pseudo
+	   			));
+		$resultat=$verif->fetch();
+		var_dump($resultat['pseudo']);
+		if($resultat['pseudo']==$pseudo){
+				echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
+				header("Location:./home.php?action=inscription");
+			}//end of the verification.
+		else{//If all conditions are true, subscribe
+				var_dump($pseudo);
+				$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-		$user = $bdd->prepare('INSERT INTO membres(id,lastname,firstname,pseudo,mail,mdp) VALUES(id,:lastname,:firstname,:pseudo,:mail,:mdp )');
-		$infoUser=$user->execute(array(
-				'lastname'=>$lastname,
-				'firstname'=>$firstname,
-				'pseudo'=>$pseudo,
-				'mail'=>$mail,
-				'mdp'=>$pass_hache
-			));
-		$_SESSION['id']=$infoUser.'id';
-		$_SESSION["pseudo"]=$infoUser.'pseudo';
-		var_dump($_SESSION["pseudo"]);
-	return $infoUser;
+				$user = $bdd->prepare('INSERT INTO membres(id,lastname,firstname,pseudo,mail,mdp) VALUES(id,:lastname,:firstname,:pseudo,:mail,:mdp )');
+				var_dump($pseudo);
+				$infoUser=$user->execute(array(
+						'lastname'=>$lastname,
+						'firstname'=>$firstname,
+						'pseudo'=>$pseudo,
+						'mail'=>$mail,
+						'mdp'=>$pass_hache
+					));
+				var_dump($infoUser.'pseudo');
+				
+				session_start();
+				var_dump($_SESSION["pseudo"]);
+				var_dump($_SESSION);
+				$_SESSION['id']=$infoUser.'id';
+				$_SESSION["pseudo"]=$infoUser.'pseudo';
+				var_dump($_SESSION["pseudo"]);
+			return $infoUser;
+			}
 	}
 
 	public function AdminCheckInfo($AdminPseudo,$AdminPwd){
@@ -85,4 +104,6 @@ class membersManager extends Manager
 			header("Location:./home.php?action=admin");
 		}
 	}//end function AdminCheckInfo();
+
+
 }//end class membersManager();

@@ -8,7 +8,6 @@ require_once("./model/commentsManager.php");
 function adminPage(){
 	require("./view/pages/connexionAdmin.php");
 }
-
 function checkInfo($checkPseudo,$checkmdp){
 	$checkUser= new membersManager();
 	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp);
@@ -18,9 +17,11 @@ function checkInfo($checkPseudo,$checkmdp){
 function formulaire(){
 	require ("./view/pages/inscription.php");
 }
+
 function subscribe($lastname,$firstname,$pseudo,$mdp,$mail){
 	$newMember= new membersManager();
 	$subMember= $newMember->getNewUser($lastname,$firstname,$pseudo,$mdp,$mail);
+	require("./index.html");
 }
 function adminConnexion($AdminPseudo,$AdminPwd){
 	$adminlog= new membersManager();
