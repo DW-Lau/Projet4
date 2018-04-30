@@ -70,7 +70,7 @@ class CommentsManager extends Manager
 	}
 	public function lastComment(){
 		$bdd=$this->dbConnect();
-		$lastComm=$bdd->query('SELECT id_comm, commentaires.id_chap, membre,contenu,date_format(date_poste,"%d.%m.%y")as date_poste_fr, chapitres.id,id_chap,titre FROM commentaires LEFT JOIN chapitres ON commentaires.id_chap=chapitres.id ORDER BY date_poste_fr LIMIT 0,1');
+		$lastComm=$bdd->query('SELECT id_comm, commentaires.id_chap, membre,contenu,date_format(date_poste,"%d.%m.%y")as date_poste_fr, chapitres.id,id_chap,titre FROM commentaires LEFT JOIN chapitres ON commentaires.id_chap=chapitres.id ORDER BY date_poste_fr DESC LIMIT 0,1');
 		return $lastComm;
 	}
 }

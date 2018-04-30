@@ -95,8 +95,8 @@ if (isset($_GET['action'])){
 			$AdminPwd=$_POST['PwdAdmin'];
 			require("controller/Front.php");
 			require("controller/Back.php");
-			//headBand();
-			//lastUpdate();
+			headBand();
+			lastUpdate();
 			adminConnexion($AdminPseudo,$AdminPwd);
 		}
 		
@@ -159,5 +159,7 @@ else{
 ?>
 		
 		<script type="text/javascript" src="javascript/commentaires.js"></script>
-
+<script type="text/javascript" src="view/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="view/plugins/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="view/plugins/tinymce/init-tinymce.js"></script>
 </html>
