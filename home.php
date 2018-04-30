@@ -20,6 +20,9 @@ if (!(isset($_GET['action']) ) ) {
 if (isset($_GET['action'])){
 	if($_GET['action']=='logOut'){
 		session_destroy();
+		require("controller/Front.php");
+		headBand();
+		getAllChaps();
 		// header("Location:home.php");
 	}
 	if($_GET['action']=='inscription'){
@@ -115,8 +118,9 @@ if (isset($_GET['action'])){
 		$idChap=$_GET['id'];
 		$pseudoComment=$_POST['nickname'];
 		$textComment=$_POST['tinymce'];
-		var_dump($pseudoComment);
+		//var_dump($pseudoComment);
 		 		require("controller/Front.php");
+		 		headBand();
 		 		getOneChap();
 		//addComment($pseudoComment,$textComment,$idChap);
 		addComments($pseudoComment,$textComment,$idChap);

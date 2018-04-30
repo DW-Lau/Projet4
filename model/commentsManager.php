@@ -15,9 +15,9 @@ class CommentsManager extends Manager
 	}
 	public function addComment($pseudoComment,$textComment,$idChap){
 		$bdd=$this->dbConnect();
-		var_dump($pseudoComment);
-		var_dump($textComment);
-		var_dump($idChap);
+		// var_dump($pseudoComment);
+		// var_dump($textComment);
+		// var_dump($idChap);
 		//$warning_comm=0;
 		$newComm=$bdd->prepare('INSERT INTO commentaires (id_chap, membre, contenu, date_poste) VALUES(:id_chap,:membre,:contenu, NOW() )' );
 		$newComm->execute(array(

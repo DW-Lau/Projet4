@@ -19,7 +19,7 @@ class membersManager extends Manager
 		}
 		else{
 	    	if ($isPasswordCorrect) {
-	        	session_start();
+	        	//session_start();
 	        	$_SESSION['id'] = $resultat['id'];
 	       		$_SESSION['pseudo'] = $checkPseudo;
 	        	echo 'Content de vous revoir '. $_SESSION['pseudo'];
