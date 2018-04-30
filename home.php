@@ -90,12 +90,20 @@ if (isset($_GET['action'])){
 		//require("view/pages/connexionAdmin.php");
 	}
 	if($_GET['action']=='adminOnly'){
-		$AdminPseudo=htmlspecialchars($_POST['IdAdmin']);
-		$AdminPwd=$_POST['PwdAdmin'];
-
-		if (isset($AdminPseudo)&& isset($AdminPwd)) {
-			
+		if (!isset($AdminPseudo)&& !isset($AdminPwd)) {
+			$AdminPseudo=htmlspecialchars($_POST['IdAdmin']);
+			$AdminPwd=$_POST['PwdAdmin'];
+			require("controller/Front.php");
 			require("controller/Back.php");
+			//headBand();
+			//lastUpdate();
+			adminConnexion($AdminPseudo,$AdminPwd);
+		}
+		
+else{
+			require("controller/Front.php");
+			require("controller/Back.php");
+			headBand();
 			lastUpdate();
 			adminConnexion($AdminPseudo,$AdminPwd);
 			
@@ -122,10 +130,16 @@ if (isset($_GET['action'])){
 		 		require("controller/Front.php");
 		 		headBand();
 		 		getOneChap();
-		//addComment($pseudoComment,$textComment,$idChap);
-		addComments($pseudoComment,$textComment,$idChap);
-		
-				
+		addComments($pseudoComment,$textComment,$idChap);		
+	}
+	if ($_GET['action']=='postChap') {
+		$titleChap=$_POST['title'];
+		$textChap=$_POST['tinymce_Chap'];
+		require("controller/Front.php");
+		require("controller/Back.php");
+		headBand();
+		lastUpdate();
+		postChap($titleChap,$textChap);
 	}
 	if ($_GET['action']=='signaler'){
 		$_GET['id'];

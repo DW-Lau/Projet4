@@ -38,4 +38,18 @@ class ChaptersManager extends Manager
 		$allchapters= $bdd->query('SELECT id,titre FROM chapitres ORDER BY date_edition ');
 		return $allchapters;
 	}
+	public function postChapter($titleChap,$textChap){
+		$bdd=$this->dbConnect();
+		// var_dump($titleChap);
+		// var_dump($$textChap);
+		//$warning_comm=0;
+		$newChap=$bdd->prepare('INSERT INTO chapitres ( pseudo_member,titre,textchap, date_edition) VALUES(:pseudo_member,:titre,:textchap, NOW() )' );
+		$newChap->execute(array(
+			'pseudo_member'=>$_SESSION['pseudo'],
+			'titre'=>$titleChap,
+			'textchap'=>$textChap
+			
+		));
+		header("Location:home.php?action=adminOnly");
+	}
 }

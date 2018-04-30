@@ -372,3 +372,16 @@ width: 80%
 #lastChapUpDate p, #lastCommUpDate p{
 font-size: 0.8em;
 }
+.maj{
+	text-transform: uppercase;
+}
+#adminPannel{
+	display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+}
+#WrittingChap{
+	background: white;
+	
+}

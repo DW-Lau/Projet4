@@ -27,8 +27,13 @@
 	</div>
 </div>
 <section id="adminPannel">
-	<article>
-		
+	<article id="WrittingChap">
+		<h2> <span class="maj">é</span>crire un nouveau chapitre:</h2>
+		<form id="getNewComment" action="./home.php?action=postChap" method="post">
+							<label>Titre:<input type="text" name="title" id="title" value="" required/></label>
+							<textarea class="tinymce_Chap" name="tinymce_Chap"></textarea>
+							<input type="submit" id="send" value="Publier" />
+						</form>
 	</article>
 	<aside id="gestionBlock">
 		<div id="CommAdmin">
