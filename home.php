@@ -141,6 +141,13 @@ else{
 		lastUpdate();
 		postChap($titleChap,$textChap);
 	}
+	if ($_GET['action']=='editChap') {
+		$chapEdit=$_GET['id'];
+		require("controller/Front.php");
+		require("controller/Back.php");
+		headBand();
+		editChapter();
+	}
 	if ($_GET['action']=='signaler'){
 		$_GET['id'];
 		var_dump($_GET['id']);
@@ -151,7 +158,17 @@ else{
 
 
 	}
-		 
+		if($_GET['action']=='reEdit'){
+			$idEdit=$_GET['id'];
+			$titleEdit=$_POST['title'];
+			$textEdit=$_POST['tinymce_Chap'];
+			require("controller/Front.php");
+			require("controller/Back.php");
+			headBand();
+			lastUpdate();
+			reEditChap($idEdit,$titleEdit,$textEdit);
+
+		}
 	if($_GET['action']=='supprimeComm'){
 		require("controller/Front.php");
 	}

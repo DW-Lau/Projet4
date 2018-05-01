@@ -56,3 +56,13 @@ function postChap($titleChap,$textChap){
 	$newChapter= $postNewChap->postChapter($titleChap,$textChap);
 	//require("./view/pages/adminPage.php?action=adminOnly");
 }
+function editChapter(){
+	$callChapters= new ChaptersManager();
+	$pickOneChap=$callChapters->oneChap();
+	require("./view/pages/editChapter.php");
+}
+function reEditChap($idEdit,$titleEdit,$textEdit){
+	$editChapter= new ChaptersManager();
+	$reEditChapter=$editChapter->reditChapter($idEdit,$titleEdit,$textEdit);
+	//require("./view/pages/adminPage.php");
+}

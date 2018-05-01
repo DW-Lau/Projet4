@@ -35,14 +35,11 @@ class ChaptersManager extends Manager
 	}
 	public function showAllChap(){
 		$bdd=$this->dbConnect();
-		$allchapters= $bdd->query('SELECT id,titre FROM chapitres ORDER BY date_edition ');
+		$allchapters= $bdd->query('SELECT id,titre FROM chapitres ORDER BY DESC date_edition ');
 		return $allchapters;
 	}
 	public function postChapter($titleChap,$textChap){
 		$bdd=$this->dbConnect();
-		// var_dump($titleChap);
-		// var_dump($$textChap);
-		//$warning_comm=0;
 		$newChap=$bdd->prepare('INSERT INTO chapitres ( pseudo_member,titre,textchap, date_edition) VALUES(:pseudo_member,:titre,:textchap, NOW() )' );
 		$newChap->execute(array(
 			'pseudo_member'=>$_SESSION['pseudo'],
@@ -50,6 +47,18 @@ class ChaptersManager extends Manager
 			'textchap'=>$textChap
 			
 		));
-		header("Location:home.php?action=adminOnly");
+		header("Location:home.php?action=admin");
+	}
+
+	public function reditChapter($idEdit,$titleEdit,$textEdit){
+		$bdd=$this->dbConnect();
+		$editChap=$bdd->prepare('UPDATE chapitres SET pseudo_member=:pseudo_member, titre=:titre, textchap=:textchap WHERE id=:id');
+		$editChap->execute(array(
+			'pseudo_member'=>$_SESSION['pseudo'],
+			'titre'=>$titleEdit,
+			'textchap'=>$textEdit,
+			'id'=>$idEdit
+		));
+		header("Location:home.php?action=admin");
 	}
 }

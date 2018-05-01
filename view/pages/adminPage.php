@@ -53,14 +53,16 @@
 		</div>
 		<div id="ChapAdmin">
 			<h2> Liste des chapitres déjà publié:</h2>
+			<p>
 			<?php
 					while ($list=$listChapters->fetch() ) {
 			?>
-			<h3><?php echo $list['titre']?></h3>
+			<?php echo $list['titre']?>:<a href="./home.php?action=editChap&amp;id=<?php echo $list['id']; ?>">Modifier</a> <br/>
 			<?php
 			}
 			$listChapters->closeCursor();
 			?>
+		</p>
 		</div>
 	</aside>
 
