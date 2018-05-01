@@ -56,7 +56,7 @@
 			<?php
 					while ($list=$listChapters->fetch() ) {
 			?>
-			<h3><?php echo htmlspecialchars($list['titre'])?></h3>
+			<h3><?php echo $list['titre']?></h3>
 			<?php
 			}
 			$listChapters->closeCursor();

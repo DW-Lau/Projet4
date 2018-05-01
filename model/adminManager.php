@@ -101,7 +101,7 @@ class membersManager extends Manager
 				}
 		}else{
 			echo"Votre mot de passe ou votre pseudo est incorrecte";
-			header("Location:./home.php?action=admin");
+			//header("Location:./home.php?");
 		}
 	}//end function AdminCheckInfo();
 
