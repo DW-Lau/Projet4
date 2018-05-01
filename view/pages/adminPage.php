@@ -31,7 +31,7 @@
 		<h2> <span class="maj">é</span>crire un nouveau chapitre:</h2>
 		<form id="getNewComment" action="./home.php?action=postChap" method="post">
 							<label>Titre:<input type="text" name="title" id="title" value="" required/></label>
-							<textarea class="tinymce_Chap" name="tinymce_Chap" row="100></textarea>
+							<textarea class="tinymce" name="tinymce_Chap"></textarea>
 							<input type="submit" id="send" value="Publier" />
 						</form>
 	</article>
@@ -65,6 +65,6 @@
 	</aside>
 
 </section>
-<script type="text/javascript" src="./javascript/jquery.min.js"></script>
-<script type="text/javascript" src="./plugins/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="./plugins/tinymce/init-tinymce.js"></script>
+<script type="text/javascript" src="./view/javascript/jquery.min.js"></script>
+<script type="text/javascript" src="./view/plugins/tinymce/tinymce.min.js"></script>
+<script type="text/javascript" src="./view/plugins/tinymce/init-tinymce.js"></script>

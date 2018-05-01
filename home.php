@@ -159,7 +159,7 @@ else{
 ?>
 		
 		<script type="text/javascript" src="javascript/commentaires.js"></script>
-<script type="text/javascript" src="view/javascript/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="view/javascript/jquery.min.js"></script>
 <script type="text/javascript" src="view/plugins/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="view/plugins/tinymce/init-tinymce.js"></script>
+<script type="text/javascript" src="view/plugins/tinymce/init-tinymce.js"></script> -->
 </html>

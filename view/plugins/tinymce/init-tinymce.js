@@ -1,5 +1,5 @@
 tinymce.init({ 
-	selector:"textarea.tinymce"
+	selector:"#tinymce"
 
 	// theme: "modern",
 	// skin: "#052942",
