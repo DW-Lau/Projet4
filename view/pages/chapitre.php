@@ -51,7 +51,7 @@
 					<?php
 					}//end of pseudo session condition
 					else{
-							echo "Vous devez être connecté pour avoir accès aux commentaires.";
+							echo "<p>Vous devez être connecté pour avoir accès aux commentaires.</p>";
 						}
 					?>
 		</article>		

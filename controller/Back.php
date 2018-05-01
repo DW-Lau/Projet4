@@ -49,7 +49,7 @@ function lastUpdate(){
 function updateWarningComm($warningComm){
 	$signalement= new CommentsManager();
 	$warningComment=$signalement->signalComm($warningComm);
-	//require("./view/pages/chapitres.php");
+	require("./view/pages/chapitre.php");
 }
 function postChap($titleChap,$textChap){
 	$postNewChap=new chaptersManager();

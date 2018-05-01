@@ -383,6 +383,7 @@ font-size: 0.8em;
 }
 #gestionBlock{
 	width:25%;
+	height:inherit;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -392,4 +393,8 @@ font-size: 0.8em;
 	width: 75%;
     border-left: 2px #052942 solid;
     padding: 5px;
+}
+.attentionRequired{
+	color: #258aa1;
+    font-style: italic;
 }
