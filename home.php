@@ -5,8 +5,8 @@ session_start();
 // 	echo 'Bonjour et bienvenue: '.$_SESSION['pseudo'];
 // }
 ?>
-<!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html>
+<html> -->
 
 <?php
 
@@ -175,8 +175,8 @@ else{
 }//end of all actions
 ?>
 		
-		<script type="text/javascript" src="javascript/commentaires.js"></script>
-<!-- <script type="text/javascript" src="view/javascript/jquery.min.js"></script>
+	<!--	<script type="text/javascript" src="javascript/commentaires.js"></script>
+ <script type="text/javascript" src="view/javascript/jquery.min.js"></script>
 <script type="text/javascript" src="view/plugins/tinymce/tinymce.min.js"></script>
 <script type="text/javascript" src="view/plugins/tinymce/init-tinymce.js"></script> -->
-</html>
+<!-- </html> -->

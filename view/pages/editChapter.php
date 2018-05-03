@@ -16,3 +16,5 @@
 <script type="text/javascript" src="./view/javascript/jquery.min.js"></script>
 <script type="text/javascript" src="./view/plugins/tinymce/tinymce.min.js"></script>
 <script type="text/javascript" src="./view/plugins/tinymce/init-tinymce.js"></script>
+</body>
+</html>

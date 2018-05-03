@@ -52,3 +52,5 @@
 
 		<!-- <script type="text/javascript" src="../javascript/validInscription.js"></script>
  -->
+ </body>
+</html>

@@ -42,3 +42,5 @@
 		</div>		
 	</div><!--Fin de sideDeco-->
 </section>
+</body>
+</html>
