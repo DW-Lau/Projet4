@@ -28,6 +28,8 @@ class CommentsManager extends Manager
 			
 		));
 		//return $newComm;
+		header("Location:./home.php?action=selectionchapitre&id=$idChap");
+		
 	}
 
 	// $newComm=$bdd->prepare('INSERT INTO commentaires (id_chap, commentaires.membre, contenu,warning_comm, date_poste,membres.pseudo)
@@ -54,13 +56,14 @@ class CommentsManager extends Manager
 	// }
 	 public function signalComm($warningComm){
 		$bdd=$this->dbConnect();
-		$warningComm;
-		var_dump($warningComm);
+		// $warningComm;
+		// var_dump($warningComm);
 		$pbComm=$bdd->prepare('UPDATE commentaires SET warning_comm=1 WHERE id_comm=:id_comm');
 		$pbComm->execute(array(
 			'id_comm'=> $warningComm
 		));
-		return $pbComm;
+		//return $pbComm;
+		header("Location:./home.php?action=chapitres");
 
 	 }
 	public function getReportingComments(){

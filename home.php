@@ -1,14 +1,6 @@
 <?php
 session_start();
-//var_dump($_SESSION['id']);
-// if(isset($_SESSION["pseudo"]) ){
-// 	echo 'Bonjour et bienvenue: '.$_SESSION['pseudo'];
-// }
-?>
-<!-- <!DOCTYPE html>
-<html> -->
 
-<?php
 
 
 if (!(isset($_GET['action']) ) ) {
@@ -124,12 +116,13 @@ else{
 		$_GET['id'];
 		//var_dump($_GET['id']);
 		$idChap=$_GET['id'];
-		$pseudoComment=$_POST['nickname'];
+		//$pseudoComment=$_POST['nickname'];
+			 $pseudoComment=$_SESSION['pseudo'];
 		$textComment=$_POST['tinymce'];
 		//var_dump($pseudoComment);
 		 		require("controller/Front.php");
 		 		headBand();
-		 		getOneChap();
+		 		//getOneChap();
 		addComments($pseudoComment,$textComment,$idChap);		
 	}
 	if ($_GET['action']=='postChap') {

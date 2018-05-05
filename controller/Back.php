@@ -12,7 +12,7 @@ function checkInfo($checkPseudo,$checkmdp){
 	$checkUser= new membersManager();
 	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp);
 
-	require("./index.html");
+	//require("./index.html");
 }
 function formulaire(){
 	require ("./view/pages/inscription.php");
@@ -21,7 +21,7 @@ function formulaire(){
 function subscribe($lastname,$firstname,$pseudo,$mdp,$mail){
 	$newMember= new membersManager();
 	$subMember= $newMember->getNewUser($lastname,$firstname,$pseudo,$mdp,$mail);
-	require("./index.html");
+	//require("./index.html");
 }
 function adminConnexion($AdminPseudo,$AdminPwd){
 	$adminlog= new membersManager();
@@ -49,7 +49,7 @@ function lastUpdate(){
 function updateWarningComm($warningComm){
 	$signalement= new CommentsManager();
 	$warningComment=$signalement->signalComm($warningComm);
-	require("./view/pages/chapitre.php");
+	//require("./view/pages/chapitre.php");
 }
 function postChap($titleChap,$textChap){
 	$postNewChap=new chaptersManager();

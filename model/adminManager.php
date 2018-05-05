@@ -15,7 +15,8 @@ class membersManager extends Manager
 		$isPasswordCorrect = password_verify($checkmdp, $resultat['mdp']);
 
 		if (!$resultat){
-	  		echo 'Mauvais identifiant ou mot de passe !';
+	  		echo '<p>Un problème est survenu, veuillez recommencer: </p>';
+	  		// header("Location:./home.php?action=inscription");
 		}
 		else{
 	    	if ($isPasswordCorrect) {
@@ -23,9 +24,11 @@ class membersManager extends Manager
 	        	$_SESSION['id'] = $resultat['id'];
 	       		$_SESSION['pseudo'] = $checkPseudo;
 	        	echo 'Content de vous revoir '. $_SESSION['pseudo'];
+	        	// header("Location:./home.php");
 	   		}
 	   		else{
-	        echo 'Mauvais identifiant ou mot de passe !';
+	        echo '<p>Mauvais identifiant ou mot de passe !</p>';
+	  		// header("Location:./home.php?action=inscription");
 	    	}
 		}
 		return $isPasswordCorrect; 

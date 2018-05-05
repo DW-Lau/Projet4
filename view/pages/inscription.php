@@ -33,7 +33,7 @@
 					<label name="mdp1">Cofirmation du mot de passe:<input type="password" name="mdp1" id="mdp1" required /></label>
 					<span id="statutMDP"></span>
 
-					<input type="submit" id="validation" value="Valider" />
+					<input type="submit" id="valide" value="Valider" />
 				</form>
 				<!-- <?php //var_dump($infoUser); ?> -->
 		</div>
