@@ -43,6 +43,7 @@
 			?>
 			<p>Message: <?php echo htmlspecialchars($listReportedComm['contenu']);?> <br/>
 				Ecrit par: <?php echo htmlspecialchars($listReportedComm['membre']);?> le: <?php echo htmlspecialchars($listReportedComm['date_poste_fr']);?>
+			</br><a href="./home.php?action=deleteComm&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Supprimer</a><a href="./home.php?action=commentChecked&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Valider</a>
 			</p>
 			<?php
 			}

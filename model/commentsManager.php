@@ -63,17 +63,31 @@ class CommentsManager extends Manager
 			'id_comm'=> $warningComm
 		));
 		//return $pbComm;
-		header("Location:./home.php?action=chapitres");
+		//header("Location:./home.php?action=chapitres");
 
 	 }
 	public function getReportingComments(){
 		$bdd=$this->dbConnect();
-		$reportedComm=$bdd->query('SELECT id_comm, id_chap, membre, contenu, warning_comm, date_format(date_poste,"%d.%m.%y")as date_poste_fr FROM commentaires WHERE warning_comm=1 ORDER BY date_poste_fr');
+		$reportedComm=$bdd->query('SELECT id_comm, id_chap, commentaires.membre, contenu, warning_comm, date_format(date_poste,"%d.%m.%y")as date_poste_fr, membres.id FROM commentaires LEFT JOIN membres ON commentaires.membre= membres.id WHERE warning_comm=1 ORDER BY date_poste_fr');
 		return $reportedComm;
 	}
 	public function lastComment(){
 		$bdd=$this->dbConnect();
 		$lastComm=$bdd->query('SELECT id_comm, commentaires.id_chap, membre,contenu,date_format(date_poste,"%d.%m.%y")as date_poste_fr, chapitres.id,id_chap,titre FROM commentaires LEFT JOIN chapitres ON commentaires.id_chap=chapitres.id ORDER BY date_poste_fr DESC LIMIT 0,1');
 		return $lastComm;
+	}
+	public function deleteComment($id_comm){
+		$bdd=$this->dbConnect();
+		$dltComm=$bdd->prepare('DELETE FROM commentaires WHERE id_comm=?');
+		$eraseComm=$dltComm->execute(array($id_comm));
+		header("Location:./home.php?action=admin");
+	}
+	public function commentValidation($id_comm){
+		$bdd=$this->dbConnect();
+		$pbComm=$bdd->prepare('UPDATE commentaires SET warning_comm=0 WHERE id_comm=:id_comm');
+		$pbComm->execute(array(
+			'id_comm'=> $id_comm
+		));
+		header("Location:./home.php?action=admin");
 	}
 }

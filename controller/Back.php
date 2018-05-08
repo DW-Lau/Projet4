@@ -66,3 +66,12 @@ function reEditChap($idEdit,$titleEdit,$textEdit){
 	$reEditChapter=$editChapter->reditChapter($idEdit,$titleEdit,$textEdit);
 	//require("./view/pages/adminPage.php");
 }
+
+function deletedComment($id_comm){
+	$eraseComment= new CommentsManager();
+	$erase=$eraseComment->deleteComment($id_comm);
+}
+function validationComment($id_comm){
+	$checkingComm= new CommentsManager();
+	$commentOk= $checkingComm-> commentValidation($id_comm);
+}

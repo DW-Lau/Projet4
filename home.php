@@ -22,6 +22,8 @@ if (isset($_GET['action'])){
 	 	require ("controller/Back.php");
 	 		headBand();
 	 		formulaire();
+
+	 		//subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
 	 		
 
 	}//end of $_GET['action']=='inscription'		
@@ -40,13 +42,20 @@ if (isset($_GET['action'])){
 					if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
 						require ("controller/Back.php");
 						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
+						$pseudoPresent=0;
 					}
 					else{
+						require ("controller/Front.php");
+						headBand();
 						echo "Un problème est survenu. Veuillez resaissir vos informations";
 					}
 				}//end of regex pwd
 			}else{
-				echo "les 2 mots de passe ne sont pas correspondant.";
+				require ("controller/Front.php");
+				headBand();
+				echo "les 2 mots de passe ne sont pas correspondant.</br>
+
+				<a href='./home.php'>Retour à la page d'acceuil .</a>";
 			}
 		}//end of if(isset($lastname)&& isset($firstname)&&	.....
 			
@@ -90,9 +99,7 @@ if (isset($_GET['action'])){
 			headBand();
 			lastUpdate();
 			adminConnexion($AdminPseudo,$AdminPwd);
-		}
-		
-else{
+		}else{
 			require("controller/Front.php");
 			require("controller/Back.php");
 			headBand();
@@ -143,9 +150,11 @@ else{
 	}
 	if ($_GET['action']=='signaler'){
 		$_GET['id'];
-		var_dump($_GET['id']);
+		$_POST['id_chap'];
+
+		var_dump($_GET['id_chap']);
 		$warningComm=$_GET['id'];
-		var_dump($warningComm);
+		//var_dump($warningComm);
 			require("controller/Back.php");
 			updateWarningComm($warningComm);
 
@@ -162,8 +171,18 @@ else{
 			reEditChap($idEdit,$titleEdit,$textEdit);
 
 		}
-	if($_GET['action']=='supprimeComm'){
+	if($_GET['action']=='deleteComm'){
+		$id_comm=$_GET['id'];
+
 		require("controller/Front.php");
+		require("controller/Back.php");
+		deletedComment($id_comm);
+	}
+	if($_GET['action']=='commentChecked'){
+		$id_comm=$_GET['id'];
+		require("controller/Front.php");
+		require("controller/Back.php");
+		validationComment($id_comm);
 	}
 }//end of all actions
 ?>
