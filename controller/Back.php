@@ -14,13 +14,17 @@ function checkInfo($checkPseudo,$checkmdp){
 
 	//require("./index.html");
 }
+// function uniqueNickname($pseudo,$pseudoPresent){
+// 	$checkNickName= new membersManager();
+// 	$resultNickName= $checkNickName-> uniqueNickName($pseudo,$pseudoPresent);
+// }
 function formulaire(){
 	require ("./view/pages/inscription.php");
 }
 
-function subscribe($lastname,$firstname,$pseudo,$mdp,$mail){
+function subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent){
 	$newMember= new membersManager();
-	$subMember= $newMember->getNewUser($lastname,$firstname,$pseudo,$mdp,$mail);
+	$subMember= $newMember->getNewUser($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
 	//require("./index.html");
 }
 function adminConnexion($AdminPseudo,$AdminPwd){
@@ -81,5 +85,11 @@ function deletedChapAndComments($idChapter){
 
 	$deletedAllComments= new CommentsManager();
 	$dltAllCommments= $deletedAllComments-> deleteAllComments($idChapter);
-
+}
+function msgPWD($message){
+	$message;
+	require('./view/pages/inscription.php');
+}
+function infoIssues($infoIssues){
+	require('./view/pages/inscription.php');
 }

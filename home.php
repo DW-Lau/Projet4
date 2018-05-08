@@ -37,25 +37,38 @@ if (isset($_GET['action'])){
 		$mail = $_POST['mail'];//ADRESSE MAIL
 
 		if(isset($lastname)&& isset($firstname)&&isset($pseudo)&&isset($mdp)&&isset($mdp1)&&isset($mail)){
+			
+
+			// require ("controller/Back.php");
+			// uniqueNickname($pseudo,$pseudoPresent);
+
 			if ($mdp==$mdp1) {
 				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 					if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
-						require ("controller/Back.php");
-						subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
 						$pseudoPresent=0;
+						require ("controller/Front.php");
+						require ("controller/Back.php");
+						headBand();
+						subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
+						$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
+						infoIssues($infoIssues);
 					}
 					else{
-						require ("controller/Front.php");
-						headBand();
-						echo "Un problème est survenu. Veuillez resaissir vos informations";
+						
+						
+						require ("controller/Back.php");
+						
+						
+						
 					}
 				}//end of regex pwd
 			}else{
+				$message="Les 2 mots de passes ne sont pas correspondant";
 				require ("controller/Front.php");
+				require ("controller/Back.php");
 				headBand();
-				echo "les 2 mots de passe ne sont pas correspondant.</br>
-
-				<a href='./home.php'>Retour à la page d'acceuil .</a>";
+				msgPWD($message);
+				
 			}
 		}//end of if(isset($lastname)&& isset($firstname)&&	.....
 			

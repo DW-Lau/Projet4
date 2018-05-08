@@ -62,6 +62,12 @@ class CommentsManager extends Manager
 		$pbComm->execute(array(
 			'id_comm'=> $warningComm
 		));
+		// $recupIdChap= $bdd->prepare('SELECT id_comm, commentaires.id_chap,chapitres.id FROM commentaires LEFT JOIN chapitres ON commentaires.id_chap=chapitres.id WHERE id_comm=:id_comm');
+		// $idChap=$recupIdChap->execute(array(
+		// 	'id_comm'=> $warningComm
+		// ));
+		//$idChap['id_chap'];
+		//var_dump($idChap['id']);
 		//return $pbComm;
 		header("Location:./home.php?action=chapitres");
 

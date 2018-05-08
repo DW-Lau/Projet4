@@ -34,8 +34,23 @@ class membersManager extends Manager
 		return $isPasswordCorrect; 
 	}
 
-
-	public function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail){
+	// public function uniqueNickName($pseudo,$pseudoPresent){
+	// 	$bdd=$this->dbConnect();
+	// 	/*This part will check if the new member had write a pseudo already taken.*/
+	// 	$verif=$bdd->prepare('SELECT pseudo FROM membres WHERE pseudo=:pseudo LIMIT 0,1');
+	// 	$verif->execute(array(
+	//    			    'pseudo'=>$pseudo
+	//    			));
+	// 	$resultat=$verif->fetch();
+	// //	var_dump($resultat['pseudo']);
+	// 	if($resultat['pseudo']==$pseudo){
+	// 			$pseudoPresent=1;
+	// 			//return $pseudoPresent;
+	// 			// header("Location:./home.php?action=inscription");
+	// 			// echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
+	// 		}
+	// }
+	public function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent){
 		$bdd=$this->dbConnect();
 		/*This part will check if the new member had write a pseudo already taken.*/
 		$verif=$bdd->prepare('SELECT pseudo FROM membres WHERE pseudo=:pseudo LIMIT 0,1');
@@ -43,14 +58,14 @@ class membersManager extends Manager
 	   			    'pseudo'=>$pseudo
 	   			));
 		$resultat=$verif->fetch();
-		var_dump($resultat['pseudo']);
+		//var_dump($resultat['pseudo']);
 		if($resultat['pseudo']==$pseudo){
 				$pseudoPresent=1;
-				//return $pseudoPresent;
-				header("Location:./home.php?action=inscription");
-				echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
+				return $pseudoPresent;
+				// header("Location:./home.php?action=inscription");
+				// echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
 				
-			}//end of the verification.
+		}//end of the verification.
 		else{//If all conditions are true, subscribe
 				var_dump($pseudo);
 				$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
