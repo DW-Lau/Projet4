@@ -63,7 +63,7 @@ class CommentsManager extends Manager
 			'id_comm'=> $warningComm
 		));
 		//return $pbComm;
-		//header("Location:./home.php?action=chapitres");
+		header("Location:./home.php?action=chapitres");
 
 	 }
 	public function getReportingComments(){
@@ -88,6 +88,12 @@ class CommentsManager extends Manager
 		$pbComm->execute(array(
 			'id_comm'=> $id_comm
 		));
+		header("Location:./home.php?action=admin");
+	}
+	public function deleteAllComments($idChapter){
+		$bdd=$this->dbConnect();
+		$dltAllComms=$bdd->prepare('DELETE FROM commentaires WHERE id_chap=?');
+		$eraseComms=$dltAllComms->execute(array($idChapter));
 		header("Location:./home.php?action=admin");
 	}
 }

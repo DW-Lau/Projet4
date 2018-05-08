@@ -58,7 +58,7 @@
 			<?php
 					while ($list=$listChapters->fetch() ) {
 			?>
-			<?php echo $list['titre']?>:<a href="./home.php?action=editChap&amp;id=<?php echo $list['id']; ?>">Modifier</a> <br/>
+			<?php echo $list['titre']?></br><a href="./home.php?action=editChap&amp;id=<?php echo $list['id']; ?>">Modifier</a><a href="./home.php?action=eraseChap&amp;id=<?php echo $list['id']; ?>"> Effacer</a> <br/>
 			<?php
 			}
 			$listChapters->closeCursor();

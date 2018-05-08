@@ -75,3 +75,11 @@ function validationComment($id_comm){
 	$checkingComm= new CommentsManager();
 	$commentOk= $checkingComm-> commentValidation($id_comm);
 }
+function deletedChapAndComments($idChapter){
+	$deletedChapter= new ChaptersManager();
+	$dltOneChapter= $deletedChapter->eraseChapter($idChapter);
+
+	$deletedAllComments= new CommentsManager();
+	$dltAllCommments= $deletedAllComments-> deleteAllComments($idChapter);
+
+}

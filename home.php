@@ -184,6 +184,12 @@ if (isset($_GET['action'])){
 		require("controller/Back.php");
 		validationComment($id_comm);
 	}
+	if ($_GET['action']=='eraseChap') {
+		$idChapter=$_GET['id'];
+		require("controller/Front.php");
+		require("controller/Back.php");
+		deletedChapAndComments($idChapter);
+	}
 }//end of all actions
 ?>
 		

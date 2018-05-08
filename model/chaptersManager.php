@@ -61,4 +61,10 @@ class ChaptersManager extends Manager
 		));
 		header("Location:home.php?action=admin");
 	}
+	public function eraseChapter($idChapter){
+		$bdd=$this->dbConnect();
+		$dltAChap=$bdd->prepare('DELETE FROM chapitres WHERE id=?');
+		$eraseComms=$dltAChap->execute(array($idChapter));
+		header("Location:./home.php?action=admin");
+	}
 }
