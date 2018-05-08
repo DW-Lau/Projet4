@@ -22,7 +22,6 @@ if (isset($_GET['action'])){
 	 	require ("controller/Back.php");
 	 		headBand();
 	 		formulaire();
-
 	 		//subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
 	 		
 
@@ -53,14 +52,6 @@ if (isset($_GET['action'])){
 						$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
 						infoIssues($infoIssues);
 					}
-					else{
-						
-						
-						require ("controller/Back.php");
-						
-						
-						
-					}
 				}//end of regex pwd
 			}else{
 				$message="Les 2 mots de passes ne sont pas correspondant";
@@ -78,11 +69,13 @@ if (isset($_GET['action'])){
 		$checkmdp = $_POST['checkmdp'];
 
 		if ( isset($checkPseudo)&& isset($checkmdp) ){
+			$noNickName=0;
+			$NoMatch=0;
 			require("controller/Front.php");
 			require ("controller/Back.php");	
 			headBand();
-			checkInfo($checkPseudo,$checkmdp);
-			
+			checkInfo($checkPseudo,$checkmdp,$noNickName,$NoMatch);
+			formulaire();
 		}
 
 	}//end of 'logger'

@@ -3,7 +3,7 @@ require_once("manager.php");
 
 class membersManager extends Manager
 {
-	public function checkInfo($checkPseudo,$checkmdp){
+	public function checkInfo($checkPseudo,$checkmdp,$NoMatch){
 		$bdd=$this->dbConnect();
 		$req= $bdd->prepare('SELECT id,mdp FROM membres WHERE pseudo=:pseudo');
 		$req->execute(array(
@@ -15,7 +15,8 @@ class membersManager extends Manager
 		$isPasswordCorrect = password_verify($checkmdp, $resultat['mdp']);
 
 		if (!$resultat){
-	  		echo '<p>Un problème est survenu, veuillez recommencer: </p>';
+			$noNickName="une erreur est survenue";
+			return $noNickName;
 	  		// header("Location:./home.php?action=inscription");
 		}
 		else{
@@ -27,29 +28,14 @@ class membersManager extends Manager
 	        	 header("Location:./home.php");
 	   		}
 	   		else{
-	        echo '<p>Mauvais identifiant ou mot de passe !</p>';
+	   			$NoMatch=1;
+	   			return $NoMatch;
 	  		// header("Location:./home.php?action=inscription");
 	    	}
 		}
 		return $isPasswordCorrect; 
 	}
 
-	// public function uniqueNickName($pseudo,$pseudoPresent){
-	// 	$bdd=$this->dbConnect();
-	// 	/*This part will check if the new member had write a pseudo already taken.*/
-	// 	$verif=$bdd->prepare('SELECT pseudo FROM membres WHERE pseudo=:pseudo LIMIT 0,1');
-	// 	$verif->execute(array(
-	//    			    'pseudo'=>$pseudo
-	//    			));
-	// 	$resultat=$verif->fetch();
-	// //	var_dump($resultat['pseudo']);
-	// 	if($resultat['pseudo']==$pseudo){
-	// 			$pseudoPresent=1;
-	// 			//return $pseudoPresent;
-	// 			// header("Location:./home.php?action=inscription");
-	// 			// echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
-	// 		}
-	// }
 	public function getNewUser($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent){
 		$bdd=$this->dbConnect();
 		/*This part will check if the new member had write a pseudo already taken.*/
@@ -58,12 +44,11 @@ class membersManager extends Manager
 	   			    'pseudo'=>$pseudo
 	   			));
 		$resultat=$verif->fetch();
-		//var_dump($resultat['pseudo']);
+
 		if($resultat['pseudo']==$pseudo){
 				$pseudoPresent=1;
 				return $pseudoPresent;
 				// header("Location:./home.php?action=inscription");
-				// echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
 				
 		}//end of the verification.
 		else{//If all conditions are true, subscribe

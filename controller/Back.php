@@ -8,20 +8,13 @@ require_once("./model/commentsManager.php");
 function adminPage(){
 	require("./view/pages/connexionAdmin.php");
 }
-function checkInfo($checkPseudo,$checkmdp){
-	$checkUser= new membersManager();
-	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp);
-
-	//require("./index.html");
-}
-// function uniqueNickname($pseudo,$pseudoPresent){
-// 	$checkNickName= new membersManager();
-// 	$resultNickName= $checkNickName-> uniqueNickName($pseudo,$pseudoPresent);
-// }
 function formulaire(){
 	require ("./view/pages/inscription.php");
 }
-
+function checkInfo($checkPseudo,$checkmdp,$noNickName,$NoMatch){
+	$checkUser= new membersManager();
+	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp,$noNickName,$NoMatch);
+}
 function subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent){
 	$newMember= new membersManager();
 	$subMember= $newMember->getNewUser($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
@@ -30,9 +23,7 @@ function subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent){
 function adminConnexion($AdminPseudo,$AdminPwd){
 	$adminlog= new membersManager();
 	$infoAdmin= $adminlog->AdminCheckInfo($AdminPseudo,$AdminPwd);
-
 	require("./view/pages/adminPage.php");
-
 }
 function lastUpdate(){
 	$lastChaptPost= new ChaptersManager ();
