@@ -15,12 +15,6 @@ function firstPage(){
 	require("./view/pages/homepage.php");
 }
 
-function footerPage(){
-	$billFooter= new billsCaller();
-	$lastBill=$billFooter->footerBill();
-	require("./view/portions/mentionsLeg.php");
-}
-
 function getAllChaps(){
 	$callChapters= new ChaptersManager();
 	$listChapters=$callChapters-> listChap();
