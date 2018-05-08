@@ -55,7 +55,13 @@
 							}
 							?>
 							<li><a href="./home.php?action=chapitres">Les Chapitres</a></li>
-							<li><a href="./home.php?action=admin">Administrateur</a></li>
+							 <?php
+								if (!isset($_SESSION['id'])|| $_SESSION['id']==115){
+									//var_dump($_SESSION['id']);
+									echo "<li><a href='./home.php?action=admin'>Administrateur</a></li>";
+								}
+							?> 
+							
 							</ul>
 					</nav>
 					<?php

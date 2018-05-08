@@ -150,9 +150,9 @@ if (isset($_GET['action'])){
 	}
 	if ($_GET['action']=='signaler'){
 		$_GET['id'];
-		$_POST['id_chap'];
+		//$_GET['id_chap'];
 
-		var_dump($_GET['id_chap']);
+		//var_dump($_GET['id_chap']);
 		$warningComm=$_GET['id'];
 		//var_dump($warningComm);
 			require("controller/Back.php");

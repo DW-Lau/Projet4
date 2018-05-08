@@ -1,5 +1,6 @@
 <?php
 if(isset($_SESSION["pseudo"])){
+	var_dump($_SESSION['id']);
 	if( ($_SESSION["id"])=="115"){
 	//	header("Location:home.php?action=adminOnly");
 		require("adminPage.php");//temporaire

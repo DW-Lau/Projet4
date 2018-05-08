@@ -24,7 +24,7 @@ class membersManager extends Manager
 	        	$_SESSION['id'] = $resultat['id'];
 	       		$_SESSION['pseudo'] = $checkPseudo;
 	        	echo 'Content de vous revoir '. $_SESSION['pseudo'];
-	        	// header("Location:./home.php");
+	        	 header("Location:./home.php");
 	   		}
 	   		else{
 	        echo '<p>Mauvais identifiant ou mot de passe !</p>';
@@ -45,8 +45,11 @@ class membersManager extends Manager
 		$resultat=$verif->fetch();
 		var_dump($resultat['pseudo']);
 		if($resultat['pseudo']==$pseudo){
-				echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
+				$pseudoPresent=1;
+				//return $pseudoPresent;
 				header("Location:./home.php?action=inscription");
+				echo "Pseudo déjà utilisé. Veuillez en séléctionner un nouveau";
+				
 			}//end of the verification.
 		else{//If all conditions are true, subscribe
 				var_dump($pseudo);
@@ -54,22 +57,39 @@ class membersManager extends Manager
 
 				$user = $bdd->prepare('INSERT INTO membres(id,lastname,firstname,pseudo,mail,mdp) VALUES(id,:lastname,:firstname,:pseudo,:mail,:mdp )');
 				var_dump($pseudo);
-				$infoUser=$user->execute(array(
+				
+			//	$infoUser;
+			//	var_dump($user.'pseudo');
+				$info=$user->execute(array(
 						'lastname'=>$lastname,
 						'firstname'=>$firstname,
 						'pseudo'=>$pseudo,
 						'mail'=>$mail,
 						'mdp'=>$pass_hache
 					));
-				var_dump($infoUser.'pseudo');
+
+				$membreLogin= $bdd->prepare('SELECT id, pseudo FROM membres WHERE pseudo=:pseudo ');
+				$SessionInfos=$membreLogin->execute(array(
+	   			    'pseudo'=>$pseudo
+	   			));
+				var_dump($pseudo);
+				var_dump('id');
+				// $infoUser=$bdd->prepare('SELECT pseudo FROM membres WHERE pseudo=:pseudo');
+				// $newtest=$infoUser->execute(array(
+	  			// 			    'pseudo'=>$pseudo
+	  			// ));
+				// var_dump($newtest.'pseudo');
+			//	var_dump($infoUser.'mdp');
+				//var_dump($_SESSION["pseudo"]);
 				
-				session_start();
-				var_dump($_SESSION["pseudo"]);
+				$_SESSION['id']=$SessionInfos['id'];
+				$_SESSION["pseudo"]=$pseudo;
 				var_dump($_SESSION);
-				$_SESSION['id']=$infoUser.'id';
-				$_SESSION["pseudo"]=$infoUser.'pseudo';
+			//	$_SESSION['id']=$newtest.'id';
+			//	$_SESSION["pseudo"]=$newtest.'pseudo';
 				var_dump($_SESSION["pseudo"]);
-			return $infoUser;
+				header("Location:./home.php");
+		
 			}
 	}
 
