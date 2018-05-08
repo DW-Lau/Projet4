@@ -30,7 +30,7 @@
 								echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
 							}
 						?>
-							<?php echo htmlspecialchars($commentaires['contenu']);?><span class="signaler"><a href="./home.php?action=signaler&amp;id=<?php echo $commentaires['id_comm']; ?>&amp;id=<?php echo $commentaires['id_chap']; ?>"> Signaler ce commentaire</a></span>
+							<?php echo htmlspecialchars($commentaires['contenu']);?><span class="signaler"><a href="./home.php?action=signaler&amp;id=<?php echo $commentaires['id_comm']; ?>"> Signaler ce commentaire</a></span>
 						</p>
 
 					</span>
