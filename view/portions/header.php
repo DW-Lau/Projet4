@@ -1,6 +1,4 @@
-
-
-	<head>
+<head>
 	<meta charset="utf-8">
 
 	<meta name="description" content="Découvert le nouveau roman de Jean Forteroche, 'Billet simple pour Alaska'.(Projet Openclassroom)">
@@ -18,7 +16,7 @@
 		<!--Meta Twitter-->
 	<meta name="twitter:card" content="images/.png">
 	<meta name="twitter:site" content="@laura"> 
-	<meta name="twitter:title" content="Billet simple ppir l'Alaska, par JR">
+	<meta name="twitter:title" content="Billet simple pour l'Alaska, par JR">
 	<meta name="twitter:description" content="Le nouveau roman de Jean ForteRoche"> 
 	<meta name="twitter:creator" content="@author_handle">
 	<meta name="twitter:image:src" content="images.png">
@@ -31,46 +29,60 @@
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+
+	<script src="view/tinymce/js/tinymce/tinymce.min.js"></script>
+	<script>
+		tinymce.init({ 
+			selector:'textarea'
+		});
+	</script>
 	<title>Billet simple pour l'Alaska, par JF</title>
-	</head>
-		<body>	
-			
-			<header>
-				<div id="headR_Home">
-					<h1><a href="./home.php"> "Billet simple pour l'Alaska"</a></h1>
-						<div id="lower_Deco">
-							<div id="line_Ink"><!--Ink line add in css--></div>
-							<h2> Jean Forteroche</h2>
-						</div>
-				</div>
+</head>
+	<body>	
+		<header>
+			<div id="headR_Home">
+				<?php
+	if(file_exists("view/tinymce/js/tinymce/tinymce.min.js")){
+		echo "oui";
+	}else{
+		echo "non";
+	}
+	?>
+				<h1><a href="./home.php"> "Billet simple pour l'Alaska"</a></h1>
+					<div id="lower_Deco">
+						<div id="line_Ink"><!--Ink line add in css--></div>
+						<h2> Jean Forteroche</h2>
+					</div>
+			</div>
 				
-				<div id="nav_Log">
-					<nav>
-						<ul>
-							 <?php
-								if (!isset($_SESSION['pseudo'])){
-							?> 
-							<li><a href="./home.php?action=inscription">Connexion/Inscription</a></li>
-							<?php
+			<div id="nav_Log">
+				<nav>
+					<ul>
+						<?php
+							if (!isset($_SESSION['pseudo'])){
+						?> 
+						<li><a href="./home.php?action=inscription">Connexion/Inscription</a>
+						</li>
+						<?php
 							}
-							?>
-							<li><a href="./home.php?action=chapitres">Les Chapitres</a></li>
-							 <?php
-								if (!isset($_SESSION['id'])|| $_SESSION['id']==115){
-									//var_dump($_SESSION['id']);
-									echo "<li><a href='./home.php?action=admin'>Administrateur</a></li>";
+						?>
+						<li><a href="./home.php?action=chapitres">Les Chapitres</a>
+						</li>
+						<?php
+							if (!isset($_SESSION['id'])|| $_SESSION['id']==115){
+								echo "<li><a href='./home.php?action=admin'>Administrateur</a></li>";
 								}
-							?> 
+						?> 
 							
-							</ul>
-					</nav>
+					</ul>
+				</nav>
 					<?php
 						if (isset($_SESSION['pseudo'] ) ) {
-						echo "<p> Bonjour ".$_SESSION['pseudo']."<br/><a href='./home.php?action=logOut'>Déconnexion</a><p>";
-					}
+							echo "<p> Bonjour ".$_SESSION['pseudo']."<br/><a href='./home.php?action=logOut'>Déconnexion</a><p>";
+						}
 					?>
 					
-				</div>
-			</header>
-		<body>
+			</div>
+		</header>
+	</body>
 		

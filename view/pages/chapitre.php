@@ -44,7 +44,7 @@
 						<form id="getNewComment" action="./home.php?action=ValiderComment&amp;id=<?php echo $_GET['id']; ?>" method="post">
 							<!-- <label>Pseudo:<input type="text" name="nickname" id="nickname" value="<?php //echo htmlspecialchars($_SESSION['pseudo']);?>" required/></label> -->
 							<label>Pseudo:<?php echo htmlspecialchars($_SESSION['pseudo']);?></label> 
-							<textarea class="tinymce" name="tinymce"></textarea>
+							<textarea id="tinymce" name="tinymce"></textarea>
 							<input type="submit" id="save" value="Valider" />
 						</form>
 								
@@ -65,9 +65,10 @@
 	
 
 			<!-- javascript -->
-			<script type="text/javascript" src="./view/plugins/tinymce/init-tinymce.js"></script>
-			<script type="text/javascript" src="./view/plugins/tinymce/jquery.tinymce.min.js"></script>
-			<script type="text/javascript" src="./view/plugins/tinymce/tinymce.min.js"></script>
+			<!--  <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> -->
+		<!-- 	<script src="./view/plugins/tinymce/init-tinymce.js"></script>
+			<script src="./view/plugins/tinymce/jquery.tinymce.min.js"></script> -->
+			<script src="./view/tinymce/tinymce.min.js"></script>
 
 </body>
 </html>
