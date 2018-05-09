@@ -36,11 +36,6 @@ if (isset($_GET['action'])){
 		$mail = $_POST['mail'];//ADRESSE MAIL
 
 		if(isset($lastname)&& isset($firstname)&&isset($pseudo)&&isset($mdp)&&isset($mdp1)&&isset($mail)){
-			
-
-			// require ("controller/Back.php");
-			// uniqueNickname($pseudo,$pseudoPresent);
-
 			if ($mdp==$mdp1) {
 				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 					if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
@@ -69,13 +64,14 @@ if (isset($_GET['action'])){
 		$checkmdp = $_POST['checkmdp'];
 
 		if ( isset($checkPseudo)&& isset($checkmdp) ){
-			$noNickName=0;
-			$NoMatch=0;
+			$noNickName="Aucun pseudo reconnu";
+			$NoMatch="Pseudo ou mot de passe incorrect";
 			require("controller/Front.php");
 			require ("controller/Back.php");	
 			headBand();
-			checkInfo($checkPseudo,$checkmdp,$noNickName,$NoMatch);
-			formulaire();
+			checkInfo($checkPseudo,$checkmdp);
+			noNickName($noNickName);
+			NoMatch($NoMatch);
 		}
 
 	}//end of 'logger'

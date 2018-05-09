@@ -11,9 +11,9 @@ function adminPage(){
 function formulaire(){
 	require ("./view/pages/inscription.php");
 }
-function checkInfo($checkPseudo,$checkmdp,$noNickName,$NoMatch){
+function checkInfo($checkPseudo,$checkmdp){
 	$checkUser= new membersManager();
-	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp,$noNickName,$NoMatch);
+	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp);
 }
 function subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent){
 	$newMember= new membersManager();
@@ -82,5 +82,13 @@ function msgPWD($message){
 	require('./view/pages/inscription.php');
 }
 function infoIssues($infoIssues){
+	require('./view/pages/inscription.php');
+}
+function noNickName($noNickName){
+	$noNickName;
+	//require('./view/pages/inscription.php');
+}
+function NoMatch($NoMatch){
+	$NoMatch;
 	require('./view/pages/inscription.php');
 }

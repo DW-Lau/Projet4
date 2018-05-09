@@ -3,7 +3,7 @@ require_once("manager.php");
 
 class membersManager extends Manager
 {
-	public function checkInfo($checkPseudo,$checkmdp,$NoMatch){
+	public function checkInfo($checkPseudo,$checkmdp){
 		$bdd=$this->dbConnect();
 		$req= $bdd->prepare('SELECT id,mdp FROM membres WHERE pseudo=:pseudo');
 		$req->execute(array(
@@ -15,9 +15,7 @@ class membersManager extends Manager
 		$isPasswordCorrect = password_verify($checkmdp, $resultat['mdp']);
 
 		if (!$resultat){
-			$noNickName="une erreur est survenue";
-			return $noNickName;
-	  		// header("Location:./home.php?action=inscription");
+			
 		}
 		else{
 	    	if ($isPasswordCorrect) {
@@ -28,9 +26,11 @@ class membersManager extends Manager
 	        	 header("Location:./home.php");
 	   		}
 	   		else{
-	   			$NoMatch=1;
-	   			return $NoMatch;
-	  		// header("Location:./home.php?action=inscription");
+	   			// $NoMatch;
+	   			// echo "<p>".$NoMatch."</p>";
+	   			
+	   			//return $NoMatch;
+	  		 //header("Location:./home.php?action=inscription");
 	    	}
 		}
 		return $isPasswordCorrect; 

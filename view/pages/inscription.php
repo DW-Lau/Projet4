@@ -62,7 +62,7 @@
 							echo "<p>".$noNickName."</p>";
 						}
 						if(isset($NoMatch)){
-							echo "<p>Pseudo ou mot de passe incorrect</p>";
+							echo "<p>".$NoMatch."</p>";
 						}
 						?>
 			</div>
