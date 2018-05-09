@@ -41,13 +41,13 @@
 	<body>	
 		<header>
 			<div id="headR_Home">
-				<?php
-	if(file_exists("view/tinymce/js/tinymce/tinymce.min.js")){
-		echo "oui";
-	}else{
-		echo "non";
+<!-- 				<?php
+//	if(file_exists("view/tinymce/js/tinymce/tinymce.min.js")){
+	//	echo "oui";
+//	}else{
+//		echo "non";
 	}
-	?>
+	?> -->
 				<h1><a href="./home.php"> "Billet simple pour l'Alaska"</a></h1>
 					<div id="lower_Deco">
 						<div id="line_Ink"><!--Ink line add in css--></div>
