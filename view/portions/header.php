@@ -47,7 +47,7 @@
 //	}else{
 //		echo "non";
 	//}
-	//?> -->
+	//s?> -->
 				<h1><a href="./home.php"> "Billet simple pour l'Alaska"</a></h1>
 					<div id="lower_Deco">
 						<div id="line_Ink"><!--Ink line add in css--></div>
