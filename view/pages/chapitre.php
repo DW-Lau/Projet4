@@ -21,7 +21,7 @@
 			?>
 				<span class="commChapter">
 					<span class="membreComm">
-						<strong><?php echo htmlspecialchars($commentaires['membre']);?></strong>
+						<strong><?php echo htmlspecialchars($commentaires['id_membre']);?></strong>
 					
 						à posté le : <?php echo htmlspecialchars($commentaires['date_poste_fr']);?></br>
 						<p>
@@ -30,7 +30,7 @@
 								echo '<span class="attentionRequired"> Vérification du contenu en cours</span>';
 							}
 						?>
-							<?php echo htmlspecialchars($commentaires['contenu']);?><span class="signaler"><a href="./home.php?action=signaler&amp;id=<?php echo $commentaires['id_comm']; ?>"> Signaler ce commentaire</a></span>
+							<?= nl2br($commentaires['contenu']);?><span class="signaler"><a href="./home.php?action=signaler&amp;id=<?php echo $commentaires['id_comm']; ?>&amp;id_chap=<?php echo $commentaires['id_chap']; ?>"> Signaler ce commentaire</a></span>
 						</p>
 
 					</span>

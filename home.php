@@ -151,10 +151,12 @@ if (isset($_GET['action'])){
 		editChapter();
 	}
 	if ($_GET['action']=='signaler'){
+		$_GET['id_chap'];
+		$idChap=$_GET['id_chap'];
 		$_GET['id'];
 		$warningComm=$_GET['id'];
 			require("controller/Back.php");
-			updateWarningComm($warningComm);
+			updateWarningComm($warningComm,$idChap);
 
 
 	}

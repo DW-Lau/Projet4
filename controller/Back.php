@@ -41,9 +41,9 @@ function lastUpdate(){
 
 	require("./view/pages/adminPage.php");
 }
-function updateWarningComm($warningComm){
+function updateWarningComm($warningComm,$idChap){
 	$signalement= new CommentsManager();
-	$warningComment=$signalement->signalComm($warningComm);
+	$warningComment=$signalement->signalComm($warningComm,$idChap);
 	
 }
 function postChap($titleChap,$textChap){
