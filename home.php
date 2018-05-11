@@ -1,15 +1,14 @@
 <?php
 session_start();
 
-
-
 if (!(isset($_GET['action']) ) ) {
 	require("controller/Front.php");
 		headBand();
-		getAllChaps();
-		
+		getAllChaps();	
 }
+
 if (isset($_GET['action'])){
+
 	if($_GET['action']=='logOut'){
 		session_destroy();
 		header("Location:home.php");
@@ -19,9 +18,6 @@ if (isset($_GET['action'])){
 	 	require ("controller/Back.php");
 	 		headBand();
 	 		formulaire();
-	 		//subscribe($lastname,$firstname,$pseudo,$mdp,$mail);
-	 		
-
 	}//end of $_GET['action']=='inscription'		
 
 	if ($_GET['action']=='subscribeMember') {
@@ -86,7 +82,6 @@ if (isset($_GET['action'])){
 		require("controller/Back.php");
 		headBand();
 		adminPage();
-		
 		//require("view/pages/connexionAdmin.php");
 	}
 	if($_GET['action']=='adminOnly'){
@@ -137,8 +132,8 @@ if (isset($_GET['action'])){
 		require("controller/Front.php");
 		require("controller/Back.php");
 		headBand();
-		lastUpdate();
 		postChap($titleChap,$textChap);
+		lastUpdate();
 	}
 	if ($_GET['action']=='editChap') {
 		$chapEdit=$_GET['id'];
@@ -154,8 +149,6 @@ if (isset($_GET['action'])){
 		$warningComm=$_GET['id'];
 			require("controller/Back.php");
 			updateWarningComm($warningComm,$idChap);
-
-
 	}
 		if($_GET['action']=='reEdit'){
 			$idEdit=$_GET['id'];
@@ -186,6 +179,12 @@ if (isset($_GET['action'])){
 		require("controller/Front.php");
 		require("controller/Back.php");
 		deletedChapAndComments($idChapter);
+	}
+}
+else{
+	if(!(isset($_GET['action']) ) || $_GET['action']!='eraseChap'||$_GET['action']!='commentChecked' || $_GET['action']!='deleteComm' || $_GET['action']!='reEdit' ||$_GET['action']!='signaler' || $_GET['action']!='editChap' || $_GET['action']!='postChap'||$_GET['action']!='ValiderComment'|| $_GET['action']!='selectionchapitre' || $_GET['action']!='chapitres' || $_GET['action']!='adminOnly' || $_GET['action']!='admin' ||$_GET['action']!='logger'  ||$_GET['action']!='subscribeMember'||$_GET['action']!='inscription' ||$_GET['action']!='logOut'  ){
+
+		echo " Ceci n'est pas une commande valable. Veuilliez retournez sur le blog. <a href='./home.php'>Billet simple pour l\'Alaska. </a>";
 	}
 }//end of all actions
 ?>
