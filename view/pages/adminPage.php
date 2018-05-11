@@ -16,7 +16,7 @@
 			while ($commentUpdate=$lastCommentPost->fetch() ) {
 		?>
 		<p>
-			<strong> Message:</strong> "<?php echo htmlspecialchars($commentUpdate['contenu']);?> ", <strong> écrit par:</strong> <?php echo htmlspecialchars($commentUpdate['membre']);?>.
+			<strong> Message:</strong> "<?php echo htmlspecialchars($commentUpdate['contenu']);?> ", <strong> écrit par:</strong> <?php echo htmlspecialchars($commentUpdate['id_membre']);?>.
 			<br/><strong> Au chapitre:</strong> <?php echo htmlspecialchars($commentUpdate['titre']);?>
 			<a href="./home.php?action=selectionchapitre&amp;id=<?php echo $commentUpdate['id_chap']; ?>">Aller vers</a>
 		</p>
@@ -42,7 +42,7 @@
 				while ($listReportedComm= $reportedComments-> fetch() ) {
 			?>
 			<p>Message: <?php echo htmlspecialchars($listReportedComm['contenu']);?> <br/>
-				Ecrit par: <?php echo htmlspecialchars($listReportedComm['membre']);?> le: <?php echo htmlspecialchars($listReportedComm['date_poste_fr']);?>
+				Ecrit par: <?php echo htmlspecialchars($listReportedComm['id_membre']);?> le: <?php echo htmlspecialchars($listReportedComm['date_poste_fr']);?>
 			</br><a href="./home.php?action=deleteComm&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Supprimer</a><a href="./home.php?action=commentChecked&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Valider</a>
 			</p>
 			<?php

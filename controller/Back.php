@@ -49,12 +49,12 @@ function updateWarningComm($warningComm,$idChap){
 function postChap($titleChap,$textChap){
 	$postNewChap=new chaptersManager();
 	$newChapter= $postNewChap->postChapter($titleChap,$textChap);
-	//require("./view/pages/adminPage.php?action=adminOnly");
+	//require("./view/pages/adminPage.php?action=admin");
 }
 function editChapter(){
 	$callChapters= new ChaptersManager();
 	$pickOneChap=$callChapters->oneChap();
-	require("./view/pages/editChapter.php");
+	//require("./view/pages/editChapter.php");
 }
 function reEditChap($idEdit,$titleEdit,$textEdit){
 	$editChapter= new ChaptersManager();

@@ -96,7 +96,6 @@ class membersManager extends Manager
 	public function AdminCheckInfo($AdminPseudo,$AdminPwd){
 		$bdd=$this->dbConnect();
 		$idAdmin="115";
-	//	var_dump($idAdmin);
 		$req= $bdd->prepare('SELECT * FROM membres WHERE id=:id AND pseudo=:pseudo');
 		$req->execute(array(
 					'id'=>$idAdmin,
