@@ -92,3 +92,6 @@ function NoMatch($NoMatch){
 	$NoMatch;
 	require('./view/pages/inscription.php');
 }
+function sessionOut(){
+	require('./home.php');
+}

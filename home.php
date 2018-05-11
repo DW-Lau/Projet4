@@ -12,10 +12,7 @@ if (!(isset($_GET['action']) ) ) {
 if (isset($_GET['action'])){
 	if($_GET['action']=='logOut'){
 		session_destroy();
-		require("controller/Front.php");
-		headBand();
-		getAllChaps();
-		// header("Location:home.php");
+		header("Location:home.php");
 	}
 	if($_GET['action']=='inscription'){
 		require("controller/Front.php");
