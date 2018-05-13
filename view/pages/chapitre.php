@@ -13,7 +13,7 @@
 			?>
 		</article>
 
-		<article id="showComms" style="overflow:unset;">
+		<article id="showComms">
 			<h4>Commentaires:</h4>
 			<?php
 				if( isset($_SESSION['pseudo']) ){		
@@ -47,27 +47,19 @@
 							<textarea id="tinymce" name="tinymce"></textarea>
 							<input type="submit" id="save" value="Valider" />
 						</form>
-								
+							
 					</div> 
 					<?php
 					}//end of pseudo session condition
 					else{
-							echo "<p class='restrictionMembre'>Vous devez être connecté pour avoir accès aux commentaires.</p>";
+							echo "<p class='restrictionMembre'>Vous devez être <a href='./home.php?action=inscription'>connecté </a> pour avoir accès aux commentaires.</p>";
 						}
 					?>
 		</article>		
 
-							
-					
 				</div>
 			</section>
 
-	
-
-			<!-- javascript -->
-			<!--  <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script> -->
-		<!-- 	<script src="./view/plugins/tinymce/init-tinymce.js"></script>
-			<script src="./view/plugins/tinymce/jquery.tinymce.min.js"></script> -->
 			<script src="./view/tinymce/tinymce.min.js"></script>
 
 </body>

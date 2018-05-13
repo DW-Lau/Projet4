@@ -26,7 +26,7 @@ h3{/*Article*/
 	text-align: center;
 	font-family: 'Dancing Script', cursive;
 }
-h4{/*footer and aside*/
+h4{
 	font-family: 'Courgette', cursive;
 	margin:0px;
 	text-align: center;
@@ -35,12 +35,20 @@ h4{/*footer and aside*/
    background: #0B8AA1;
 	color:white;
 }
+h5 a{
+	font-family: 'Helvetica';
+	font-size: 1.2em;
+	color: white;
+	margin: 0px;
+}
 h5{
-	background: #052942;
+	background:  #0B8AA1;
 	margin:5px;
+	text-align: center;
 }
 p{
 	font-family: 'Raleway', sans-serif;
+	text-align: justify;
 }
 #headR_Home{
 	height:120px;
@@ -55,6 +63,7 @@ p{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	width: 35%;
 }
 
 #deco_In_Header{
@@ -81,7 +90,7 @@ section{
 	justify-content: space-around;
 }
 /*Article*/
-
+/*
 #chaps{
 	display: flex;
 	flex-direction: column;
@@ -120,7 +129,7 @@ section{
 	height: inherit;
 	border: solid #052942 2px;
 	border-radius: 10px;
-}
+}*/
 /*Fin article/ END ARTICLE*/
 
 /*DEBUT ASIDE*/
@@ -134,118 +143,44 @@ aside{
 	overflow: auto;
 }
 
-#block{/*Container for both aside part*/
-	display: flex;
-	flex-direction: column;
-	text-align: justify;
-	
-	justify-content: space-around;
-	width:25%;
-	height: 675px;
-	margin: auto;
-}
-.new_Note{
-	font-size: 0.9em;
-}
-/*FIN ASIDE*/
-
-/*Fin de section*/
-footer{
-	background:#5cadd395;
-	border: double #052942 5px;
-	height: 120px;
-}
-footer h4{
-font-size: 1em;
-	border:0px;
-	margin: 0px;
-	background: #052942;
-	color:white;
-}
-footer p{
-	margin: 0px;
-}
-
-p.bottom{
-	text-align: center;
-  	font-family: 'Raleway', sans-serif;
-  	display: flex;
-  	flex-direction: column;
-}
-
-.bottom a{
-	color:white;
-	text-transform: uppercase;
-}
-
-#mentions_Infos{
-	display: flex;
-	height: inherit;
-}
-
-
-
-#comptes_inscriptions,#contacts,#last_billet{
-	width:50%;
-	background: #0B8AA1;
-	overflow: auto;
-	border-right: solid 2px #052942;
-	height:inherit;
-
-}
-#contact{
-	background-color: inherit;
-	display: flex;
-	align-items: center;
-	
-}
-#contact p{
-font-size: 1em;
-}
-h6{
-	margin:0px;
-	text-align: center;
-	font-size: 0.9em;
-}
 /*Fin Page HOME*/
 #authorDeco{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
-/*beginning of inscription.php*/
-#secondSideDeco{/*this "div" is pretty much the same as sideDeco, but it only on the inscription.php */
+#secondSideDeco{
 	margin: auto;
 	background: white;
 	width:80%;
 	height: inherit;
-	border-left: solid #052942;
-	border-right:  solid #052942;
+	border-left: solid #052942 1px;
+    border-right: solid #052942 1px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/*overflow: auto;*/
+}
+#rules{
+	margin: 10px;
+	width: 80%;
+	border-bottom: solid 1px #052942;
 }
 #subBlock{
 	display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    text-align: left;
     width: 80%;
-    height: 500px;
+    height: 570px;
+    margin-bottom: 10px;
     padding:10px;
-    border:#052460 inset 5px;
     background: rgba(37,138,161, 0.2);
 }
- #rules{
-	margin: 10px;
-	width: 80%;
-	border-bottom: double 5px #052942;
-}
 .formulaires{
-	width: 80%;
+	background: #ffffffb5;
+	width: 60%;
 	margin: auto;
-
+	border-left: solid 1px #052942;
+	border-right: solid 1px #052942;
+    padding: 5px;
 }
 form{
 	display: flex;
@@ -254,17 +189,17 @@ form{
 	font-family: 'Arial';
 }
 form input{
-	width:50%;
+	width:60%;
 	float: right;
 }
-/*---CHAPTERS---*/
-h5 a{
-	font-family: 'Helvetica';
-	font-size: 1.2em;
-	color: white;
-	margin: 0px;
+#valide, #validation, #save{
+	background: white;
+    border-radius: 5px;
+    box-shadow: none;
+    margin: auto;
+    margin-top: 5px;
 }
-
+/*---CHAPTERS---*/
 #introChapters{
 	height:110px;
 	text-align: center;
@@ -279,8 +214,7 @@ width: 100%;
 	margin: 0px;
 }
 .thumbnail{
-	border: inset 5px #052942;
-	border-radius: 5px;
+	border-bottom: solid 1px #052942;
 	margin: auto;
 	padding: 5px;
 	width: 85%;
@@ -300,50 +234,41 @@ width: 100%;
 	margin: auto;
 	background: white;
 	width:80%;
-	/*height: inherit;*/
-	border-left: solid #052942;
-	border-right:  solid #052942;
+	border-left: solid 1px #052942;
+	border-right:  solid  1px #052942;
 	display: flex;
 	flex-direction: column;
-/*	overflow: auto;*/
 }
-aside #showComms{
-	overflow: unset;
+#showComms{
+	width: 90%;
+    margin: auto;
 }
-/*SCROLL BAR*/
-/* width */
-/*::-webkit-scrollbar {
-    width: 10px;
-}
-*/
-/* Track */
-/*::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-}*/
- 
-/* Handle */
-/*::-webkit-scrollbar-thumb {
-    background: #888; 
-}*/
-
-/* Handle on hover */
-/*::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-}*/
 .commChapter{
-color: black;
-margin:auto;
-width: 80%
+	color: black;
+	margin:auto;
+	width: 80%
+}
+.restrictionMembre{
+	text-align: center;
+	font-size: 1.1em;
+}
+.restrictionMembre a{
+color:  #052942;
+font-style: italic;
 }
 .membreComm{
-	
 	font-size: 1em;
 	margin:2px;
+}
+.attentionRequired{
+	color: #258aa1;
+    font-style: italic;
+    font-size: 0.7em;
 
 }
 .signaler{
 	color:#0B8AA1;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	font-style: italic;
 	padding-left: 5px;
 }
@@ -393,8 +318,4 @@ font-size: 0.8em;
 	width: 75%;
     border-left: 2px #052942 solid;
     padding: 5px;
-}
-.attentionRequired{
-	color: #258aa1;
-    font-style: italic;
 }
