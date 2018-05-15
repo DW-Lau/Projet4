@@ -5,7 +5,7 @@ body{
 /*Page HOME*/
 
 /*Debut HEADER*/
-header{/*Même propriétés que stylesA.css*/
+header{
 	background: white;
 	border-bottom: 5px double #052942;
 	height: 165px;
@@ -48,11 +48,10 @@ h5{
 }
 p{
 	font-family: 'Raleway', sans-serif;
-	text-align: justify;
+	
 }
 #headR_Home{
 	height:120px;
-	background: white;
 	display: flex;
 	flex-direction: column;
 	width:65%;
@@ -78,72 +77,6 @@ section{
 	/*height: 790px;*/
 }
 
-#sideDeco{/*Div contenant aside et article*/
-	margin: auto;
-	background: white;
-	width:80%;
-	height: inherit;
-	border-left: solid #052942;
-	border-right:  solid #052942;
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-around;
-}
-/*Article*/
-/*
-#chaps{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 5px;
-	width: 70%;
-	border-left: solid 2px #052942;
-	border-right: solid 2px #052942;
-}
-#chaptersColumns{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	height: 620px;
-}
-#chaps p{
-	font-size: 0.8em;
-	margin: 0px;
-	padding: 5px;
-	text-align: justify;
-}
-.lastsChapts{
-	margin-top: 10px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	height:150px;
-	width: 85%;
-}
-.lastsChapts a{
-	color:#0B8AA1;
-	font-size: 1em;
-	font-family: 'Raleway';
-}
-#imgThumb{
-	height: inherit;
-	border: solid #052942 2px;
-	border-radius: 10px;
-}*/
-/*Fin article/ END ARTICLE*/
-
-/*DEBUT ASIDE*/
-
-aside{
-	display: flex;
-	flex-direction: column;
-	margin: 5px;
-	border-bottom:solid #052942 2px;
-	height: 240px;
-	overflow: auto;
-}
-
-/*Fin Page HOME*/
 #authorDeco{
 	display: flex;
 	flex-direction: column;
@@ -192,16 +125,18 @@ form input{
 	width:60%;
 	float: right;
 }
-#valide, #validation, #save{
+#valide, #validation, #save, #send,#edit{
 	background: white;
     border-radius: 5px;
     box-shadow: none;
     margin: auto;
     margin-top: 5px;
+    font-size: 1em;
+    font-family: 'Raleway';
 }
 /*---CHAPTERS---*/
 #introChapters{
-	height:110px;
+	height:inherit;
 	text-align: center;
 	width: 80%
 }
@@ -273,6 +208,17 @@ font-style: italic;
 	padding-left: 5px;
 }
 /*FORM ADMIN*/
+p.warningAcces{
+	font-size: 1.2em;
+	height: 700px;
+}
+p.warning{
+
+	font-style: italic;
+	font-size: 0.9em;
+	margin: 5px;
+	margin-bottom: 5px;
+}
 #AdminConnexion{
 	background: white;
     border: #052942 2px inset;
@@ -300,6 +246,9 @@ font-size: 0.8em;
 .maj{
 	text-transform: uppercase;
 }
+#editChapitre{
+	margin: 50px;
+}
 #adminPannel{
 	display: flex;
     flex-direction: row-reverse;
@@ -312,10 +261,37 @@ font-size: 0.8em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	background:rgba(255, 255, 255, 0.1);
+	align-items: center;
+}
+#CommAdmin,#ChapAdmin{
+	text-align: center;
+	margin-bottom: 10px;
 }
 #WrittingChap{
 	background: white;
 	width: 75%;
     border-left: 2px #052942 solid;
     padding: 5px;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#deletButton, #okButton,#changeButton, #deleteChap{
+	margin: 10px;
+    padding: 5px;
+    font-size: 0.9em;
+    
+}
+#deletButton a, #okButton a,#changeButton a, #deleteChap a{
+	color: #052942;
+
+}
+#deletButton a,#deleteChap a {
+	border-bottom:#ff00006b solid 2px;
+	border-radius: 5px;
+}
+#okButton a,#changeButton a{
+	border-bottom:#052942 solid 2px;
+	border-radius: 5px;
 }

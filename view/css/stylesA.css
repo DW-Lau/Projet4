@@ -1,9 +1,7 @@
-/*Debut HEADER*/
+/*------------------Beginning of HEADER----------------------*/
 a{
 	text-decoration: none;
 }
-
-
 header{
 	display: flex;
 }
@@ -42,8 +40,8 @@ h2{
 	transform:scaleX(-1);
 }
 
-/*Fin HEADER*/
-
+/*end HEADER*/
+/*-----------------INDEX.PHP CSS STYLES--------------------*/
 
 #bot{
 	background:rgba(255,255,255,0.8);
