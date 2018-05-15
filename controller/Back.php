@@ -2,7 +2,6 @@
 /*----------------REQUIRE TO ADMINPAGE----------------*/
 require_once("./model/adminManager.php");
 require_once("./model/chaptersManager.php");
-require_once("./model/billetsManager.php");
 require_once("./model/commentsManager.php");
 
 function adminPage(){
