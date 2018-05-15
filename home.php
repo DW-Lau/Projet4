@@ -9,10 +9,12 @@ if (!(isset($_GET['action']) ) ) {
 
 if (isset($_GET['action'])){
 
-	if($_GET['action']=='logOut'){
+	if($_GET['action']=='logOut'){//log ou session
 		session_destroy();
 		header("Location:home.php");
 	}
+
+/*--------------------------------LOGIN / SUBSCRIBE----------------------------------------*/
 	if($_GET['action']=='inscription'){
 		require("controller/Front.php");
 	 	require ("controller/Back.php");
@@ -20,7 +22,7 @@ if (isset($_GET['action'])){
 	 		formulaire();
 	}//end of $_GET['action']=='inscription'		
 
-	if ($_GET['action']=='subscribeMember') {
+	if ($_GET['action']=='subscribeMember') {//
 		$lastname = htmlspecialchars($_POST['lastname']);
 		$firstname= htmlspecialchars($_POST['firstname']);
 		$pseudo = htmlspecialchars($_POST['pseudo']);//PSEUDO
@@ -33,12 +35,12 @@ if (isset($_GET['action'])){
 				if ( preg_match ("#^[a-zA-Z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#", $_POST['mail']) ) {
 					if ( isset($lastname)&& isset($firstname)&&isset($pseudo)&&($mdp==true)&&($mail== true) ) {
 						$pseudoPresent=0;
-						require ("controller/Front.php");
-						require ("controller/Back.php");
-						headBand();
-						subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
+							require ("controller/Front.php");
+							require ("controller/Back.php");
+							headBand();
+							subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
 						$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
-						infoIssues($infoIssues);
+							infoIssues($infoIssues);
 					}
 				}//end of regex pwd
 			}else{
@@ -59,16 +61,19 @@ if (isset($_GET['action'])){
 		if ( isset($checkPseudo)&& isset($checkmdp) ){
 			$noNickName="Aucun pseudo reconnu";
 			$NoMatch="Pseudo ou mot de passe incorrect";
-			require("controller/Front.php");
-			require ("controller/Back.php");	
-			headBand();
-			checkInfo($checkPseudo,$checkmdp);
-			noNickName($noNickName);
-			NoMatch($NoMatch);
+				require("controller/Front.php");
+				require ("controller/Back.php");	
+				headBand();
+				checkInfo($checkPseudo,$checkmdp);
+				noNickName($noNickName);
+				NoMatch($NoMatch);
 		}
 
 	}//end of 'logger'
-	
+
+/*--------------------------------END OF SUBSCRIB/ LOGIN----------------------------------------*/
+
+/*--------------------------------ADMIN LOG IN----------------------------------------*/
 	if($_GET['action']=='admin'){
 		if (isset($_SESSION["pseudo"])) {
 			if( ($_SESSION["id"])=="115"){
@@ -76,23 +81,23 @@ if (isset($_GET['action'])){
 				require("controller/Back.php");
 				headBand();
 				lastUpdate();
-			}
+			}/*End of id's check*/
 		}
 		require("controller/Front.php");
 		require("controller/Back.php");
 		headBand();
 		adminPage();
-		//require("view/pages/connexionAdmin.php");
-	}
+	}//end of 'admin'
+
 	if($_GET['action']=='adminOnly'){
 		if (!isset($AdminPseudo)&& !isset($AdminPwd)) {
 			$AdminPseudo=htmlspecialchars($_POST['IdAdmin']);
 			$AdminPwd=$_POST['PwdAdmin'];
-			require("controller/Front.php");
-			require("controller/Back.php");
-			headBand();
-			lastUpdate();
-			adminConnexion($AdminPseudo,$AdminPwd);
+				require("controller/Front.php");
+				require("controller/Back.php");
+				headBand();
+				lastUpdate();
+				adminConnexion($AdminPseudo,$AdminPwd);
 		}else{
 			require("controller/Front.php");
 			require("controller/Back.php");
@@ -101,46 +106,64 @@ if (isset($_GET['action'])){
 			adminConnexion($AdminPseudo,$AdminPwd);
 			
 		}
-	}
+	}//END 'adminOnly'
+/*--------------------------------END OF ADMIN CONNEXION----------------------------------------*/
+/*--------------------------------CHAPTERS----------------------------------------*/
  	if ($_GET['action']=='chapitres') {
 		require("controller/Front.php");
 		headBand();
 		getAllChaps();
 	}
+
 	if($_GET['action']=='selectionchapitre'){
 		require("controller/Front.php");
 		headBand();
 		getOneChap();
 	} 	
 
-	if($_GET['action']=='ValiderComment'){
-		$_GET['id'];
-		//var_dump($_GET['id']);
-		$idChap=$_GET['id'];
-		//$pseudoComment=$_POST['nickname'];
-			 $pseudoComment=$_SESSION['pseudo'];
-		$textComment=$_POST['tinymce'];
-		//var_dump($pseudoComment);
-		 		require("controller/Front.php");
-		 		headBand();
-		 		//getOneChap();
-		addComments($pseudoComment,$textComment,$idChap);		
-	}
 	if ($_GET['action']=='postChap') {
 		$titleChap=$_POST['title'];
 		$textChap=$_POST['tinymce_Chap'];
-		require("controller/Front.php");
-		require("controller/Back.php");
-		headBand();
-		postChap($titleChap,$textChap);
-		lastUpdate();
+			require("controller/Front.php");
+			require("controller/Back.php");
+			headBand();
+			postChap($titleChap,$textChap);
+			lastUpdate();
 	}
+
 	if ($_GET['action']=='editChap') {
 		$chapEdit=$_GET['id'];
-		require("controller/Front.php");
-		require("controller/Back.php");
-		headBand();
-		editChapter();
+			require("controller/Front.php");
+			require("controller/Back.php");
+			headBand();
+			editChapter();
+	}
+
+	if($_GET['action']=='reEdit'){
+		$idEdit=$_GET['id'];
+		$titleEdit=$_POST['title'];
+		$textEdit=$_POST['tinymce_Chap'];
+			require("controller/Front.php");
+			require("controller/Back.php");
+			headBand();
+			lastUpdate();
+			reEditChap($idEdit,$titleEdit,$textEdit);
+		}
+	if ($_GET['action']=='eraseChap') {
+		$idChapter=$_GET['id'];
+			require("controller/Front.php");
+			require("controller/Back.php");
+			deletedChapAndComments($idChapter);
+	}
+/*--------------------------------COMMENTS----------------------------------------*/
+	if($_GET['action']=='ValiderComment'){
+		$_GET['id'];
+		$idChap=$_GET['id'];
+		$pseudoComment=$_SESSION['pseudo'];
+		$textComment=$_POST['tinymce'];
+		 	require("controller/Front.php");
+		 	headBand();
+			addComments($pseudoComment,$textComment,$idChap);		
 	}
 	if ($_GET['action']=='signaler'){
 		$_GET['id_chap'];
@@ -150,36 +173,22 @@ if (isset($_GET['action'])){
 			require("controller/Back.php");
 			updateWarningComm($warningComm,$idChap);
 	}
-		if($_GET['action']=='reEdit'){
-			$idEdit=$_GET['id'];
-			$titleEdit=$_POST['title'];
-			$textEdit=$_POST['tinymce_Chap'];
-			require("controller/Front.php");
-			require("controller/Back.php");
-			headBand();
-			lastUpdate();
-			reEditChap($idEdit,$titleEdit,$textEdit);
 
-		}
+
 	if($_GET['action']=='deleteComm'){
 		$id_comm=$_GET['id'];
-
-		require("controller/Front.php");
-		require("controller/Back.php");
-		deletedComment($id_comm);
+			require("controller/Front.php");
+			require("controller/Back.php");
+			deletedComment($id_comm);
 	}
+
 	if($_GET['action']=='commentChecked'){
 		$id_comm=$_GET['id'];
-		require("controller/Front.php");
-		require("controller/Back.php");
-		validationComment($id_comm);
+			require("controller/Front.php");
+			require("controller/Back.php");
+			validationComment($id_comm);
 	}
-	if ($_GET['action']=='eraseChap') {
-		$idChapter=$_GET['id'];
-		require("controller/Front.php");
-		require("controller/Back.php");
-		deletedChapAndComments($idChapter);
-	}
+
 }
 // else{
 // 	if(($_GET['action']!='eraseChap')||($_GET['action']!='commentChecked')||($_GET['action']!='deleteComm')||($_GET['action']!='reEdit')||($_GET['action']!='signaler')||($_GET['action']!='editChap')||($_GET['action']!='postChap')||($_GET['action']!='ValiderComment')||($_GET['action']!='selectionchapitre')||($_GET['action']!='chapitres')||($_GET['action']!='adminOnly')||($_GET['action']!='admin')||($_GET['action']!='logger')||($_GET['action']!='subscribeMember')||($_GET['action']!='inscription' )||($_GET['action']!='logOut') ){

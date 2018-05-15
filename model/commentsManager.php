@@ -33,8 +33,6 @@ class CommentsManager extends Manager
 
 	 public function signalComm($warningComm,$idChap){
 		$bdd=$this->dbConnect();
-		// $warningComm;
-		// var_dump($warningComm);
 		$pbComm=$bdd->prepare('UPDATE commentaires SET warning_comm=1 WHERE id_comm=:id_comm');
 		$pbComm->execute(array(
 			'id_comm'=> $warningComm

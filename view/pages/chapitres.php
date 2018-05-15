@@ -25,5 +25,6 @@
 		</article>
 	</div>
 </section>
-<!-- pages/chapitre.php?id=<
-./home.php?action=chapitres?id=< -->
+
+</body>
+</html>

@@ -14,7 +14,7 @@ function firstPage(){
 	$bills= $billetsCall-> billsCall();
 	require("./view/pages/homepage.php");
 }
-
+/*------------------CHAPTERS-----------------------*/
 function getAllChaps(){
 	$callChapters= new ChaptersManager();
 	$listChapters=$callChapters-> listChap();
@@ -30,11 +30,13 @@ function getOneChap(){
 
 	require("./view/pages/chapitre.php");
 }
+/*------------------END CHAPTERS-----------------------*/
+
+/*------------------COMMENTS-----------------------*/
 function addComments($pseudoComment,$textComment,$idChap){
 	$addComm= new CommentsManager();
 	$newComment=$addComm->addComment($pseudoComment,$textComment,$idChap);
 
 	$getallComms= new CommentsManager();
 	$commByChap=$getallComms->getComments();
-	//require("./view/pages/chapitre.php");
 }

@@ -42,7 +42,7 @@
 
 					<div id="writeComm">
 						<form id="getNewComment" action="./home.php?action=ValiderComment&amp;id=<?php echo $_GET['id']; ?>" method="post">
-							<!-- <label>Pseudo:<input type="text" name="nickname" id="nickname" value="<?php //echo htmlspecialchars($_SESSION['pseudo']);?>" required/></label> -->
+							
 							<label>Pseudo:<?php echo htmlspecialchars($_SESSION['pseudo']);?></label> 
 							<textarea id="tinymce" name="tinymce"></textarea>
 							<input type="submit" id="save" value="Valider" />

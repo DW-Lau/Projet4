@@ -9,6 +9,7 @@
 					<i>En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
 					Les informations renseignées ne seront utilisées que sur ce site.</i>
 				</p>
+				<p id="mentions">Projet réalisé dans le cadre de la formation OpenClassroom: Dévellopeur Web Junior.</p>
 		</article>
 
 		<div id="subBlock">
@@ -68,6 +69,8 @@
 			</div>
 		</div> <!-- end of subBlock -->
 	</div><!--end secondSideDeco-->
+	
 </section>
+
 </body>
 </html>

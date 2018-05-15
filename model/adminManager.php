@@ -26,11 +26,7 @@ class membersManager extends Manager
 	        	 header("Location:./home.php");
 	   		}
 	   		else{
-	   			// $NoMatch;
-	   			// echo "<p>".$NoMatch."</p>";
-	   			
-	   			//return $NoMatch;
-	  		 //header("Location:./home.php?action=inscription");
+	   	
 	    	}
 		}
 		return $isPasswordCorrect; 
