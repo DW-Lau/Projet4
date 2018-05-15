@@ -61,7 +61,7 @@
 								if (!isset($_SESSION['pseudo'])){
 							?> 
 								<li>
-									<a href="./home.php?action=inscription">Connexion/Inscription</a>
+									<a href="./home.php?action=inscription">Connexion</a>
 								</li>
 							<?php
 								}
@@ -71,7 +71,7 @@
 								</li>
 							<?php
 								if (!isset($_SESSION['id'])|| $_SESSION['id']==115){
-									echo "<li><a href='./home.php?action=admin'>Administrateur</a></li>";
+									echo "<li><a href='./home.php?action=admin'>Admin</a></li>";
 									}
 							?> 
 								
