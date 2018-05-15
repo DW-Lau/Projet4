@@ -6,6 +6,7 @@ body{
 
 /*Debut HEADER*/
 header{
+	display: flex;
 	background: white;
 	border-bottom: 5px double #052942;
 	height: 165px;

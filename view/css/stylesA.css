@@ -2,9 +2,7 @@
 a{
 	text-decoration: none;
 }
-header{
-	display: flex;
-}
+
 #head_R{
 	height:120px;
 	background: white;
