@@ -36,13 +36,14 @@ class ChaptersManager extends Manager
 	}
 	public function postChapter($titleChap,$textChap){
 		$bdd=$this->dbConnect();
-		$newChap=$bdd->prepare('INSERT INTO chapitres ( pseudo_member,titre,textchap, date_edition) VALUES(:pseudo_member,:titre,:textchap, NOW() )' );
+		$newChap=$bdd->prepare('INSERT INTO chapitres ( id_pseudoAuteur,titre,textchap, date_edition) VALUES(:id_pseudoAuteur,:titre,:textchap, NOW() )' );
 		$newChap->execute(array(
-			'pseudo_member'=>$_SESSION['pseudo'],
+			'id_pseudoAuteur'=>$_SESSION['id'],
 			'titre'=>$titleChap,
 			'textchap'=>$textChap
 			
 		));
+		$newChap=$bdd->query('SELECT chapitres.id_pseudoAuteur, membres.pseudo FROM chapitres LEFT JOIN membres ON chapitres.id_pseudoAuteur=membres.id');
 		header("Location:home.php?action=admin");
 	}
 
