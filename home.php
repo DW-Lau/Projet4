@@ -159,11 +159,11 @@ if (isset($_GET['action'])){
 	if($_GET['action']=='ValiderComment'){
 		$_GET['id'];
 		$idChap=$_GET['id'];
-		$pseudoComment=$_SESSION['pseudo'];
+		$idPseudo=$_SESSION['id'];
 		$textComment=$_POST['tinymce'];
 		 	require("controller/Front.php");
 		 	headBand();
-			addComments($pseudoComment,$textComment,$idChap);		
+			addComments($idPseudo,$textComment,$idChap);		
 	}
 	if ($_GET['action']=='signaler'){
 		$_GET['id_chap'];

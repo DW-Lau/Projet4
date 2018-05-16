@@ -21,7 +21,7 @@
 			?>
 				<span class="commChapter">
 					<span class="membreComm">
-						<strong><?php echo htmlspecialchars($commentaires['id_membre']);?></strong>
+						<strong><?php echo htmlspecialchars($commentaires['pseudo']);?></strong>
 					
 						à posté le : <?php echo htmlspecialchars($commentaires['date_poste_fr']);?></br>
 						<p>

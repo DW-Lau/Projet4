@@ -7,7 +7,7 @@ class CommentsManager extends Manager
 	public function getComments(){
 		$bdd=$this->dbConnect();
 		$idPage=$_GET['id'];
-		$comments=$bdd->prepare('SELECT id_comm,id_chap,commentaires.id_membre,contenu,warning_comm,date_format(date_poste,"%d.%m.%y")as date_poste_fr, membres.pseudo FROM commentaires LEFT JOIN membres ON commentaires.id_membre=membres.pseudo WHERE id_chap=:id_chap ');
+		$comments=$bdd->prepare('SELECT id_comm,id_chap,commentaires.id_membre,contenu,warning_comm,date_format(date_poste,"%d.%m.%y")as date_poste_fr, membres.id, membres.pseudo FROM commentaires LEFT JOIN membres ON commentaires.id_membre=membres.id WHERE id_chap=:id_chap ');
 		$comments->execute(array(
 						'id_chap'=>$idPage
 					));
@@ -15,14 +15,14 @@ class CommentsManager extends Manager
 	}
 
 
-	public function addComment($pseudoComment,$textComment,$idChap){
+	public function addComment($idPseudo,$textComment,$idChap){
 		$bdd=$this->dbConnect();
 		
 		$newComm=$bdd->prepare('INSERT INTO commentaires (id_chap, id_membre, contenu, date_poste) VALUES(:id_chap,:id_membre,:contenu, NOW() )' );
 
 		$newComm->execute(array(
 			'id_chap'=>$idChap,
-			'id_membre'=>$pseudoComment,
+			'id_membre'=>$idPseudo,
 			'contenu'=>$textComment,
 		));
 

@@ -32,9 +32,9 @@ function getOneChap(){
 /*------------------END CHAPTERS-----------------------*/
 
 /*------------------COMMENTS-----------------------*/
-function addComments($pseudoComment,$textComment,$idChap){
+function addComments($idPseudo,$textComment,$idChap){
 	$addComm= new CommentsManager();
-	$newComment=$addComm->addComment($pseudoComment,$textComment,$idChap);
+	$newComment=$addComm->addComment($idPseudo,$textComment,$idChap);
 
 	$getallComms= new CommentsManager();
 	$commByChap=$getallComms->getComments();
