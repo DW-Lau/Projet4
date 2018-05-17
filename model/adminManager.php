@@ -51,7 +51,7 @@ class membersManager extends Manager
 				var_dump($pseudo);
 				$pass_hache = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-				$user = $bdd->prepare('INSERT INTO membres(id,lastname,firstname,pseudo,mail,mdp) VALUES(id,:lastname,:firstname,:pseudo,:mail,:mdp )');
+				$user = $bdd->prepare('INSERT INTO membres(lastname,firstname,pseudo,mail,mdp) VALUES(:lastname,:firstname,:pseudo,:mail,:mdp )');
 				var_dump($pseudo);
 				
 			//	$infoUser;
@@ -64,26 +64,15 @@ class membersManager extends Manager
 						'mdp'=>$pass_hache
 					));
 
-				$membreLogin= $bdd->prepare('SELECT id, pseudo FROM membres WHERE pseudo=:pseudo ');
-				$SessionInfos=$membreLogin->execute(array(
+				$membreLogin= $bdd->prepare('SELECT id FROM membres WHERE pseudo=:pseudo ');
+				$membreLogin->execute(array(
 	   			    'pseudo'=>$pseudo
 	   			));
-				var_dump($pseudo);
-				var_dump('id');
-				// $infoUser=$bdd->prepare('SELECT pseudo FROM membres WHERE pseudo=:pseudo');
-				// $newtest=$infoUser->execute(array(
-	  			// 			    'pseudo'=>$pseudo
-	  			// ));
-				// var_dump($newtest.'pseudo');
-			//	var_dump($infoUser.'mdp');
-				//var_dump($_SESSION["pseudo"]);
-				
-				$_SESSION['id']=$SessionInfos['id'];
-				$_SESSION["pseudo"]=$pseudo;
-				var_dump($_SESSION);
-			//	$_SESSION['id']=$newtest.'id';
-			//	$_SESSION["pseudo"]=$newtest.'pseudo';
-				var_dump($_SESSION["pseudo"]);
+	   			$SessionInfos=$membreLogin->fetch();
+	   			
+				$_SESSION["id"]=$SessionInfos["id"];
+			 	$_SESSION["pseudo"]=$pseudo;
+
 				header("Location:./home.php");
 		
 			}
