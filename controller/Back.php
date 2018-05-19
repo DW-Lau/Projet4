@@ -93,6 +93,7 @@ function editChapter(){
 function reEditChap($idEdit,$titleEdit,$textEdit){
 	$editChapter= new ChaptersManager();
 	$reEditChapter=$editChapter->reditChapter($idEdit,$titleEdit,$textEdit);
+	require("./view/pages/adminPage.php");
 }
 
 function deletedChapAndComments($idChapter){

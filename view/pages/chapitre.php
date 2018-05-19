@@ -6,7 +6,7 @@
 				while($chapitre = $pickOneChap->fetch()){
 			?>
 			<h2><?php echo htmlspecialchars($chapitre['titre']);?></h2>		
-				<p><?= nl2br($chapitre['textchap'])?></p>
+				<p><?php echo($chapitre['textchap'])?></p>
 			<?php
 			}
 				$pickOneChap->closeCursor();
@@ -60,7 +60,7 @@
 				</div>
 			</section>
 
-			<script src="./view/tinymce/tinymce.min.js"></script>
+			<!-- <script src="./view/tinymce/tinymce.min.js"></script> -->
 
 </body>
 </html>

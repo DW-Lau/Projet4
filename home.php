@@ -190,16 +190,5 @@ if (isset($_GET['action'])){
 	}
 
 }
-// else{
-// 	if(($_GET['action']!='eraseChap')||($_GET['action']!='commentChecked')||($_GET['action']!='deleteComm')||($_GET['action']!='reEdit')||($_GET['action']!='signaler')||($_GET['action']!='editChap')||($_GET['action']!='postChap')||($_GET['action']!='ValiderComment')||($_GET['action']!='selectionchapitre')||($_GET['action']!='chapitres')||($_GET['action']!='adminOnly')||($_GET['action']!='admin')||($_GET['action']!='logger')||($_GET['action']!='subscribeMember')||($_GET['action']!='inscription' )||($_GET['action']!='logOut') ){
 
-// 		echo " Ceci n'est pas une commande valable. Veuilliez retournez sur le blog. <a href='./home.php'>Billet simple pour l\'Alaska. </a>";
-// 	}
-// }//end of all actions
 ?>
-		
-	<!--	<script type="text/javascript" src="javascript/commentaires.js"></script>
- <script type="text/javascript" src="view/javascript/jquery.min.js"></script>
-<script type="text/javascript" src="view/plugins/tinymce/tinymce.min.js"></script>
-<script type="text/javascript" src="view/plugins/tinymce/init-tinymce.js"></script> -->
-<!-- </html> -->

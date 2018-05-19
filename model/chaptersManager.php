@@ -20,7 +20,7 @@ class ChaptersManager extends Manager
 	}
 	public function listChap(){	
 		$bdd=$this->dbConnect();
-		$allchap= $bdd->query('SELECT id,titre,SUBSTR(textchap, 1, 100)as textchap,date_format(date_edition,"%d.%m.%y")as date_fr FROM chapitres  ');//Selection of the first 100 characters 
+		$allchap= $bdd->query('SELECT id,titre,SUBSTR(textchap, 1, 250)as textchap,date_format(date_edition,"%d.%m.%y")as date_fr FROM chapitres  ');//Selection of the first 100 characters 
 		return $allchap;
 	}
 
@@ -49,9 +49,8 @@ class ChaptersManager extends Manager
 
 	public function reditChapter($idEdit,$titleEdit,$textEdit){
 		$bdd=$this->dbConnect();
-		$editChap=$bdd->prepare('UPDATE chapitres SET pseudo_member=:pseudo_member, titre=:titre, textchap=:textchap WHERE id=:id');
+		$editChap=$bdd->prepare('UPDATE chapitres SET titre=:titre, textchap=:textchap WHERE id=:id');
 		$editChap->execute(array(
-			'pseudo_member'=>$_SESSION['pseudo'],
 			'titre'=>$titleEdit,
 			'textchap'=>$textEdit,
 			'id'=>$idEdit

@@ -3,13 +3,13 @@
 		<article id="rules">
 			<h4 class="subInfo">Avant de continuer..</h4>
 				<p> Remplissez le formulaire  pour rejoindre notre communauté! </br>
-					Devenez membre et profiter de contenu exclusif.
-					Paratger vos impressions avec les autres utilisateurs, en postant des messages sur les billets et chapitres postés par l'auteur.  </br></br>
+					Devenez membre et profiter de contenus exclusifs.
+					Paratger vos impressions avec les autres utilisateurs, en postant des messages sur les chapitres postés par l'auteur.  </br></br>
 
-					<i>En remplissant, et acceptant l'envoie du formulaire vous acceptez l'utilisation des cookies.</br>
-					Les informations renseignées ne seront utilisées que sur ce site.</i>
+					<i>En remplissant, et acceptant l'envoi du formulaire vous acceptez l'utilisation des cookies.</br>
+					Les informations renseignées ne seront utilisées que sur ce site.
 				</p>
-				<p id="mentions">Projet réalisé dans le cadre de la formation OpenClassroom: Dévellopeur Web Junior.</p>
+				<p id="mentions">Projet réalisé dans le cadre de la formation OpenClassroom: Développeur Web Junior.</p></i>
 		</article>
 
 		<div id="subBlock">
