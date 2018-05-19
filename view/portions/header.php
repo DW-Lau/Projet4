@@ -85,6 +85,5 @@
 						
 				</div>
 			</header>
-		</body>
-</html>
+		
 		
