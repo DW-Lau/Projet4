@@ -42,7 +42,13 @@ if (isset($_GET['action'])){
 						$infoIssues="Le pseudo que vous avez choisie est déjà utilisé. Veuillez en choisir un autre.";
 							infoIssues($infoIssues);
 					}
-				}//end of regex pwd
+				}else{
+				$message="Une erreur dans votre adresse mail s'est produit. Veuillez vérifier vos information";
+				require ("controller/Front.php");
+				require ("controller/Back.php");
+				headBand();
+				msgMail($message);
+				}
 			}else{
 				$message="Les 2 mots de passes ne sont pas correspondant";
 				require ("controller/Front.php");
