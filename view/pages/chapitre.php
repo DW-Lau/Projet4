@@ -59,8 +59,5 @@
 
 				</div>
 			</section>
-
-			<!-- <script src="./view/tinymce/tinymce.min.js"></script> -->
-
 </body>
 </html>

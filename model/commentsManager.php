@@ -4,7 +4,7 @@ require_once("manager.php");
 
 class CommentsManager extends Manager
 {
-	public function getComments(){
+	public function getComments(){//This function will return every comment on the chapter it belong.
 		$bdd=$this->dbConnect();
 		$idPage=$_GET['id'];
 		$comments=$bdd->prepare('SELECT id_comm,id_chap,commentaires.id_membre,contenu,warning_comm,date_format(date_poste,"%d.%m.%y")as date_poste_fr, membres.id, membres.pseudo FROM commentaires LEFT JOIN membres ON commentaires.id_membre=membres.id WHERE id_chap=:id_chap ');
@@ -31,7 +31,7 @@ class CommentsManager extends Manager
 		header("Location:./home.php?action=selectionchapitre&id=$idChap");
 	}
 
-	 public function signalComm($warningComm,$idChap){
+	 public function signalComm($warningComm,$idChap){// This function will reported a comment, and update it status in the database.
 		$bdd=$this->dbConnect();
 		$pbComm=$bdd->prepare('UPDATE commentaires SET warning_comm=1 WHERE id_comm=:id_comm');
 		$pbComm->execute(array(
@@ -45,25 +45,19 @@ class CommentsManager extends Manager
 		header("Location:./home.php?action=selectionchapitre&id=$idChap");
 	 }
 
-
-	public function getReportingComments(){
+	public function getReportingComments(){// In the admin section, It will list all the comments reported.
 		$bdd=$this->dbConnect();
 		$reportedComm=$bdd->query('SELECT id_comm, id_chap, commentaires.id_membre, contenu, warning_comm, date_format(date_poste,"%d.%m.%y")as date_poste_fr, membres.id,membres.pseudo FROM commentaires LEFT JOIN membres ON commentaires.id_membre= membres.id WHERE warning_comm=1 ORDER BY date_poste_fr');
 		return $reportedComm;
 	}
 
-	public function lastComment(){
-		$bdd=$this->dbConnect();
-		$lastComm=$bdd->query('SELECT id_comm, commentaires.id_chap, id_membre,contenu,date_format(date_poste,"%d.%m.%y")as date_poste_fr, chapitres.id,id_chap,titre FROM commentaires LEFT JOIN chapitres ON commentaires.id_chap=chapitres.id ORDER BY date_poste_fr   DESC LIMIT 0,1');
-		return $lastComm;
-	}
-	public function deleteComment($id_comm){
+	public function deleteComment($id_comm){// In the admin section, Admin will deleted the comment which was reported.
 		$bdd=$this->dbConnect();
 		$dltComm=$bdd->prepare('DELETE FROM commentaires WHERE id_comm=?');
 		$eraseComm=$dltComm->execute(array($id_comm));
 		header("Location:./home.php?action=admin");
 	}
-	public function commentValidation($id_comm){
+	public function commentValidation($id_comm){//In the admin section, Admin will return the comment to it chapter.
 		$bdd=$this->dbConnect();
 		$pbComm=$bdd->prepare('UPDATE commentaires SET warning_comm=0 WHERE id_comm=:id_comm');
 		$pbComm->execute(array(
@@ -71,7 +65,7 @@ class CommentsManager extends Manager
 		));
 		header("Location:./home.php?action=admin");
 	}
-	public function deleteAllComments($idChapter){
+	public function deleteAllComments($idChapter){//This function will deleted ALL the comments in One chapter.
 		$bdd=$this->dbConnect();
 		$dltAllComms=$bdd->prepare('DELETE FROM commentaires WHERE id_chap=?');
 		$eraseComms=$dltAllComms->execute(array($idChapter));
