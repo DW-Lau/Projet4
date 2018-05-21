@@ -151,9 +151,9 @@ if (isset($_GET['action'])){
 		$textEdit=$_POST['tinymce_Chap'];
 			require("controller/Front.php");
 			require("controller/Back.php");
-			headBand();
+			headBand();reEditChap($idEdit,$titleEdit,$textEdit);
 			lastUpdate();
-			reEditChap($idEdit,$titleEdit,$textEdit);
+			
 		}
 	if ($_GET['action']=='eraseChap') {
 		$idChapter=$_GET['id'];
