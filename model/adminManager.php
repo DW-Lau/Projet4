@@ -11,7 +11,6 @@ class membersManager extends Manager
 	   			));
 	
 		$resultat = $req->fetch();
-		//return $resultat;
 		$isPasswordCorrect = password_verify($checkmdp, $resultat['mdp']);
 
 		if (!$resultat){
@@ -19,7 +18,6 @@ class membersManager extends Manager
 		}
 		else{
 	    	if ($isPasswordCorrect) {
-	        	//session_start();
 	        	$_SESSION['id'] = $resultat['id'];
 	       		$_SESSION['pseudo'] = $checkPseudo;
 	        	echo 'Content de vous revoir '. $_SESSION['pseudo'];
@@ -44,7 +42,6 @@ class membersManager extends Manager
 		if($resultat['pseudo']==$pseudo){
 				$pseudoPresent=1;
 				return $pseudoPresent;
-				// header("Location:./home.php?action=inscription");
 				
 		}//end of the verification.
 		else{//If all conditions are true, subscribe
@@ -54,8 +51,6 @@ class membersManager extends Manager
 				$user = $bdd->prepare('INSERT INTO membres(lastname,firstname,pseudo,mail,mdp) VALUES(:lastname,:firstname,:pseudo,:mail,:mdp )');
 				var_dump($pseudo);
 				
-			//	$infoUser;
-			//	var_dump($user.'pseudo');
 				$info=$user->execute(array(
 						'lastname'=>$lastname,
 						'firstname'=>$firstname,
@@ -88,19 +83,12 @@ class membersManager extends Manager
 	   			));
 
 		$resultat = $req->fetch();
-		//var_dump($resultat);
-		//var_dump($resultat['id']);
 		$isPasswordCorrect = password_verify($AdminPwd, $resultat['mdp']);
 		
 		if($isPasswordCorrect){
 				if($resultat['id']=="115"){
-					//var_dump($resultat['id']);
-					//session_start();
 					$_SESSION['id']=$resultat['id'];
-					//var_dump($_SESSION['id']);
 					$_SESSION['pseudo'] = $AdminPseudo;
-				//	echo "Bienvenu". $_SESSION['pseudo'] ;
-					//header("Location:home.php?action=adminOnly");
 				}
 				else{
 					echo "Vous n'avez pas accès à cette partie du blog, redirection en cours";
@@ -108,7 +96,6 @@ class membersManager extends Manager
 				}
 		}else{
 			echo"Votre mot de passe ou votre pseudo est incorrecte";
-			//header("Location:./home.php?");
 		}
 	}//end function AdminCheckInfo();
 

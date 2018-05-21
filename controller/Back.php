@@ -39,6 +39,11 @@ function msgPWD($message){
 
 	require('./view/pages/inscription.php');
 }
+function msgMail($message){
+	$message;
+
+	require('./view/pages/inscription.php');
+}
 
 function infoIssues($infoIssues){
 
@@ -63,14 +68,8 @@ function updateWarningComm($warningComm,$idChap){
 }
 /*--------------------------------ADMIN----------------------------------------*/
 function lastUpdate(){
-	$lastChaptPost= new ChaptersManager ();
-	$lastChapterPost= $lastChaptPost->AdminChapRecap();
-
 	$callChapters= new ChaptersManager();
 	$listChapters=$callChapters-> listChap();
-
-	$lastCommPost= new CommentsManager ();
-	$lastCommentPost= $lastCommPost -> lastComment();
 
 	$repotedComm= new CommentsManager();
 	$reportedComments= $repotedComm->getReportingComments();
@@ -93,7 +92,6 @@ function editChapter(){
 function reEditChap($idEdit,$titleEdit,$textEdit){
 	$editChapter= new ChaptersManager();
 	$reEditChapter=$editChapter->reditChapter($idEdit,$titleEdit,$textEdit);
-	require("./view/pages/adminPage.php");
 }
 
 function deletedChapAndComments($idChapter){
