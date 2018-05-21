@@ -3,15 +3,8 @@
 		if(isset($_SESSION["pseudo"])){
 			if( ($_SESSION["id"])=="115"){
 			
-			require("adminPage.php");//temporaire
-			echo'<div>
-					<h3>Connexion: </h3>
-						<form method="post" action="./home.php?action=adminOnly">
-							<label name="IdAdmin"> Pseudo:<input type="text" name="IdAdmin" id="IdAdmin" required></label>
-							<label name="PwdAdmin">Mot de passe:<input type="password" name="PwdAdmin" id="PwdAdmin" required /></label>
-							<input type="submit" id="validation" value="Entrer" />
-						</form>
-				</div>';
+			require("adminPage.php");
+		
 			}
 		}
 		else{
