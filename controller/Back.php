@@ -20,11 +20,13 @@ function sessionOut(){
 function checkInfo($checkPseudo,$checkmdp){
 	$checkUser= new membersManager();
 	$userLogin= $checkUser->checkInfo($checkPseudo,$checkmdp);
+	//A redirection will be done on the Adminpage.php
 }
 
 function subscribe($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent){
 	$newMember= new membersManager();
 	$subMember= $newMember->getNewUser($lastname,$firstname,$pseudo,$mdp,$mail,$pseudoPresent);
+	//A redirection will be done on the Adminpage.php
 }
 
 function adminConnexion($AdminPseudo,$AdminPwd){
@@ -82,6 +84,7 @@ function lastUpdate(){
 function postChap($titleChap,$textChap){
 	$postNewChap=new chaptersManager();
 	$newChapter= $postNewChap->postChapter($titleChap,$textChap);
+	//A redirection will be done on the Adminpage.php
 }
 
 function editChapter(){
@@ -94,6 +97,7 @@ function editChapter(){
 function reEditChap($idEdit,$titleEdit,$textEdit){
 	$editChapter= new ChaptersManager();
 	$reEditChapter=$editChapter->reditChapter($idEdit,$titleEdit,$textEdit);
+	//A redirection will be done on the Adminpage.php
 }
 
 function deletedChapAndComments($idChapter){
@@ -102,6 +106,7 @@ function deletedChapAndComments($idChapter){
 
 	$deletedAllComments= new CommentsManager();
 	$dltAllCommments= $deletedAllComments-> deleteAllComments($idChapter);
+	//A redirection will be done on the Adminpage.php
 }
 /*--------------------------------END CHAPTERS----------------------------------------*/
 
@@ -109,11 +114,13 @@ function deletedChapAndComments($idChapter){
 function deletedComment($id_comm){
 	$eraseComment= new CommentsManager();
 	$erase=$eraseComment->deleteComment($id_comm);
+	//A redirection will be done on the commentsManager.php
 }
 
 function validationComment($id_comm){
 	$checkingComm= new CommentsManager();
 	$commentOk= $checkingComm-> commentValidation($id_comm);
+	//A redirection will be done on the commentsManager.php
 }
 /*--------------------------------END COMMENTS----------------------------------------*/
 

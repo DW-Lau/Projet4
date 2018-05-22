@@ -30,4 +30,5 @@ function addComments($idPseudo,$textComment,$idChap){
 
 	$getallComms= new CommentsManager();
 	$commByChap=$getallComms->getComments();
+	require('./view/pages/chapitre.php');
 }
