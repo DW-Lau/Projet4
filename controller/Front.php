@@ -9,8 +9,6 @@ function firstPage(){
 	$callChapters= new ChaptersManager();
 	$chapters= $callChapters->chapterCall();
 
-	$billetsCall= new billsCaller();
-	$bills= $billetsCall-> billsCall();
 	require("./view/pages/homepage.php");
 }
 /*------------------CHAPTERS-----------------------*/

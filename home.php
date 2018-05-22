@@ -163,7 +163,6 @@ if (isset($_GET['action'])){
 	}
 /*--------------------------------COMMENTS----------------------------------------*/
 	if($_GET['action']=='ValiderComment'){
-		$_GET['id'];
 		$idChap=$_GET['id'];
 		$idPseudo=$_SESSION['id'];
 		$textComment=$_POST['tinymce'];
@@ -172,9 +171,7 @@ if (isset($_GET['action'])){
 			addComments($idPseudo,$textComment,$idChap);		
 	}
 	if ($_GET['action']=='signaler'){
-		$_GET['id_chap'];
 		$idChap=$_GET['id_chap'];
-		$_GET['id'];
 		$warningComm=$_GET['id'];
 			require("controller/Back.php");
 			updateWarningComm($warningComm,$idChap);

@@ -46,12 +46,13 @@ function msgMail($message){
 }
 
 function infoIssues($infoIssues){
-
+	$infoIssues;
 	require('./view/pages/inscription.php');
 }
 function noNickName($noNickName){
 
 	$noNickName;
+	require('./view/pages/inscription.php');
 }
 function NoMatch($NoMatch){
 	$NoMatch;
@@ -65,6 +66,7 @@ function NoMatch($NoMatch){
 function updateWarningComm($warningComm,$idChap){
 	$signalement= new CommentsManager();
 	$warningComment=$signalement->signalComm($warningComm,$idChap);
+	require('./view/pages/chapitre.php');
 }
 /*--------------------------------ADMIN----------------------------------------*/
 function lastUpdate(){
