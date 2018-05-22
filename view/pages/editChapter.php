@@ -5,7 +5,7 @@
 					while($chapitre = $pickOneChap->fetch()){
 				?>
 
-				<form id="editChaptre" action="./home.php?action=reEdit&amp;id=<?php echo $chapitre['id']; ?>" method="post">
+				<form id="editChaptre" action="./index.php?action=reEdit&amp;id=<?php echo $chapitre['id']; ?>" method="post">
 
 					<label>Titre:<input type="text" name="title" id="title" value="<?php echo htmlspecialchars($chapitre['titre']);?>" required/></label>
 					

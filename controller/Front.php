@@ -5,12 +5,6 @@ require_once("./model/commentsManager.php");
 function  headBand(){
 	require ("./view/portions/header.php");
 }
-function firstPage(){
-	$callChapters= new ChaptersManager();
-	$chapters= $callChapters->chapterCall();
-
-	require("./view/pages/homepage.php");
-}
 /*------------------CHAPTERS-----------------------*/
 function getAllChaps(){
 	$callChapters= new ChaptersManager();

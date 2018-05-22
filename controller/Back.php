@@ -13,7 +13,7 @@ function formulaire(){
 }
 
 function sessionOut(){
-	require('./home.php');
+	require('./index.php');
 }
 
 /*--------------------------------CONNEXION----------------------------------------*/

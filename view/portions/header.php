@@ -47,7 +47,7 @@
 			<header>
 				<div id="headR_Home">
 
-					<h1><a href="./home.php"> "Billet simple pour l'Alaska"</a></h1>
+					<h1><a href="./index.php"> "Billet simple pour l'Alaska"</a></h1>
 						<div id="lower_Deco">
 							<div id="line_Ink"><!--Ink line add in css--></div>
 							<h2> Jean Forteroche</h2>
@@ -61,17 +61,17 @@
 								if (!isset($_SESSION['pseudo'])){
 							?> 
 								<li>
-									<a href="./home.php?action=inscription">Connexion</a>
+									<a href="./index.php?action=inscription">Connexion</a>
 								</li>
 							<?php
 								}
 							?>
 								<li>
-									<a href="./home.php?action=chapitres">Les Chapitres</a>
+									<a href="./index.php?action=chapitres">Les Chapitres</a>
 								</li>
 							<?php
 								if (!isset($_SESSION['id'])|| $_SESSION['id']==115){
-									echo "<li><a href='./home.php?action=admin'>Admin</a></li>";
+									echo "<li><a href='./index.php?action=admin'>Admin</a></li>";
 									}
 							?> 
 								
@@ -79,7 +79,7 @@
 					</nav>
 						<?php
 							if (isset($_SESSION['pseudo'] ) ) {
-								echo "<p> Bonjour ".$_SESSION['pseudo']."<br/><a href='./home.php?action=logOut'>Déconnexion</a><p>";
+								echo "<p> Bonjour ".$_SESSION['pseudo']."<br/><a href='./index.php?action=logOut'>Déconnexion</a><p>";
 							}
 						?>
 						

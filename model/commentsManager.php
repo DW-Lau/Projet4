@@ -28,7 +28,7 @@ class CommentsManager extends Manager
 
 		$newComm=$bdd->query('SELECT commentaires.id_membre, membres.id FROM commentaires LEFT JOIN membres ON commentaires.id_membre=membres.id');
 		
-		header("Location:./home.php?action=selectionchapitre&id=$idChap");
+		header("Location:./index.php?action=selectionchapitre&id=$idChap");
 	}
 
 	 public function signalComm($warningComm,$idChap){// This function will reported a comment, and update it status in the database.
@@ -42,7 +42,7 @@ class CommentsManager extends Manager
 			'id_comm'=> $warningComm
 		));
 		
-		header("Location:./home.php?action=selectionchapitre&id=$idChap");
+		header("Location:./index.php?action=selectionchapitre&id=$idChap");
 	 }
 
 	public function getReportingComments(){// In the admin section, It will list all the comments reported.
@@ -55,7 +55,7 @@ class CommentsManager extends Manager
 		$bdd=$this->dbConnect();
 		$dltComm=$bdd->prepare('DELETE FROM commentaires WHERE id_comm=?');
 		$eraseComm=$dltComm->execute(array($id_comm));
-		header("Location:./home.php?action=admin");
+		header("Location:./index.php?action=admin");
 	}
 	public function commentValidation($id_comm){//In the admin section, Admin will return the comment to it chapter.
 		$bdd=$this->dbConnect();
@@ -63,12 +63,12 @@ class CommentsManager extends Manager
 		$pbComm->execute(array(
 			'id_comm'=> $id_comm
 		));
-		header("Location:./home.php?action=admin");
+		header("Location:./index.php?action=admin");
 	}
 	public function deleteAllComments($idChapter){//This function will deleted ALL the comments in One chapter.
 		$bdd=$this->dbConnect();
 		$dltAllComms=$bdd->prepare('DELETE FROM commentaires WHERE id_chap=?');
 		$eraseComms=$dltAllComms->execute(array($idChapter));
-		header("Location:./home.php?action=admin");
+		header("Location:./index.php?action=admin");
 	}
 }

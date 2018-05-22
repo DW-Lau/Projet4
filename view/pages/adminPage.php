@@ -3,7 +3,7 @@
 
 		<h2><span class="maj">é</span>crire un nouveau chapitre:</h2>
 
-			<form id="getNewChapter" action="./home.php?action=postChap" method="post">
+			<form id="getNewChapter" action="./index.php?action=postChap" method="post">
 					
 				<label>Titre:<input type="text" name="title" id="title" value="" required/></label>
 					
@@ -24,10 +24,10 @@
 						Ecrit par: <?php echo htmlspecialchars($listReportedComm['pseudo']);?> le: <?php echo htmlspecialchars($listReportedComm['date_poste_fr']);?></br>
 						
 						<span id="deletButton">
-							<a href="./home.php?action=deleteComm&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Supprimer</a>
+							<a href="./index.php?action=deleteComm&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Supprimer</a>
 						</span>
 						<span id="okButton">
-							<a href="./home.php?action=commentChecked&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Valider</a>
+							<a href="./index.php?action=commentChecked&amp;id=<?php echo $listReportedComm['id_comm']; ?>">Valider</a>
 						</span>
 					</p>
 
@@ -47,10 +47,10 @@
 						<?php echo $list['titre']?>
 						</br>
 						<span id="deleteChap">
-							<a href="./home.php?action=eraseChap&amp;id=<?php echo $list['id']; ?>"> Effacer</a>
+							<a href="./index.php?action=eraseChap&amp;id=<?php echo $list['id']; ?>"> Effacer</a>
 						</span>
 						<span id="changeButton">
-							<a href="./home.php?action=editChap&amp;id=<?php echo $list['id']; ?>">Modifier</a>
+							<a href="./index.php?action=editChap&amp;id=<?php echo $list['id']; ?>">Modifier</a>
 						</span>
 
 						 <br/>

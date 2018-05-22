@@ -39,7 +39,7 @@ class ChaptersManager extends Manager
 			
 		));
 		$newChap=$bdd->query('SELECT chapitres.id_pseudoAuteur, membres.pseudo FROM chapitres LEFT JOIN membres ON chapitres.id_pseudoAuteur=membres.id');
-		header("Location:home.php?action=admin");
+		header("Location:index.php?action=admin");
 	}
 
 	public function reditChapter($idEdit,$titleEdit,$textEdit){//This function will changed a chapter
@@ -56,6 +56,6 @@ class ChaptersManager extends Manager
 		$bdd=$this->dbConnect();
 		$dltAChap=$bdd->prepare('DELETE FROM chapitres WHERE id=?');
 		$eraseComms=$dltAChap->execute(array($idChapter));
-		header("Location:./home.php?action=admin");
+		header("Location:./index.php?action=admin");
 	}
 }

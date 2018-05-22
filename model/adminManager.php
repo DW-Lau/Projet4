@@ -21,10 +21,10 @@ class membersManager extends Manager
 	        	$_SESSION['id'] = $resultat['id'];
 	       		$_SESSION['pseudo'] = $checkPseudo;
 	        	echo 'Content de vous revoir '. $_SESSION['pseudo'];
-	        	 header("Location:./home.php");
+	        	 header("Location:./index.php");
 	   		}
 	   		else{
-	   	
+	   			echo "Une erreur est survenu. Veuilliez ré-essayer.";
 	    	}
 		}
 		return $isPasswordCorrect; 
@@ -68,7 +68,7 @@ class membersManager extends Manager
 				$_SESSION["id"]=$SessionInfos["id"];
 			 	$_SESSION["pseudo"]=$pseudo;
 
-				header("Location:./home.php");
+				header("Location:./index.php");
 		
 			}
 	}
@@ -92,7 +92,7 @@ class membersManager extends Manager
 				}
 				else{
 					echo "Vous n'avez pas accès à cette partie du blog, redirection en cours";
-					header("Location: ./home.php");
+					header("Location: ./index.php");
 				}
 		}else{
 			echo"Votre mot de passe ou votre pseudo est incorrecte";
